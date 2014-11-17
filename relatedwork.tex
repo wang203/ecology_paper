@@ -1,0 +1,246 @@
+\section{related work}
+
+\hfill \break
+\hfill \break
+\subsection*{latest}
+\hfill \break
+\hfill \break
+
+\xhdr{Accuracy of geo and temporal data on Flickr.}
+Over all the images on Flickr.com, XX\% (only a small subset) of them come with geo and temporal data.
+?Among these data, XX\% of them are accurate enough.
+?Flickr provides the geo-location accuracy according to the camera device, and GPS precision.
+Meanwhile, a lot of works are trying to correct estimate or correct geo-location of Flickr images.
+~\cite{Geo-Clustering of Images With Missing GeoTags} estimates where images are taken for those missing geo-tags. They are optimizing a graph clustering problem. Attributes in their graph include textual tags, timestamps and vision content. It's inspired by an earlier work
+~\cite{Mapping the world’s photos}.
+~\cite{Geo-Location Estimation of Flickr Images: Social
+Web Based Enrichment} consider textual meta-data to correct geo tags. 
+They also found for users active on both Flickr and Twitter, the Twitter post at around the same time the images are taken can be a reliable reference to estimate the approximate location.
+
+Timestamp is harder to be accurate due to the same reason of geo-tags and the time-zone problem. In paper ~\cite{Who's Time is it anyway?}, there is a detail analysis in disagreement of camera time and GPS time. They also estimate a more accurate timestamp when users taking multiple images in a short timespan.
+
+
+
+
+\xhdr{Vegetation classification.}
+%http://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=5&ved=0CEkQFjAE&url=http%3A%2F%2Fhomes.cs.washington.edu%2F~neeraj%2Fpapers%2Fnk_eccv2012_leafsnap.pdf&ei=W9n8U5z7JoOTyATZloLICA&usg=AFQjCNHzDMozsenIFTdGySrMk0Vw8nhLhA&sig2=CPxNj5C0S-b3YDpR7-jPHg&bvm=bv.73612305,d.aWw
+~\cite{Leafsnap: A Computer Vision System for
+Automatic Plant Species Identification} identifies plant species by leaf images. They focus on accurate leaf segmentation according to color difference of leaf and background, curvature distribution over scale, and nearest neighbor matching.
+
+~\cite{Comparisons of Gist Models in Rapid Scene categorization tasks}
+introduces multiple Gist models in scene classification. There happen to be a test set of vegetation shows gist feature works great on vegetation classification.
+
+~\cite{Detecting subpixel woody vegetation in digital imagery using two artificial intelligence approaches}
+This one may be a little too old
+It's using man-made mask and neural networks.
+(could be compared with deep learning)
+
+a lot of works use remote sensing 
+
+%http://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=3&ved=0CDMQFjAC&url=http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F4309074_Greenery_Image_and_Non-greenery_Image_Classification_Using_Adaptive_Neuro-Fuzzy_Inference_System%2Flinks%2F09e4150ddce7a3514d000000&ei=Edr8U6yzJMOAygSg4YGAAw&usg=AFQjCNGXbvsw1sd1aZA1vAnk_f-4n5bwGA&sig2=62HbvxAtNQXCkCH_raYdig&bvm=bv.73612305,d.aWw
+This paper ~\cite{greenery and non-greenery image classification using adaptive neuro-guzzy inference system}
+is the closest one to our purpose.
+They consider
+color, texture features in images and get good result. But they only test on a very limited dataset where the positive images are either with one tree in the center or full of trees or meadow. This is so not enough when we are working with  complex and very large number of public shared images.
+%200 imgs (50*50)
+
+
+\hfill \break
+\hfill \break
+===================================
+\hfill \break
+\hfill \break
+\subsection*{workshop}
+
+
+
+\vspace{-8pt}
+\xhdr{Crowd-sourcing from social media} Several recent studies have
+shown the power of social media  for observing
+the world itself, as a special case of
+`social sensing'~\cite{Aggarwal:2013vh}.
+This
+work includes using Twitter data to measure collective emotional
+state~\cite{Golder:2011cy} (which, in turn, has found to
+be predictive of stock  moves~\cite{bollen11twitter}),
+predicting product adoption rates and political election
+outcomes~\cite{jin10prediction}, and collecting data about
+earthquakes and other natural disasters~\cite{Sakaki:2010uv}.
+%Others have tracked the geo-temporal distributions of social media
+%tags, query search terms, and English words in large
+%datasets~\cite{singh10socialpixels,
+%vlachos2004identifying,chien2005semantic,Backstrom:2008tv,Vadrevu2008,ginsberg09flu,Sadilek:2012wp,Cook:2012wj,Michel:2011gm,radinsky2011word,Radinsky:2012ta};
+Particularly striking examples include Ginsberg
+\textit{et al}~\cite{ginsberg09flu}, who show that 
+geo-temporal properties of web search queries can
+predict the spread of flu, and 
+Sadilek \textit{et al}~\cite{Sadilek:2012wp} who show that
+Twitter feeds can predict when a given person will
+fall ill.
+
+The specific application we consider here is inferring
+information about the state of the natural world from social media.
+Existing work has analyzed textual content, including text tags and
+Twitter feeds, in order to do this. Hyvarinen and
+Saltikoff~\cite{meteo} use tag search on Flickr to validate
+metereological satellite observations, although the analysis is done
+by hand. Zhang \textit{et al}~\cite{ecology2012www} take a large
+collection of geo-tagged and time-stamped Flickr photos and search for
+snow-related tags to produce estimates of geo-temporal snowfall
+distributions, and evaluate them against satellite snow maps.
+Singh \textit{et al}~\cite{singh10socialpixels} visualize geospatial
+distributions of photos tagged ``snow'' as an example of
+their Social Pixels framework, but they study the
+database theory needed to perform this analysis
+and do not consider the prediction problem.  
+
+Few papers have used actual image content
+analysis as we do here. Leung and Newsam~\cite{Leung:2010wa} use scene
+analysis in geo-tagged photos to infer land cover and land use types.
+Murdock \textit{et al}~\cite{murdock} analyze  geo-referenced
+stationary webcam feeds to estimate cloud cover on a day-by-day
+basis, and then use these estimates to recreate satellite cloud cover
+maps.  Webcams offer a complimentary data source to the social media
+images we consider here: on one hand, analyzing webcam data is made
+easier by the fact that the camera is stationary and offers dense
+temporal resolution; on the other hand, their observations are restricted to 
+where public webcams exist, whereas photos on social media sites 
+offer a potentially much denser spatial sampling of the world.
+
+We note that these applications are related to citizen science
+projects where volunteers across a wide geographic area send 
+in observations~\cite{greatsunflower,ebirds,king09snowtweets}. These projects
+often use social media, but require observations to be made
+explicitly, whereas in our work we ``passively'' analyze social
+media feeds generated by untrained and unwitting individuals.
+
+\xhdr{Detecting snow in images} We know of only a handful of
+papers that have explicitly considered snow detection in
+images. Perhaps the most relevant is the 2003 work of Singhal
+\textit{et al}~\cite{singhal2003spatialcontext,luo2003spatialcontext}
+which studies this in the context of detecting ``materials'' like
+water, grass, sky, etc. They calculate local color and texture
+features at each pixel, and then compute a probability
+distribution over the materials at each pixel using a neural
+network. They partition the image into segments by thresholding these
+belief values, and assign a label to each segment with a probabilistic
+framework that considers both the beliefs and simple
+contextual information like relative location.
+ They find that sky and grass
+are relatively easy to classify, while snow and water are
+most difficult.  Follow-up work~\cite{boutell2006semanticfeature,boutell2005exploiting}
+applied more modern techniques like
+support vector machines.  Barnum \textit{et al}~\cite{rain2009IJCV}
+detect falling snow and rain, a complementary problem
+to the one we study here of detecting fallen
+snow.
+
+Papers in the scene recognition literature have considered
+snowy scenes amongst their scene categories; for instance, Li \textit{et
+  al}~\cite{li2009totalscene,li2007event} mention snow as one possible
+component of their scene parsing framework, but do not present
+experimental results. The SUN database of Xiao \textit{et
+  al}~\cite{XiaoHEOT10} includes several snow-related classes like
+``snowfield,'' ``ski slope,'' ``ice shelf,'' and ``mountain snowy,''
+but other categories like ``residential neighborhood'' sometimes have
+snow and sometimes do not, such that detecting these scenes alone
+is not sufficient for our purposes. 
+
+
+\xhdr{Recognizing flowers} There are a number of papers on detecting
+and recognizing flowers in images, although none have specifically
+considered the California Poppies we study here.  Most 
+work on flower classification uses datasets with 
+close-up images of nearly-centered flowers, not the cluttered images
+typical of Flickr. We use the work of Nilsback and Zisserman~\cite{flower2006cvpr} as the starting point for our experiments.
+They perform a binary segmentation step to separate flower from background,
+represent the foreground with vocabularies of color, shape, and texture features, 
+and then perform recognition using nearest neighbors.
+% They test their system
+%on a dataset with 17 flower species.
+%
+%
+%% %% The system is tested on 17 species and get best performance of  81.3\%.
+
+
+\hfill \break
+\hfill \break
+===================================
+\hfill \break
+\hfill \break
+\subsection*{www}
+
+
+A variety of recent work has studied how to apply computational
+techniques to analyze online social datasets in order to aid research
+in other disciplines~\cite{lazer09}. Much of this work has studied
+questions in sociology and human interaction, such as how friendships
+form~\cite{feedback08kdd}, how information flows through social
+networks~\cite{libennowell08}, how people move through
+space~\cite{brockmann06}, and how people influence their
+peers\cite{anagnostpopoulos08}.  The goal of these projects is not to
+measure data about the physical world itself, but instead to discover
+interesting properties of human behavior using social networking sites
+as a convenient data source.
+
+\xhdr{Crowd-sourced observational data.}
+Other studies have shown the power of social networking sites as a
+source of observational data about the world itself.  Bollen
+\textit{et al}~\cite{bollen11twitter} use data from Twitter to try to measure
+the aggregated emotional state of humanity, computing mood across six
+dimensions according to a standard psychological
+test. Intriguingly, they find that these changing mood states
+correlate well with the Dow Jones Industrial Average, allowing stock
+market moves to be predicted up to 3 days in advance.  However their
+test dataset is relatively small, consisting of only three weeks of
+trading data.  Like us, Jin~\textit{et al}~\cite{jin10prediction} use
+Flickr as a source of data for prediction, but they estimate the
+adoption rate of consumer photos by monitoring the frequency of tag
+use over time. They find that the volume of Flickr tags is 
+correlated  with with sales of two products, Macs and iPods. They also
+estimate geo-temporal distributions of these sales over time but do
+not compare to ground truth, so it is unclear how accurate these
+estimates are. In contrast, we evaluate our techniques against a large
+ground truth dataset, where the task is to accurately predict the
+distribution of a phenomenon (e.g. snow) across an entire continent 
+each day for several years.
+
+\xhdr{Crowd-sourced geo-temporal data.}
+Other work has used online data to predict geo-temporal distributions,
+but again in domains other than ecology.  Perhaps the most
+striking is the work of Ginsberg \textit{et al}~\cite{ginsberg09flu},
+who show that by monitoring the geospatial distribution of search
+engine queries related to flu symptoms, the spread of the H1N1
+flu can be estimated several days before the official statistics produced by traditional
+means.
+DeLongueville \textit{et
+  al}~\cite{delongueville09} study tweets related to a major fire in
+France, but their analysis is at a very small scale (a few dozen
+tweets) and their focus is more on human reactions to the fire as
+opposed to using these tweets to estimate the fire's position and
+severity.  In perhaps the most related existing work to ours,
+ Singh \textit{et al}~\cite{singh10socialpixels} create
+geospatial heat maps (dubbed ``social pixels'') of various
+tags, including snow and greenery, but their focus is on developing a
+formal database-style algebra for describing queries on these systems
+and for creating visualizations. They do not consider how to produce
+accurate predictions from these visualizations, nor do they compare to
+any ground truth.
+
+\xhdr{Citizen science.}
+While some volunteer-based biology efforts like the Lost Ladybug
+Project~\cite{lostladybug} and the Great Sunflower
+Project~\cite{greatsunflower} use social networking sites to
+organize and recruit volunteer observers, we are not aware of any
+work that has attempted to passively mine ecological data from social media
+sites. The visual data in online social networking sites provide a
+unique resource for tracking biological phenomena:  because they are
+images, this data can be verified in ways that simple text 
+cannot.  In addition, the rapidly expanding quantity
+of online images with geo-spatial and temporal metadata creates a
+fine-scale record of what is happening across the globe.  However, to
+unlock the latent information in these vast photo collections, we need
+ mining and recognition tools that can efficiently
+process large numbers of images, and robust statistical models that
+can handle incomplete and incorrect observations.
+

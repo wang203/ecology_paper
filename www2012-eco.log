@@ -1,0 +1,584 @@
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2012.2.17)  11 MAR 2014 09:43
+entering extended mode
+ %&-line parsing enabled.
+**www2012-eco.tex
+(./www2012-eco.tex
+LaTeX2e <2005/12/01>
+Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, arabic, basque, bulgarian, coptic, welsh, czech, slovak, german, ng
+erman, danish, esperanto, spanish, catalan, galician, estonian, farsi, finnish,
+ french, greek, monogreek, ancientgreek, croatian, hungarian, interlingua, ibyc
+us, indonesian, icelandic, italian, latin, mongolian, dutch, norsk, polish, por
+tuguese, pinyin, romanian, russian, slovenian, uppersorbian, serbian, swedish, 
+turkish, ukenglish, ukrainian, loaded.
+(./www2012-accepted.cls (/usr/share/texmf/tex/latex/graphics/epsfig.sty
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 90.
+
+(/usr/share/texmf/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2007/01/08 v0.04d Graphics/color for pdfTeX
+\Gread@gobject=\count79
+))
+\Gin@req@height=\dimen102
+\Gin@req@width=\dimen103
+)
+\epsfxsize=\dimen104
+\epsfysize=\dimen105
+)
+(/usr/share/texmf/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2002/01/22 v2.2d
+
+(/usr/share/texmf/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2001/10/25 v2.2f
+\@emptytoks=\toks15
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 132.
+))
+(/usr/share/texmf/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip41
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texmf/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/share/texmf/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks16
+\ex@=\dimen106
+))
+(/usr/share/texmf/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen107
+)
+(/usr/share/texmf/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count80
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count81
+\leftroot@=\count82
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count83
+\DOTSCASE@=\count84
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen108
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count85
+\c@MaxMatrixCols=\count86
+\dotsspace@=\muskip10
+\c@parentequation=\count87
+\dspbrk@lvl=\count88
+\tag@help=\toks17
+\row@=\count89
+\column@=\count90
+\maxfields@=\count91
+\andhelp@=\toks18
+\eqnshift@=\dimen109
+\alignsep@=\dimen110
+\tagshift@=\dimen111
+\tagwidth@=\dimen112
+\totwidth@=\dimen113
+\lineht@=\dimen114
+\@envbody=\toks19
+\multlinegap=\skip42
+\multlinetaggap=\skip43
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+Document Class 'www2012-accepted From www-release by Gerry Murray
+Based in part upon document Style `acmconf' <22 May 89>. Hacked 4/91 by
+shivers@cs.cmu.edu, 4/93 by theobald@cs.mcgill.ca
+Excerpts were taken from (Journal Style) 'esub2acm.cls'.
+****** Bugs/comments/suggestions/technicalities to Gerry Murray -- murray@hq.ac
+m.org ******
+Questions on the style, SIGS policies, etc. to Julie Goetz goetz@acm.org or Adr
+ienne Griscti griscti@acm.org
+\footheight=\dimen115
+\@maxsep=\dimen116
+\@dblmaxsep=\dimen117
+\aucount=\count92
+\originalaucount=\count93
+\auwidth=\dimen118
+\auskip=\dimen119
+\auskipcount=\count94
+\auskip=\dimen120
+\allauboxes=\dimen121
+\addauthors=\toks21
+\addauflag=\count95
+\subtitletext=\toks22
+\savesection=\count96
+\sectioncntr=\count97
+\c@figure=\count98
+\c@table=\count99
+\titleboxnotes=\toks23
+\titleboxnoteflag=\count100
+Document Class: www2012-accepted 2012/01/26 V2.0 based on sig-alt-release.cls
+(/usr/share/texmf/tex/latex/base/latexsym.sty
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
+)
+\@acmtitlebox=\box28
+\titlenotecount=\count101
+\tntoks=\toks24
+\tntokstwo=\toks25
+\tntoksthree=\toks26
+\tntoksfour=\toks27
+\tntoksfive=\toks28
+\catcount=\count102
+\copyrightnotice=\toks29
+\conf=\toks30
+\confinfo=\toks31
+\c@part=\count103
+\c@section=\count104
+\c@subsection=\count105
+\c@subsubsection=\count106
+\c@paragraph=\count107
+
+Using 'Abbrev' bibliography style
+LaTeX Info: Redefining \cite on input line 1205.
+\bibindent=\dimen122
+\colcntr=\count108
+\saveb@x=\box29
+\copyrtyr=\toks32
+\acmcopyr=\toks33
+\boilerplate=\toks34
+\copyrightetc=\toks35
+(/usr/share/texmf/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/share/texmf/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+)
+LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
+
+(/usr/share/texmf/tex/latex/ae/t1aer.fd
+File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
+)))
+(/usr/share/texmf/tex/latex/cite/cite.sty
+LaTeX Info: Redefining \cite on input line 149.
+LaTeX Info: Redefining \nocite on input line 214.
+Package: cite 2003/11/04  v 4.01
+)
+(/usr/share/texmf/tex/latex/html/url.sty
+Package: url 1999/03/02  ver 1.4  Verb mode for urls, email addresses, and file
+ names
+)
+(/usr/share/texmf/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2007/02/07 v6.75r Hypertext links for LaTeX
+\@linkdim=\dimen123
+\Hy@linkcounter=\count109
+\Hy@pagecounter=\count110
+
+(/usr/share/texmf/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2007/02/07 v6.75r Hyperref: PDFDocEncoding definition (HO)
+)
+(/usr/share/texmf/tex/latex/config/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+(/usr/share/texmf/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2006/08/22 v2.4 Connects package keyval with LaTeX options (
+HO)
+)
+Package hyperref Info: Hyper figures OFF on input line 2288.
+Package hyperref Info: Link nesting OFF on input line 2293.
+Package hyperref Info: Hyper index ON on input line 2296.
+Package hyperref Info: Plain pages OFF on input line 2303.
+Package hyperref Info: Backreferencing OFF on input line 2308.
+
+Implicit mode ON; LaTeX internals redefined
+Package hyperref Info: Bookmarks ON on input line 2444.
+LaTeX Info: Redefining \url on input line 2599.
+\Fld@menulength=\count111
+\Field@Width=\dimen124
+\Fld@charsize=\dimen125
+\Choice@toks=\toks36
+\Field@toks=\toks37
+Package hyperref Info: Hyper figures OFF on input line 3102.
+Package hyperref Info: Link nesting OFF on input line 3107.
+Package hyperref Info: Hyper index ON on input line 3110.
+Package hyperref Info: backreferencing OFF on input line 3117.
+Package hyperref Info: Link coloring OFF on input line 3122.
+
+Package hyperref Warning: Option `pdfpagelabels' is turned off
+(hyperref)                because \thepage is undefined.
+
+\c@Item=\count112
+\c@Hfootnote=\count113
+)
+*hyperref using default driver hpdftex*
+(/usr/share/texmf/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2007/02/07 v6.75r Hyperref driver for pdfTeX
+\Fld@listcount=\count114
+)
+(/usr/share/texmf/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+(/usr/share/texmf/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/usr/share/texmf/tex/latex/config/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+(/usr/share/texmf/tex/latex/tools/verbatim.sty
+Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks38
+\verbatim@line=\toks39
+\verbatim@in@stream=\read1
+)
+(/usr/share/texmf/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen126
+) (./www2012-eco.aux)
+\openout1 = `www2012-eco.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 42.
+
+(/usr/share/texmf/tex/latex/psnfss/t1ptm.fd
+File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
+)
+(/usr/share/texmf/tex/context/base/supp-pdf.tex
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count115
+\scratchdimen=\dimen127
+\scratchbox=\box30
+\nofMPsegments=\count116
+\nofMParguments=\count117
+\MPscratchCnt=\count118
+\MPscratchDim=\dimen128
+\MPnumerator=\count119
+\everyMPtoPDFconversion=\toks40
+)
+Package hyperref Info: Link coloring OFF on input line 42.
+ (/usr/share/texmf/tex/latex/hyperref/nameref.sty
+Package: nameref 2006/12/27 v2.28 Cross-referencing by name of section
+
+(/usr/share/texmf/tex/latex/oberdiek/refcount.sty
+Package: refcount 2006/02/20 v3.0 Data extraction from references (HO)
+)
+\c@section@level=\count120
+)
+LaTeX Info: Redefining \ref on input line 42.
+LaTeX Info: Redefining \pageref on input line 42.
+ (./www2012-eco.out)
+(./www2012-eco.out)
+\@outlinefile=\write3
+\openout3 = `www2012-eco.out'.
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 108.
+ (/usr/share/texmf/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2002/01/19 v2.2g AMS font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 108.
+
+(/usr/share/texmf/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2002/01/19 v2.2g AMS font definitions
+)
+LaTeX Font Info:    Try loading font information for U+lasy on input line 108.
+
+(/usr/share/texmf/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 134.
+
+Overfull \hbox (7.31786pt too wide) in paragraph at lines 134--136
+\T1/ptm/m/n/9 H.2.8 [\T1/ptm/b/n/9 Database Man-age-ment\T1/ptm/m/n/9 ]: Databa
+se Ap-pli-ca-tions--- \T1/ptm/m/it/9 Data Min-
+ []
+
+<figs/newsat-12212009.png, id=55, 1197.47375pt x 593.21625pt>
+File: figs/newsat-12212009.png Graphic file (type png)
+
+<use figs/newsat-12212009.png>
+<figs/sat-dec212009.png, id=56, 688.5725pt x 324.21124pt>
+File: figs/sat-dec212009.png Graphic file (type png)
+
+<use figs/sat-dec212009.png>
+<figs/flickr-dec212009.png, id=57, 691.58376pt x 324.21124pt>
+File: figs/flickr-dec212009.png Graphic file (type png)
+
+<use figs/flickr-dec212009.png>
+Overfull \hbox (7.13141pt too wide) in paragraph at lines 205--211
+ [] 
+ []
+
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <9> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 223.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.360 
+       [2 <./figs/newsat-12212009.png> <./figs/sat-dec212009.png> <./figs/flick
+r-dec212009.png>]
+Overfull \hbox (1.29668pt too wide) in paragraph at lines 508--510
+\T1/ptm/m/n/9 cor-rect (e.g. be-cause peo-ple for-get to set their cam-era cloc
+ks). 
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.528 
+       [3]
+
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 545.
+
+
+Overfull \hbox (14.01692pt too wide) in paragraph at lines 590--598
+\T1/ptm/m/n/9 learned pa-ram-e-ters are: $\OML/cmm/m/it/9 p \OT1/cmr/m/n/9 = \O
+ML/cmm/m/it/9 p\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 s\OMS/cmsy/m/n/9 j\OML/cmm/m/it/
+9 snow\OT1/cmr/m/n/9 ) = 17\OML/cmm/m/it/9 :\OT1/cmr/m/n/9 12%$\T1/ptm/m/n/9 , 
+$\OML/cmm/m/it/9 q \OT1/cmr/m/n/9 = \OML/cmm/m/it/9 p\OT1/cmr/m/n/9 (\OML/cmm/m
+/it/9 s\OMS/cmsy/m/n/9 j[]\OT1/cmr/m/n/9 ) =
+ []
+
+(./results.texpdfTeX warning (ext4): destination with the same identifier (name
+{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.14 
+      [4] <plots/nyc_stations.png, id=102, 586.44093pt x 197.98969pt>
+File: plots/nyc_stations.png Graphic file (type png)
+
+<use plots/nyc_stations.png>
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 124.
+
+<plots/nyc_snow_ROC.png, id=111, 602.25pt x 406.51875pt>
+File: plots/nyc_snow_ROC.png Graphic file (type png)
+
+<use plots/nyc_snow_ROC.png>
+<plots/city_cmp_snow_ROC.png, id=113, 602.25pt x 406.51875pt>
+File: plots/city_cmp_snow_ROC.png Graphic file (type png)
+
+<use plots/city_cmp_snow_ROC.png>
+<plots/nyc_LibLinear_Tag-Info-conf-TagInfoConf_baseline.png, id=115, 602.25pt x
+ 406.51875pt>
+File: plots/nyc_LibLinear_Tag-Info-conf-TagInfoConf_baseline.png Graphic file (
+type png)
+ <use plots/nyc_LibLinear_Tag-Info-conf-TagInfoConf_baseline.png>
+<plots/ROC_4cities_Tags_conf_info.png, id=117, 602.25pt x 406.51875pt>
+File: plots/ROC_4cities_Tags_conf_info.png Graphic file (type png)
+
+<use plots/ROC_4cities_Tags_conf_info.png>
+<plots/nyc_daily_maxsnow.png, id=121, 505.89pt x 286.06876pt>
+File: plots/nyc_daily_maxsnow.png Graphic file (type png)
+
+<use plots/nyc_daily_maxsnow.png>
+<plots/nyc_daily_confidence.png, id=123, 505.89pt x 286.06876pt>
+File: plots/nyc_daily_confidence.png Graphic file (type png)
+
+<use plots/nyc_daily_confidence.png>pdfTeX warning (ext4): destination with the
+ same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.396 
+       [5 <./plots/nyc_stations.png>]
+<plots/chicago_noaa_vs_prediction_prev_3.png, id=136, 963.6pt x 514.17094pt>
+File: plots/chicago_noaa_vs_prediction_prev_3.png Graphic file (type png)
+
+<use plots/chicago_noaa_vs_prediction_prev_3.png>
+Overfull \hbox (22.80042pt too wide) in paragraph at lines 476--482
+ [] 
+ []
+
+<plots/votingconfidencepercentage.png, id=139, 602.25pt x 406.51875pt>
+File: plots/votingconfidencepercentage.png Graphic file (type png)
+
+<use plots/votingconfidencepercentage.png>
+<plots/rawvsbest.png, id=141, 602.25pt x 406.51875pt>
+File: plots/rawvsbest.png Graphic file (type png)
+
+<use plots/rawvsbest.png>
+<plots/filtered_ml_vis_snow.png, id=143, 602.25pt x 406.51875pt>
+File: plots/filtered_ml_vis_snow.png Graphic file (type png)
+
+<use plots/filtered_ml_vis_snow.png>
+<plots/votingconfidencepercentagenosnow.png, id=145, 602.25pt x 406.51875pt>
+File: plots/votingconfidencepercentagenosnow.png Graphic file (type png)
+
+<use plots/votingconfidencepercentagenosnow.png>
+<plots/rawvsbestnosnow.png, id=147, 602.25pt x 406.51875pt>
+File: plots/rawvsbestnosnow.png Graphic file (type png)
+
+<use plots/rawvsbestnosnow.png>
+<plots/filtered_ml_vis_no_snow.png, id=149, 602.25pt x 406.51875pt>
+File: plots/filtered_ml_vis_no_snow.png Graphic file (type png)
+
+<use plots/filtered_ml_vis_no_snow.png>
+Overfull \hbox (12.25104pt too wide) in paragraph at lines 681--698
+ [] 
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.719 \[
+         [6 <./plots/nyc_snow_ROC.png> <./plots/city_cmp_snow_ROC.png> <./plots
+/nyc_LibLinear_Tag-Info-conf-TagInfoConf_baseline.png> <./plots/ROC_4cities_Tag
+s_conf_info.png> <./plots/nyc_daily_maxsnow.png (PNG copy)> <./plots/nyc_daily_
+confidence.png (PNG copy)> <./plots/chicago_noaa_vs_prediction_prev_3.png>]
+Overfull \hbox (3.34018pt too wide) in paragraph at lines 918--934
+\T1/ptm/m/n/9 they are caused by the pres-ence or ab-sence of an ac-tual phe-no
+menon.
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.934 
+       [7 <./plots/votingconfidencepercentage.png> <./plots/rawvsbest.png> <./p
+lots/filtered_ml_vis_snow.png> <./plots/votingconfidencepercentagenosnow.png> <
+./plots/rawvsbestnosnow.png> <./plots/filtered_ml_vis_no_snow.png>]
+<plots/precvotes.png, id=188, 578.16pt x 433.62pt>
+File: plots/precvotes.png Graphic file (type png)
+ <use plots/precvotes.png>
+<plots/alittlesnow.jpg, id=192, 501.875pt x 376.40625pt>
+File: plots/alittlesnow.jpg Graphic file (type jpg)
+
+<use plots/alittlesnow.jpg>
+<plots/distantsnow.jpg, id=193, 501.875pt x 376.40625pt>
+File: plots/distantsnow.jpg Graphic file (type jpg)
+
+<use plots/distantsnow.jpg>
+<plots/manmadesnow.jpg, id=194, 200.75pt x 150.5625pt>
+File: plots/manmadesnow.jpg Graphic file (type jpg)
+
+<use plots/manmadesnow.jpg>
+<plots/nosnow.jpg, id=195, 115.07962pt x 86.30971pt>
+File: plots/nosnow.jpg Graphic file (type jpg)
+ <use plots/nosnow.jpg>
+Overfull \hbox (1.1438pt too wide) in paragraph at lines 1106--1130
+\T1/ptm/b/it/9 Machine learn-ing for tag se-lec-tion. \T1/ptm/m/n/9 Many of the
+ above er-ror modes
+ []
+
+
+<plots/LibLinear_new_Bins4years2year2years_ROC_conf_IG_Tags_2.png, id=199, 602.
+25pt x 451.6875pt>
+File: plots/LibLinear_new_Bins4years2year2years_ROC_conf_IG_Tags_2.png Graphic 
+file (type png)
+
+<use plots/LibLinear_new_Bins4years2year2years_ROC_conf_IG_Tags_2.png>
+Underfull \vbox (badness 7685) has occurred while \output is active []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1300 N
+        ext we try the second learning paradigm, in which our [8 <./plots/precv
+otes.png> <./plots/alittlesnow.jpg> <./plots/distantsnow.jpg> <./plots/manmades
+now.jpg> <./plots/nosnow.jpg>]
+<plots/PhotosLimitUser_ROC_Human.png, id=210, 578.16pt x 433.62pt>
+File: plots/PhotosLimitUser_ROC_Human.png Graphic file (type png)
+
+<use plots/PhotosLimitUser_ROC_Human.png>
+<plots/greenery.png, id=218, 602.25pt x 406.51875pt>
+File: plots/greenery.png Graphic file (type png)
+ <use plots/greenery.png>
+<plots/greenery_LibLinear_Snow_1_curves_ROC.png, id=219, 602.25pt x 406.51875pt
+>
+File: plots/greenery_LibLinear_Snow_1_curves_ROC.png Graphic file (type png)
+ <use plots/greenery_LibLinear_Snow_1_curves_ROC.png>)pdfTeX warning (ext4): de
+stination with the same identifier (name{page.}) has been already used, duplica
+te ignored
+<to be read again> 
+                   \relax 
+l.677 \newpage
+               [9 <./plots/LibLinear_new_Bins4years2year2years_ROC_conf_IG_Tags
+_2.png> <./plots/PhotosLimitUser_ROC_Human.png>] (./conclusion.tex) (./ack.tex)
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.856 \end{document}
+                     [10 <./plots/greenery.png> <./plots/greenery_LibLinear_Sno
+w_1_curves_ROC.png>] (./www2012-eco.aux) ) 
+Here is how much of TeX's memory you used:
+ 4419 strings out of 256216
+ 58851 string characters out of 1917084
+ 127319 words of memory out of 1500000
+ 7526 multiletter control sequences out of 10000+200000
+ 57212 words of font info for 71 fonts, out of 1200000 for 2000
+ 645 hyphenation exceptions out of 8191
+ 39i,14n,37p,884b,376s stack positions out of 5000i,500n,6000p,200000b,15000s
+{/usr/share/texmf/fonts/enc/dvips/bas
+e/8r.enc}</usr/share/texmf/fonts/type1/bluesky/cm/cmmi6.pfb></usr/share/texmf/f
+onts/type1/bluesky/cm/cmmi8.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi9.
+pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr6.pfb></usr/share/texmf/fonts/t
+ype1/bluesky/cm/cmr9.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy6.pfb></u
+sr/share/texmf/fonts/type1/bluesky/cm/cmsy9.pfb></usr/share/texmf/fonts/type1/p
+ublic/cmex/fmex9.pfb></usr/share/texmf/fonts/type1/urw/helvetic/uhvb8a.pfb></us
+r/share/texmf/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf/fonts/type1
+/urw/times/utmb8a.pfb></usr/share/texmf/fonts/type1/urw/times/utmbi8a.pfb></usr
+/share/texmf/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf/fonts/type1/urw
+/times/utmri8a.pfb>
+Output written on www2012-eco.pdf (10 pages, 2684717 bytes).
+PDF statistics:
+ 323 PDF objects out of 1000 (max. 8388607)
+ 62 named destinations out of 1000 (max. 131072)
+ 327 words of extra memory for PDF output out of 10000 (max. 10000000)
+

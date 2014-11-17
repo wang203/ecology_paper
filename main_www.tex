@@ -1,0 +1,345 @@
+% THIS IS SIGPROC-SP.TEX - VERSION 3.1
+% WORKS WITH V3.2SP OF ACM_PROC_ARTICLE-SP.CLS
+% APRIL 2009
+%
+% It is an example file showing how to use the 'acm_proc_article-sp.cls' V3.2SP
+% LaTeX2e document class file for Conference Proceedings submissions.
+% ----------------------------------------------------------------------------------------------------------------
+% This .tex file (and associated .cls V3.2SP) *DOES NOT* produce:
+%       1) The Permission Statement
+%       2) The Conference (location) Info information
+%       3) The Copyright Line with ACM data
+%       4) Page numbering
+% ---------------------------------------------------------------------------------------------------------------
+% It is an example which *does* use the .bib file (from which the .bbl file
+% is produced).
+% REMEMBER HOWEVER: After having produced the .bbl file,
+% and prior to final submission,
+% you need to 'insert'  your .bbl file into your source .tex file so as to provide
+% ONE 'self-contained' source file.
+%
+% Questions regarding SIGS should be sent to
+% Adrienne Griscti ---> griscti@acm.org
+%
+% Questions/suggestions regarding the guidelines, .tex and .cls files, etc. to
+% Gerald Murray ---> murray@hq.acm.org
+%
+% For tracking purposes - this is V3.1SP - APRIL 2009
+
+%%\documentclass{sig-alternate}
+%%hp cr: using www2012-accepted
+\documentclass{www2012-accepted}
+%\usepackage{cite}
+\usepackage{url}
+\usepackage{hyperref}
+%\usepackage[table]{xcolor} 
+\usepackage{times}
+\usepackage{color}
+%\usepackage{multirow} %mk
+\usepackage{verbatim}
+
+\usepackage{multirow}
+\begin{document}
+\clubpenalty=10000 
+\widowpenalty = 10000
+\newcommand{\xhdr}[1]{{\vspace{6pt}\noindent\textbf{\textit{#1}}}}
+
+\newcommand{\soic}{\affaddr{School of Informatics \& Computing}\\ 
+\affaddr{Indiana University}\\
+\affaddr{Bloomington, IN}\\}
+
+\title{TBD}
+%{Mining Photo-sharing Websites to Study\\ Ecological Phenomena}
+
+\begin{comment}
+
+\numberofauthors{4} %  in this sample file, there are a *total*
+% of EIGHT authors. SIX appear on the 'first-page' (for formatting
+% reasons) and the remaining two appear in the \additionalauthors section.
+%
+
+
+\author{
+% You can go ahead and credit any number of authors here,
+% e.g. one 'row of three' or two rows (consisting of one row of three
+% and a second row of one, two or three).
+%
+% The command \alignauthor (no curly braces needed) should
+% precede each author name, affiliation/snail-mail address and
+% e-mail address. Additionally, tag each line of
+% affiliation/address with \affaddr, and tag the
+% e-mail address with \email.
+%
+% 1st. author
+\alignauthor
+%Anonymous CIKM submission \\
+ Haipeng Zhang\\
+ \soic
+ \email{zhanhaip@indiana.edu}
+ % 2nd. author
+ \alignauthor
+ Mohammed Korayem\\
+ \soic
+ \email{mkorayem@indiana.edu}
+ % 3rd. author
+ \alignauthor 
+ David J. Crandall \\
+ \soic
+ \email{djcran@indiana.edu}
+ \and
+ \alignauthor
+ Gretchen LeBuhn \\
+ \affaddr{Department of Biology} \\
+ \affaddr{University of California} \\
+ \affaddr{San Francisco, CA} 
+ \email{lebuhn@sfsu.edu}
+}
+
+% There's nothing stopping you putting the seventh, eighth, etc.
+% author on the opening page (as the 'third row') but we ask,
+% for aesthetic reasons that you place these 'additional authors'
+% in the \additional authors block, viz.
+%\additionalauthors{Additional authors: John Smith (The Th{\o}rv{\"a}ld Group,
+%email: {\texttt{jsmith@affiliation.org}}) and Julius P.~Kumquat
+%(The Kumquat Consortium, email: {\texttt{jpkumquat@consortium.net}}).}
+%\date{30 July 1999}
+% Just remember to make sure that the TOTAL number of authors
+% is the number that will appear on the first page PLUS the
+% number that will appear in the \additionalauthors section.
+\end{comment}
+
+\begin{comment}
+\end{comment}
+\maketitle
+\begin{abstract}
+The popularity of social media websites like Flickr
+and Twitter has created enormous collections of user-generated content
+online. Latent in these content collections are observations of the
+world: each photo is a visual snapshot of what the world looked like
+at a particular point in time and space, for example, while each tweet
+is a textual expression of the state of a person and his or her
+environment. Aggregating these observations across millions
+of social sharing users could lead to new techniques for large-scale
+monitoring of the state of the world and how it is changing over
+time. In this paper we step towards that goal, showing that by
+analyzing the tags and image features of geo-tagged, time-stamped
+photos we can measure and quantify the occurrence of ecological
+phenomena including ground snow cover, snow fall and vegetation
+density.  We compare several techniques for dealing with the large
+degree of noise in the dataset, and show how machine learning can be
+used to reduce errors caused by misleading tags and ambiguous visual
+content. We evaluate the accuracy of these techniques by comparing to
+ground truth data collected both by surface stations and by
+Earth-observing satellites. Besides the immediate application to
+ecology, our study gives insight into how to accurately crowd-source                                                                                                                           
+other types of information from large, noisy social sharing datasets.
+\end{abstract}
+
+%% A category with the (minimum) three required fields
+%\category{H.2.8}{Database Management}{Database Applications}[Data
+%Mining, Image Databases, Spatial Databases and GIS]
+%\category{I.4.8}{Image Processing and Computer Vision}{Scene Analysis}
+%
+%\terms{Measurement, Theory}
+%
+%\keywords{Data mining, social media, photo collections, crowd-sourcing, ecology} % NOT required for Proceedings
+
+\newcommand{\leaveout}[1]{}
+
+\newenvironment{packed_itemize}{
+\begin{itemize}
+  \setlength{\itemsep}{0pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+\vspace{-4pt}
+}{\end{itemize}}
+
+\vspace{12pt}
+\input{intro}
+
+\input{relatedwork}
+\input{methods}
+\input{results}
+\newpage
+\input{conclusion}
+
+%%hp cr: added acknowledgments
+
+\input{ack}
+
+\begin{comment}
+
+%
+% The following two commands are all you need in the
+% initial runs of your .tex file to
+% produce the bibliography for the citations in your paper.
+\bibliographystyle{abbrv}
+{\small
+\begin{thebibliography}{10}
+\vspace{5pt}
+\bibitem{ghcn}
+http://www.ncdc.noaa.gov/oa/climate/ghcn-daily/.
+
+\bibitem{greatsunflower}
+The great sunflower project.
+\newblock http://www.greatsunflower.org.
+
+\bibitem{lostladybug}
+Lost ladybug project.
+\newblock http://www.lostladybug.org.
+
+\bibitem{anagnostpopoulos08}
+A.~Anagnostopoulos, R.~Kumar, and M.~Mahdian.
+\newblock Influence and correlation in social networks.
+\newblock In {\em KDD}, 2008.
+
+\bibitem{bollen11twitter}
+J.~Bollen, H.~Mao, and X.-J. Zeng.
+\newblock Twitter mood predicts the stock market.
+\newblock {\em Journal of Computational Science}, 2(1):1--8, 2011.
+
+\bibitem{brockmann06}
+D.~Brockmann, L.~Hufnagel, and T.~Geisel.
+\newblock The scaling laws of human travel.
+\newblock {\em Nature}, 439:462--465, 2006.
+
+\bibitem{CC01a}
+C.-C. Chang and C.-J. Lin.
+\newblock {LIBSVM}: A library for support vector machines.
+\newblock {\em ACM Trans. on Intelligent Systems and Technology}, 2:1--27,
+  2011.
+
+\bibitem{feedback08kdd}
+D.~Crandall, D.~Cosley, D.~Huttenlocher, J.~Kleinberg, and S.~Suri.
+\newblock Feedback effects between similarity and social influence in online
+  communities.
+\newblock In {\em KDD}, 2008.
+
+\bibitem{delongueville09}
+B.~De~Longueville, R.~S. Smith, and G.~Luraschi.
+\newblock "{OMG}, from here, i can see the flames!".
+\newblock In {\em Proc. Intl. Workshop on Location Based Social Networks},
+  pages 73--80, 2009.
+
+\bibitem{Fan2008}
+R.-E. Fan, K.-W. Chang, C.-J. Hsieh, X.-R. Wang, and C.-J. Lin.
+\newblock Liblinear: a library for large linear classification.
+\newblock {\em Journal of Machine Learning Research}, 9:1871--1874, 2008.
+
+\bibitem{ginsberg09flu}
+J.~Ginsberg, M.~Mohebbi, R.~Patel, L.~Brammer, M.~Smolinski, and L.~Brilliant.
+\newblock Detecting influenza epidemics using search engine query data.
+\newblock {\em Nature}, 457:1012--1014, 2009.
+
+\bibitem{modissnow}
+D.~K. Hall, G.~A. Riggs, and V.~V. Salomonson.
+\newblock {MODIS/Terra Snow Cover Daily L3 Global 0.05Deg CMG V004}.
+\newblock Boulder, CO, USA: National Snow and Ice Data Center, 2011, updated
+  daily.
+
+\bibitem{hall2009weka}
+M.~Hall, E.~Frank, G.~Holmes, B.~Pfahringer, P.~Reutemann, and I.~Witten.
+\newblock The weka data mining software: an update.
+\newblock {\em ACM SIGKDD Explorations Newsletter}, 11(1):10--18, 2009.
+
+\bibitem{hays}
+J.~Hays and A.~A. Efros.
+\newblock {IM2GPS}: Estimating geographic information from a single image.
+\newblock In {\em CVPR}, 2008.
+
+\bibitem{lab}
+R.~Hunt.
+\newblock {\em Measuring Color}.
+\newblock London: Fountain Press, 1998.
+
+\bibitem{jin10prediction}
+X.~Jin, A.~Gallagher, L.~Cao, J.~Luo, and J.~Han.
+\newblock The wisdom of social multimedia: Using {F}lickr for prediction and
+  forecast.
+\newblock In {\em ACM Multimedia}, 2010.
+
+\bibitem{john1995estimating}
+G.~John and P.~Langley.
+\newblock Estimating continuous distributions in bayesian classifiers.
+\newblock In {\em Proc. Uncertainty in AI}, 1995.
+
+\bibitem{Kremerskothen11}
+K.~Kremerskothen.
+\newblock http://blog.flickr.net/en/2011/08/04/6000000000/
+
+\bibitem{modisveg}
+{Land Processes Distributed Active Archive Center}.
+\newblock {MODIS/Terra Vegetation Indices 16-Day L3 Global 0.05Deg CMG V005}.
+\newblock Sioux Falls, SD: U.S. Geological Survey., 2011.
+
+\bibitem{lazer09}
+D.~{Lazer et al}.
+\newblock Life in the network: the coming age of computational social science.
+\newblock {\em Science}, 323(5915):721--723, 2009.
+
+\bibitem{libennowell08}
+D.~Liben-Nowell and J.~Kleinberg.
+\newblock Tracing information flow on a global scale using internet
+  chain-letter data.
+\newblock {\em PNAS}, 12(105):4633--4638, 2008.
+
+\bibitem{oconnor10mood}
+B.~O'Connor, R.~Balasubramanyan, B.~Routedge, and N.~Smith.
+\newblock From tweets to polls: Linking text sentiment to public opinion time
+  series.
+\newblock In {\em ICWSM}, 2010.
+
+\bibitem{ipcc2007climate}
+M.~L. Parry, O.~F. Canziani, J.~P. Palutikof, P.~J. van~der Linden, and C.~E.
+  Hanson.
+\newblock {\em IPCC, 2007: Climate Change 2007: Impacts, Adaptation, and
+  Vulnerability}.
+\newblock Cambridge University Press, 2007.
+
+\bibitem{singh10socialpixels}
+V.~K. Singh, M.~Gao, and R.~Jain.
+\newblock Social pixels: genesis and evaluation.
+\newblock In {\em ACM Multimedia}, 2010.
+
+\bibitem{squires5}
+M.~Squires and J.~Lawrimore.
+\newblock Development of an operational northeast snowfall impact scale.
+\newblock Technical report, NOAA National Climatic Data Center, 2006.
+
+\bibitem{su2008discriminative}
+J.~Su, H.~Zhang, C.~Ling, and S.~Matwin.
+\newblock Discriminative parameter learning for bayesian networks.
+\newblock In {\em ICML}, 2008.
+
+\bibitem{szeliski}
+R.~Szeliski.
+\newblock {\em Computer Vision: Algorithms and Applications}.
+\newblock Springer, 2010.
+
+\bibitem{gist}
+A.~Torralba.
+\newblock Contextual priming for object detection.
+\newblock {\em International Journal of Computer Vision}, 53(2):161--191, 2003.
+
+\bibitem{auc}
+I.~Vergara, T.~Norambuena, E.~Ferrada, A.~Slater, and F.~Melo.
+\newblock {StAR}: a simple tool for the statistical comparison of {ROC} curves.
+\newblock {\em BMC Bioinformatics}, 9(1):265, 2008.
+
+\end{thebibliography}
+
+}
+\end{comment}
+% You must have a proper ".bib" file
+%  and remember to run:
+% latex bibtex latex latex
+% to resolve all references
+%
+% ACM needs 'a single self-contained file'!
+%
+%APPENDICES are optional
+%\balancecolumns
+
+% That's all folks!
+\end{document}
+

@@ -1,0 +1,79 @@
+% THIS IS SIGPROC-SP.TEX - VERSION 3.1
+% WORKS WITH V3.2SP OF ACM_PROC_ARTICLE-SP.CLS
+% APRIL 2009
+%
+% It is an example file showing how to use the 'acm_proc_article-sp.cls' V3.2SP
+% LaTeX2e document class file for Conference Proceedings submissions.
+% ----------------------------------------------------------------------------------------------------------------
+% This .tex file (and associated .cls V3.2SP) *DOES NOT* produce:
+%       1) The Permission Statement
+%       2) The Conference (location) Info information
+%       3) The Copyright Line with ACM data
+%       4) Page numbering
+% ---------------------------------------------------------------------------------------------------------------
+% It is an example which *does* use the .bib file (from which the .bbl file
+% is produced).
+% REMEMBER HOWEVER: After having produced the .bbl file,
+% and prior to final submission,
+% you need to 'insert'  your .bbl file into your source .tex file so as to provide
+% ONE 'self-contained' source file.
+%
+% Questions regarding SIGS should be sent to
+% Adrienne Griscti ---> griscti@acm.org
+%
+% Questions/suggestions regarding the guidelines, .tex and .cls files, etc. to
+% Gerald Murray ---> murray@hq.acm.org
+%
+% For tracking purposes - this is V3.1SP - APRIL 2009
+
+%%\documentclass{sig-alternate}
+%%hp cr: using www2012-accepted
+\documentclass{www2012-accepted}
+%\usepackage{cite}
+\usepackage{url}
+\usepackage{hyperref}
+%\usepackage[table]{xcolor} 
+\usepackage{times}
+\usepackage{color}
+%\usepackage{multirow} %mk
+\usepackage{verbatim}
+
+\usepackage{multirow}
+\begin{document}
+\clubpenalty=10000 
+\widowpenalty = 10000
+\newcommand{\xhdr}[1]{{\vspace{6pt}\noindent\textbf{\textit{#1}}}}
+
+\newcommand{\soic}{\affaddr{School of Informatics \& Computing}\\ 
+\affaddr{Indiana University}\\
+\affaddr{Bloomington, IN}\\}
+
+\title{TBD}
+
+
+\newcommand{\leaveout}[1]{}
+
+\newenvironment{packed_itemize}{
+\begin{itemize}
+  \setlength{\itemsep}{0pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+\vspace{-4pt}
+}{\end{itemize}}
+
+\vspace{12pt}
+\input{abstract}
+\input{intro}
+
+\input{relatedwork}
+\input{methods}
+
+\input{results}
+\newpage
+\input{conclusion}
+
+%%hp cr: added acknowledgments
+
+%\input{ack}
+\end{document}
+

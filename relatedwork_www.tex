@@ -1,0 +1,74 @@
+\section{related work}
+
+A variety of recent work has studied how to apply computational
+techniques to analyze online social datasets in order to aid research
+in other disciplines~\cite{lazer09}. Much of this work has studied
+questions in sociology and human interaction, such as how friendships
+form~\cite{feedback08kdd}, how information flows through social
+networks~\cite{libennowell08}, how people move through
+space~\cite{brockmann06}, and how people influence their
+peers\cite{anagnostpopoulos08}.  The goal of these projects is not to
+measure data about the physical world itself, but instead to discover
+interesting properties of human behavior using social networking sites
+as a convenient data source.
+
+\xhdr{Crowd-sourced observational data.}
+Other studies have shown the power of social networking sites as a
+source of observational data about the world itself.  Bollen
+\textit{et al}~\cite{bollen11twitter} use data from Twitter to try to measure
+the aggregated emotional state of humanity, computing mood across six
+dimensions according to a standard psychological
+test. Intriguingly, they find that these changing mood states
+correlate well with the Dow Jones Industrial Average, allowing stock
+market moves to be predicted up to 3 days in advance.  However their
+test dataset is relatively small, consisting of only three weeks of
+trading data.  Like us, Jin~\textit{et al}~\cite{jin10prediction} use
+Flickr as a source of data for prediction, but they estimate the
+adoption rate of consumer photos by monitoring the frequency of tag
+use over time. They find that the volume of Flickr tags is 
+correlated  with with sales of two products, Macs and iPods. They also
+estimate geo-temporal distributions of these sales over time but do
+not compare to ground truth, so it is unclear how accurate these
+estimates are. In contrast, we evaluate our techniques against a large
+ground truth dataset, where the task is to accurately predict the
+distribution of a phenomenon (e.g. snow) across an entire continent 
+each day for several years.
+
+\xhdr{Crowd-sourced geo-temporal data.}
+Other work has used online data to predict geo-temporal distributions,
+but again in domains other than ecology.  Perhaps the most
+striking is the work of Ginsberg \textit{et al}~\cite{ginsberg09flu},
+who show that by monitoring the geospatial distribution of search
+engine queries related to flu symptoms, the spread of the H1N1
+flu can be estimated several days before the official statistics produced by traditional
+means.
+DeLongueville \textit{et
+  al}~\cite{delongueville09} study tweets related to a major fire in
+France, but their analysis is at a very small scale (a few dozen
+tweets) and their focus is more on human reactions to the fire as
+opposed to using these tweets to estimate the fire's position and
+severity.  In perhaps the most related existing work to ours,
+ Singh \textit{et al}~\cite{singh10socialpixels} create
+geospatial heat maps (dubbed ``social pixels'') of various
+tags, including snow and greenery, but their focus is on developing a
+formal database-style algebra for describing queries on these systems
+and for creating visualizations. They do not consider how to produce
+accurate predictions from these visualizations, nor do they compare to
+any ground truth.
+
+\xhdr{Citizen science.}
+While some volunteer-based biology efforts like the Lost Ladybug
+Project~\cite{lostladybug} and the Great Sunflower
+Project~\cite{greatsunflower} use social networking sites to
+organize and recruit volunteer observers, we are not aware of any
+work that has attempted to passively mine ecological data from social media
+sites. The visual data in online social networking sites provide a
+unique resource for tracking biological phenomena:  because they are
+images, this data can be verified in ways that simple text 
+cannot.  In addition, the rapidly expanding quantity
+of online images with geo-spatial and temporal metadata creates a
+fine-scale record of what is happening across the globe.  However, to
+unlock the latent information in these vast photo collections, we need
+ mining and recognition tools that can efficiently
+process large numbers of images, and robust statistical models that
+can handle incomplete and incorrect observations.

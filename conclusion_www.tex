@@ -1,0 +1,27 @@
+\section{Conclusion and future work}
+
+In this paper, we propose using the massive collections of
+user-generated photos uploaded to social sharing websites as a source
+of observational evidence about the world, and in particular as a way
+of estimating the presence of ecological phenomena. As a first step
+towards this long-term goal, we used a collection of 150 million
+geo-tagged, timestamped photos from Flickr to estimate snow 
+cover and greenery, and compared these estimates to fine-grained
+ground truth collected by earth-observing satellites and ground stations. We compared
+several techniques for performing the estimation from noisy, biased
+data, including simple voting mechanisms and a Bayesian likelihood
+ratio. We also tested several possible improvements to these basic
+%%hp cr: removed "multi-language tag sets" as we did not report it in
+%%this version
+methods, including using temporal smoothing
+%%methods, including using temporal smoothing, multi-language tag sets,
+and machine learning to improve the accuracy of estimates. We found
+that while the recall is relatively low due to the sparsity of photos
+on any given day, the precision can be quite high, suggesting that
+mining from photo sharing websites could be a reliable source of
+observational data for ecological and other scientific research. In
+future work, we plan to study additional features including using
+more sophisticated computer vision techniques to analyze visual content. Also we plan to study a variety of other ecological phenomena,
+including those for which high quality ground truth is not available,
+such as migration patterns of wildlife and the distributions of
+blooming flowers.

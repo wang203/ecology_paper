@@ -1,0 +1,193 @@
+\section{Introduction}
+
+The popularity of social networking websites has grown dramatically
+over the last few years, creating enormous collections of
+user-generated content online. Photo-sharing sites have become
+particularly popular: Flickr and Facebook alone have amassed an
+estimated 100 billion images, with over 100 million new images
+uploaded every day~\cite{Kremerskothen11}.  People use these
+sites to share photos with family and friends, but in the process they
+are creating immense public archives of information about the world:
+each photo is a record of what the world looked like at a particular
+point in time and space.  When combined together, the billions of
+photos on these sites combined with metadata including timestamps,
+geo-tags, and captions are a rich untapped source of information about
+the state of the world and how it is changing over
+time.
+
+Recent work has studied how to mine passively-collected data
+from social networking and microblogging websites to make estimates
+and predictions about world events, including tracking the spread of
+disease~\cite{ginsberg09flu}, monitoring for fires and
+emergencies~\cite{delongueville09}, predicting product adoption rates
+and election outcomes~\cite{jin10prediction}, and estimating aggregate
+public mood~\cite{oconnor10mood,bollen11twitter}. In most of these
+studies, however, there is either little ground truth available to
+judge the quality of the estimates and predictions, or the available
+ground truth is an indirect proxy (e.g. since no aggregate public mood
+data exists, \cite{oconnor10mood} evaluates against opinion polls,
+while~\cite{bollen11twitter} compares to stock market indices).  While
+these studies have demonstrated promising results, it is not yet clear
+when crowd-sourcing data from social media sites can yield reliable
+estimates, or how to deal with the substantial noise and bias in these
+datasets. Moreover, these studies have largely focused on textual
+content and have not taken advantage of the vast amount of visual
+content online.
+
+In this paper, we study the particular problem of estimating
+geo-temporal distributions of ecological phenomena using geo-tagged,
+time-stamped photos from Flickr.  Our motivations to study this
+particular problem are three-fold.  First, biological and ecological
+phenomena frequently appear in images, both because photographers take
+photos of them purposely (e.g. close-ups of plants and animals) or
+incidentally (a bird in the background of a family portrait, or the
+snow in the action shot of children sledding).  Second, for the two
+phenomena we study here, snowfall and vegetation cover, large-scale
+(albeit imperfect) ground truth is available in the form of
+observations from satellites and ground-based weather stations.  Thus
+we can explicitly evaluate the accuracy of various techniques for
+extracting semantic information from large-scale social media
+collections.
+
+\begin{figure*}[th]
+\begin{center}
+\begin{tabular}{ccc}
+\textbf{Raw satellite map} & \textbf{Coarsened satellite map} & \textbf{Map estimated by Flickr photo analysis} \\
+\fbox{\includegraphics[width=0.23\textheight]{figs/newsat-12212009.png}} &
+\fbox{\includegraphics[width=0.23\textheight]{figs/sat-dec212009.png}} &
+\fbox{\includegraphics[width=0.23\textheight]{figs/flickr-dec212009.png}} \\
+\end{tabular}
+\end{center}
+\vspace{-6pt}
+\caption{Comparing MODIS satellite snow coverage data for North
+  America on Dec 21, 2009 with estimates produced by analyzing Flickr
+  tags (best viewed on screen in color). \textit{Left:} Original MODIS snow data, where white
+  corresponds with water, black is missing data because of cloud
+  cover, grey indicates snow cover, and purple indicates no
+  significant snow cover.  \textit{Middle:} Satellite data coarsened
+  into 1 degree bins, where green indicates snow cover, blue indicates
+  no snow, and grey indicates missing data.  \textit{Right:} Estimates
+  produced by the Flickr photo analysis proposed in this paper, where
+  green indicates high probability of snow cover, and grey and black
+  indicate low-confidence areas (with few photos or ambiguous evidence).}
+\label{fig:samplemap}
+\end{figure*}
+
+
+Third, while ground truth is available for these particular
+phenomena, for other important ecological phenomena (like the geo-temporal distribution of plants and animals) no such data is
+available, and social media could help fill this need.
+%, and mining data from social media has the potential to fill
+%this gap.  
+In fact, perhaps no community is in greater need of
+real-time, global-scale information on the state of the world than the
+scientists who study climate change. Recent work shows that global
+climate change is impacting a variety of flora and fauna at local,
+regional and continental scales: for example, species of
+high-elevation and cold-weather mammals have moved northward, some
+species of butterflies have become extinct, waterfowl are losing
+coastal wetland habitats as oceans rise, and certain fish populations
+are rapidly declining~\cite{ipcc2007climate}. However monitoring these
+changes is surprisingly difficult: plot-based studies
+involving direct observation of small patches of land yield
+high-quality data but are costly and possible only at very small
+scales, while aerial surveillance gives data over
+large land areas but cloud cover, forests, atmospheric
+conditions and mountain shadows can interfere with the observations,
+and only certain types of ecological information can be collected from
+the air.  To understand how biological phenomena are responding to
+both landscape changes and global climate change, ecologists need an
+efficient system for ground-based data collection to give detailed
+observations across the planet.  A new approach
+for creating ground-level, continental-scale datasets is to use
+passive data-mining of the huge number of visual observations produced
+by millions of users worldwide, in the form of digital images uploaded
+to photo-sharing websites.
+
+
+\xhdr{Challenges.}
+There are two key challenges to unlocking the ecological
+information latent in these photo datasets. The first is how to recognize 
+ecological phenomena appearing in photos and how to map these observations to
+specific places and times. Fortunately, modern photo-sharing sites
+collect a rich variety of non-visual
+information about photos, including metadata recorded by the digital
+camera --- exposure settings and timestamps, for example --- as well as
+information generated during social sharing  ---
+text tags, comments, and ratings, for example. Many sites also
+record the
+ geographic coordinates of where on Earth a photo was taken, as reported either by a GPS-enabled camera or smartphone, or input manually by the user.
+Thus online photos include the ingredients
+necessary to produce geo-temporal data about the world,
+including information about content (images, tags and comments), and
+when (timestamp) and where (geotag) each photo was taken.
+
+The second challenge is how to deal with the biases and noise inherent
+in online data. People do not photograph the Earth evenly,
+ so there are disproportionate concentrations of
+activity near cities and tourist attractions. Photo metadata is often
+noisy or inaccurate; for example, users forget to set the clock on
+their camera, GPS units fail to find fixes, and users
+carelessly tag photos.  Even photos without such errors might be
+misleading: the tag ``snow'' on an image might refer to a snow lily or a
+snowy owl, while snow appearing in an image might be artificial (as in an indoor zoo exhibit).
+
+\xhdr{This paper.}  In this paper we study how to mine data from
+photo-sharing websites to produce crowd-sourced observations of
+ecological phenomena.  As a first step towards the longer-term goal of
+mining for many types of phenomena, here we study two in particular:
+ground snow cover and vegetation cover (``green-up'') data. Both are
+critical features for ecologists monitoring the earth's ecosystems.
+Importantly for our study, these two phenomena have accurate
+fine-grained ground truth available at a continental scale in the form
+of observations from aerial instruments like NASA's Terra earth-observing
+satellites~\cite{modisveg,modissnow} or networks of ground-based
+observing stations run by the U.S. National Weather Service. This
+data allows us to evaluate the performance of our crowd-sourced data mining
+techniques at a very large scale, including thousands of days of data
+across an entire continent.
+%This evaluation gives insight into how accurate crowd-sourced 
+%observations could be for tracking ecological phenomena for which
+%no ground truth exists.
+ Using a dataset of nearly 150 million geo-tagged Flickr photos, we
+ study whether this data can potentially be a
+ reliable resource for scientific research.  An example comparing
+ ground truth snow cover data with the estimates produced by our
+ Flickr analysis on one particular day (December 21, 2009) is shown in
+ Figure~\ref{fig:samplemap}. Note that the Flickr analysis is sparse
+ in places with few photographs, while the satellite data is missing
+ in areas with cloud cover, but they agree well in areas where both
+ observations are present. This (and the much more extensive experimental results presented later in the paper) suggests that Flickr analysis may produce
+ useful observations either on its own or as a complement other
+ observational sources.
+
+
+%% More generally, this paper is a step towards answering a more basic
+%% question: How reliable could passive mining of social sharing sites be
+%% in producing observations of the world?  Analyzing data from social
+%% networking and microblogging websites to make estimations and
+%% predictions about world events has become a popular research
+%% direction, including for example tracking the spread of
+%% disease~\cite{ginsberg09flu}, monitoring for fires and other
+%% emergencies~\cite{delongueville09}, predicting product adoption and
+%% election outcomes~\cite{jin10prediction}, and inferring aggregate
+%% public mood~\cite{oconnor10mood,bollen11twitter}. In most of these
+%% studies, however, there is either no ground truth to judge the quality
+%% of the estimates, or the ground truth that is used is an indirect
+%% proxy (e.g. since no aggregate public mood data exists,
+%% \cite{oconnor10mood} evaluates against opinion polls,
+%% while~\cite{bollen11twitter} compares to stock market indices). In
+%% contrast, for predicting some ecological phenomena like vegetation and
+%% snow cover, we have daily, dense ground-truth data for the entire
+%% globe in the form of satellite observations.
+
+To summarize, the main contributions of this paper include: 
+
+\begin{packed_itemize}
+\item[---] introducing the novel idea of mining photo-sharing sites for
+  geo-temporal information about ecological phenomena, 
+\item[---] introducing several techniques for deriving crowd-sourced
+  observations from noisy, biased data using both visual and textual tag analysis, and
+\item[---] evaluating the ability of these techniques to accurately measure
+  these phenomena, using dense large-scale ground truth.
+\end{packed_itemize}

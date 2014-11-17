@@ -1,0 +1,91 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+\usepackage{gensymb}
+
+
+\begin{document}
+
+\section{Related works}
+
+%http://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=5&ved=0CEkQFjAE&url=http%3A%2F%2Fhomes.cs.washington.edu%2F~neeraj%2Fpapers%2Fnk_eccv2012_leafsnap.pdf&ei=W9n8U5z7JoOTyATZloLICA&usg=AFQjCNHzDMozsenIFTdGySrMk0Vw8nhLhA&sig2=CPxNj5C0S-b3YDpR7-jPHg&bvm=bv.73612305,d.aWw
+plant identification by leaf images
+
+a lot of work use remote sensing 
+
+%http://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=3&ved=0CDMQFjAC&url=http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F4309074_Greenery_Image_and_Non-greenery_Image_Classification_Using_Adaptive_Neuro-Fuzzy_Inference_System%2Flinks%2F09e4150ddce7a3514d000000&ei=Edr8U6yzJMOAygSg4YGAAw&usg=AFQjCNGXbvsw1sd1aZA1vAnk_f-4n5bwGA&sig2=62HbvxAtNQXCkCH_raYdig&bvm=bv.73612305,d.aWw
+color, texture
+%200 imgs (50*50)
+
+
+
+
+
+
+\section{Dataset}
+
+crowd sourcing images\\*\\*
+Outdoor Greenery\\*
+Outdoor non-Greenery\\*
+Indoor\\*
+Other-modified\\*
+Not available
+
+Finally, we build a positive set with images in category "Outdoor Greenery" and a negative set with images in categories "Outdoor non-Greenery" and "Indoor". To learn a image classification model, we build a training set with 4000 images and a testing set with 1900 images. In training and testing set, there are equal number of positive and negative samples.
+
+\section{Method}
+	
+
+\subsection{Vision model}
+Vegetation has the characteristic of signature green color, and the leaves of plants have distinctive visual texture. So we employ SIFT feature to analyze the local gradient distribution. And we also extract GIST feature to describe texture feature and global context. 
+
+
+\textbf{\textit{Color SIFT histogram.}}
+We extract dense SIFT feature on each of the RGB color plane, and concatenate them to build color SIFT feature. The dense SIFT feature is extracted from every 2 pixels by 2 pixels bin, with a step size of 5 pixels. In this way, we achieve representative key points and reasonable computation complex. 
+% Therefore we have 128*3-d for each key point
+% about 300-500 key points each images
+
+From training data set, We build 2000 dimensional centers of color SIFT feature using K-means clustering. With these centers, a 2000 dimensional histogram is built from all the key points of each image.
+
+Using SIFT histogram, a model is trained and tested with SVM using RBF kernel. 
+%Maybe the numbers should be in evaluation section        
+The performance is 78.10\%.
+
+\textbf{\textit{Color GIST.}}
+Similar to color SIFT feature, we also extract GIST feature from each of the RGB color plane.\\*\\*
+The performance is 82.58\%.
+
+\textbf{\textit{Combine visual features.}}
+The combined visual feature is built from concatenating the normalized GIST feature and SIFT histogram. A new model is learnt based on the combined feature.
+The performance is 85.9\%.
+
+\subsection{Deep learning}
+% \section{Experiments and evaluation}
+% or 
+% \section{Vegetation detection}
+% or
+\section{North America vegetation coverage detection}
+
+We consider north America area has more images uploaded to photo-sharing website, and is also where Ecologists in the US would be interested in the changing color of vegetation. In our work, we define north America as latitude 10$^{\circ}$ to 70$^{\circ}$ and longitude -130$^{\circ}$ to -50$^{\circ}$.
+%\textdegree
+
+\subsection{Ground truth of NDVI index}
+%%%%%%% how much should the NDVI index value be mentioned?
+The ground truth is specified for every 16 days period. 
+And geometrically, north America area is divided into bins of 0.5 by 0.5 degree. This makes the north America area a 120*160 grid map.
+Only the days and bins with clear enough cloud coverage can be count as useful units. As in ~\cite{www paper}, a green bin must be covered by at least 50\% of green vegetation while a non-green bin only has less than 5\% of coverage.
+
+
+% explain day bin, ground truth
+
+
+
+
+
+\subsection{Confidence score}
+
+
+For an image taken from a place covered by green vegetation at that time, the probability of this image being a green image is 27\%. On the other hand, it's only 3\% probability to see a green image in a place not covered by enough green vegetation at that time.
+
+measuring the ratio of log likelihood of being a vegetation bin at each time period.
+
+
+\end{document}

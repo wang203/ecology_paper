@@ -1,0 +1,66 @@
+\subsection{Learning features automatically}
+
+The confidence score in the last section has a number of limitations,
+including requiring that a set of tags related to the phenomenon of
+interest be selected by hand. Moreover, it makes no attempt to
+incorporate visual evidence or negative textual evidence --- e.g.,
+that a photo tagged ``snowy owl'' probably contains a bird and no
+actual snow.  We use machine learning techniques to address these
+weaknesses, both to automatically identify specific tags and tag
+combinations that are correlated with the presence of a phenomenon of
+interest, and to incorporate visual evidence into the prediction techniques.
+
+\xhdr{Learning tags.}  We consider two learning paradigms. The first
+is to produce a single exemplar for each bin in time and space
+consisting of the set of all tags used by all users. For each of these
+exemplars, the NASA and/or NOAA ground truth data gives a label (snow
+or non-snow). We then use standard machine learning algorithms like
+Support Vector Machines and decision trees to identify the most
+discriminative tags and tag combinations. In the second paradigm, our
+goal instead is to classify individual \textit{photos} as containing
+snow or not, and then use these classifier outputs to compute the
+number of positive and non-positive photos in each bin (i.e., to
+compute $m$ and $n$ in the likelihood ratio described in the last
+section).
+
+\xhdr{Learning visual features.}  We also wish to incorporate visual
+evidence from the photos themselves. There is decades of
+work in the computer vision community on object and scene
+classification (see~\cite{szeliski} for a recent survey), although
+most of that work has not considered the large, noisy photo collections we work with here. We tried a number of
+approaches, and found that a classifier using a simplified version of
+GIST  augmented with color features~\cite{gist, hays}
+gave a good trade-off between accuracy and 
+tractability.
+
+\newcommand{\lab}{CIELAB }
+Given an image $I$, we partition the image into a $4 \times 4$ grid of
+16 equally-sized rectangular regions. In each region we compute the
+average pixel values in each of the red, green, and blue color planes,
+and then convert this color triple from sRGB space to the \lab color
+space~\cite{lab}. \lab  has a number of advantages, including
+separating greyscale intensity from the color channels and having greater
+perceptual uniformity (so that Euclidean distances between two \lab
+color triples are approximately proportional to the human perception
+of difference between the colors). For each region $R$ we also compute the
+total gradient energy $E(R)$ within the grayscale plane $I_g$ of the image,
+%
+\begin{eqnarray*}
+E(R) & = & \sum_{(x,y) \in R}   || \nabla I_g(x,y) || \\
+& = & \sum_{(x,y) \in R} \sqrt{I_x(x,y)^2 + I_y(x,y)^2}, 
+\end{eqnarray*}
+%
+where $I_x(x,y)$ and $I_y(x,y)$ are the partial derivatives in the $x$
+and $y$ directions evaluated at point $(x,y)$, approximated as,
+%
+\begin{eqnarray*}
+I_x(x,y) = I_g(x+1, y) - I_g(x-1, y), \\
+ I_y(x,y) = I_g(x, y+1) - I_g(x, y-1).
+\end{eqnarray*}
+%
+  For each image we
+concatenate the gradient energy in each of the 16 bins, followed by
+the 48 color features (average L, a, and b values for each of the 16
+bins), to produce a 64-dimensional feature vector.  We then learn a
+Support Vector Machine (SVM) classifier from a labeled training image
+set.

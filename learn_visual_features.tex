@@ -1,0 +1,43 @@
+
+\xhdr{Learning visual features.}  We also wish to incorporate visual
+evidence from the photos themselves. There is decades of
+work in the computer vision community on object and scene
+classification (see~\cite{szeliski} for a recent survey), although
+most of that work has not considered the large, noisy photo collections we work with here. We tried a number of
+approaches, and found that a classifier using a simplified version of
+GIST  augmented with color features~\cite{gist, hays}
+gave a good trade-off between accuracy and 
+tractability.
+
+
+\newcommand{\lab}{CIELAB }
+Given an image $I$, we partition the image into a $4 \times 4$ grid of
+16 equally-sized rectangular regions. In each region we compute the
+average pixel values in each of the red, green, and blue color planes,
+and then convert this color triple from sRGB space to the \lab color
+space~\cite{lab}. \lab  has a number of advantages, including
+separating greyscale intensity from the color channels and having greater
+perceptual uniformity (so that Euclidean distances between two \lab
+color triples are approximately proportional to the human perception
+of difference between the colors). For each region $R$ we also compute the
+total gradient energy $E(R)$ within the grayscale plane $I_g$ of the image,
+%
+\begin{eqnarray*}
+E(R) & = & \sum_{(x,y) \in R}   || \nabla I_g(x,y) || \\
+& = & \sum_{(x,y) \in R} \sqrt{I_x(x,y)^2 + I_y(x,y)^2}, 
+\end{eqnarray*}
+%
+where $I_x(x,y)$ and $I_y(x,y)$ are the partial derivatives in the $x$
+and $y$ directions evaluated at point $(x,y)$, approximated as,
+%
+\begin{eqnarray*}
+I_x(x,y) = I_g(x+1, y) - I_g(x-1, y), \\
+ I_y(x,y) = I_g(x, y+1) - I_g(x, y-1).
+\end{eqnarray*}
+%
+  For each image we
+concatenate the gradient energy in each of the 16 bins, followed by
+the 48 color features (average L, a, and b values for each of the 16
+bins), to produce a 64-dimensional feature vector.  We then learn a
+Support Vector Machine (SVM) classifier from a labeled training image
+set.

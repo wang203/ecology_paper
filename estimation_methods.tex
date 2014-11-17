@@ -1,0 +1,127 @@
+\subsection{Estimation techniques}
+\label{sec:methods}
+
+Our goal is to estimate the presence or absence of a given ecological
+phenomenon (like a species of plant or flower, or a meteorological
+feature like snow) on a given day and at a given place,
+using only the geo-tagged, time-stamped photos from Flickr. One way of viewing
+this problem is that every time a user takes a photo of a phenomenon
+of interest, they are casting a ``vote''  that the
+phenomenon actually occurred in a given geospatial region. 
+ We could
+simply look for tags indicating the presence of a feature --
+i.e. count the number of photos with the tag ``snow'' --  
+but sources of noise and bias make this task 
+challenging, including:
+\begin{packed_itemize}
+\item[---] \textit{Sparse sampling:} The geospatial distribution of photos
+  is highly non-uniform. A lack of photos
+  of a phenomenon in a region does not
+  necessarily mean that it was not there. 
+\item[---] \textit{Observer bias:} Social media users are younger and
+  wealthier than average, and most live in North
+  America and Europe.
+\item[---] \textit{Incorrect, incomplete and misleading tags:}
+  Photographers may use incorrect or ambiguous tags  ---
+  e.g. the tag ``snow'' may refer to a snowy owl or interference on a
+  TV screen.
+\item[---] \textit{Measurement errors:} Geo-tags and timestamps are
+  often incorrect (e.g. because people   forget to set their camera clocks).
+\end{packed_itemize}
+
+\xhdr{A statistical test.}  We introduce a simple probabilistic model
+and use it to derive a statistical test that can deal with some such
+sources of noise and bias. The test could be used for estimating the
+presence of any phenomenon of interest; without loss of generality we
+use the particular case of snow here, for ease of explanation.  Any
+given photo either contains evidence of snow (event $s$) or does not
+contain evidence of snow (event $\bar{s}$).  We assume that a given
+photo taken at a time and place with snow has a fixed probability $P(s
+| snow)$ of containing evidence of snow; this probability is less than
+1.0 because many photos are taken indoors, and outdoor photos might be
+composed in such a way that no snow is visible. We also assume that
+photos taken at a time and place without snow have some non-zero
+probability $P(s | \overline{snow})$ of containing evidence of snow;
+this incorporates various scenarios including incorrect timestamps or
+geo-tags and misleading visual evidence (e.g.  man-made
+snow).
+
+Let $m$ be the number of snow
+photos (event $s$), and $n$ be the number of non-snow photos (event
+$\bar{s}$) taken at a place and time of interest. Assuming that each photo is captured
+independently, we can use Bayes' Law to
+derive the probability that a given place has snow
+given its number of snow and non-snow photos,
+%
+%\newcommand{\smsn}{\overbrace{s\cdots s}^{m},\overbrace{\overline{s}\cdots \overline{s}}^{n}}
+%%hp cr: \bar{s}^n
+\newcommand{\smsn}{s^m, \bar{s}^n}
+\newcommand{\smsntwo}{s^m, \bar{s}^n}
+%%\newcommand{\smsn}{s^m, s^n}
+%%\newcommand{\smsntwo}{s^m, s^n}
+%\newcommand{\smsntwo}{\underbrace{s\cdots s}_{m},\underbrace{\overline{s}\cdots \overline{s}}_{n}}
+\begin{eqnarray*}
+P(snow|\smsn)  &=&\frac{ P(\smsn|snow)P(snow)}{P(\smsntwo)}  \\
+&=&\frac{{m+n\choose m}p^{m}(1-p)^{n}P(snow)}{P(\smsntwo)},  
+\end{eqnarray*}
+%
+where we write $s^m, \bar{s}^n$ to denote $m$ occurrences of event $s$ and $n$ occurrences of event $\bar{s}$, and where $p=P(s|snow)$ and $P(snow)$ is the prior probability of snow. A similar derivation gives the posterior probability that the bin does not contain snow,
+%
+\begin{eqnarray*}
+P(\overline{snow}|\smsn)  &=&\frac{{m+n\choose m}q^{m}(1-q)^{n}P(\overline{snow})}{P(\smsntwo)},  
+\end{eqnarray*}
+%
+where $q=P(s|\overline{snow})$. 
+%
+Taking the ratio between these two posterior probabilities yields a likelihood ratio,
+%
+\begin{eqnarray}
+\frac{P(snow|\smsn)}{P(\overline{snow}|\smsntwo)}
+%\\=\frac{\frac{{m+n\choose m}p^{m}(1-p)^{n}P(snow)}{P(\overbrace{s\cdots s}^{m},\overbrace{\overline{s}\cdots \overline{s}}^{n})}}{\frac{{m+n\choose m}q^{m}(1-q)^{n}P(\overline{snow})}{P(\overbrace{s\cdots s}^{m},\overbrace{\overline{s}\cdots \overline{s}}^{n})}}
+&=&\frac{P(snow)}{P(\overline{snow})}\left(\frac{p}{q}\right)^{m}\left(\frac{1-p}{1-q}\right)^n.
+\label{eq:conf}
+\end{eqnarray}
+%
+This ratio can be thought of as a measure of the confidence that a
+given time and place actually had snow, given photos from Flickr.
+
+A simple way of classifying a photo into a positive event $s$ or a
+negative event $\bar{s}$ is to use text tags. We identify a
+set ${\cal S}$ of tags related to a phenomenon of
+interest. Any photo tagged with at least one tag in ${\cal S}$ is
+declared to be a positive event $s$, and otherwise it is considered a
+negative event $\bar{s}$. For the snow detection task, we use the set
+${\cal S}$=\{snow, snowy, snowing, snowstorm\}, which we selected
+by hand.
+
+%%, which we chose by
+%%looking at the 200 most frequent Flickr tags and hand selecting those
+%%directly relevant to snowfall.
+
+The above derivation assumes that photos are taken independently of
+one another, which is generally not true in reality. One particular
+source of dependency is that photos from the same user are highly
+correlated with one another.  To mitigate this problem, instead of
+counting $m$ and $n$ as numbers of \textit{photos}, we instead let $m$ be 
+the number of \textit{photographers} having at least one photo with evidence of snow,
+while $n$ is the numbers of photographers who did not upload any
+photos with evidence of snow.
+
+The probability parameters in the likelihood ratio of
+equation~(\ref{eq:conf}) can be directly estimated from training data
+and ground truth. For example, for the snow cover results
+presented in Section~\ref{sec:results}, the learned parameters are: $p
+= p(s|snow) = 17.12\%$, $q = p(s|\overline{snow}) = 0.14\%$.  In other
+words, almost 1 of 5 people at a snowy place take a photo containing
+snow, whereas about 1 in 700 people take a photo containing evidence
+of snow at a non-snowy place.
+
+Figure~\ref{fig:samplemap} shows a visualization of the likelihood
+ratio values for the U.S. on one particular day using this simple
+technique with ${\cal S}$=\{snow, snowy, snowing, snowstorm\}.  High
+likelihood ratio values are plotted
+in green, indicating a high confidence of snow in a geospatial bin,
+while low values are shown in blue and indicate high confidence of 
+no snow.  Black areas indicate a likelihood ratio 
+near 1, showing little conference either way, and grey areas lack
+data entirely (having no Flickr photos in that bin on that day).

@@ -1,0 +1,65 @@
+%\documentclass[12pt]{article}
+%\begin{document}
+\subsubsection*{Dataset}
+
+We collected a large realistic dataset of Flickr images.
+A subtle but important issue is how to sample
+these photos. The distribution of geo-tagged Flickr photos is highly
+non-uniform, with high peaks in population centers and tourist
+locations.  Sampling uniformly at random from  Flickr photos
+produces a dataset that mirrors this highly non-uniform distribution,
+biasing it towards cities and away from rural areas. Since our
+eventual goal is to reproduce continental-scale satellite maps, rural
+areas are very important. An alternative is biased sampling that
+attempts to select more uniformly over the globe, but has the
+disadvantage that it no longer reflects the distribution of Flickr
+photos. Other important considerations include how to find a variety
+of snowy and non-snowy images, including relatively difficult images
+that may include wintery scenes with ice but not snow, and how to
+prevent highly-active Flickr users from disproportionately affecting
+the datasets.
+
+We strike a compromise on these issues by combining together datasets
+sampled in different ways.  We begin with a collection of about 100
+million Flickr photos geo-tagged within North America and collected
+using the public API (by repeatedly querying at different times and
+geo-spatial areas, similar to~\cite{hays}). From this set, we
+considered only photos taken before January 1, 2009 (so that we could
+use later years for creating a separate test set), and selected:
+%
+%\begin{enumerate}
+%\item
+(1) all photos tagged \textit{snow,} \textit{snowfall,} \textit{snowstorm,} or \textit{snowy} in
+  English and 10 other common languages (about 500,000 images);
+%\item
+(2) all photos tagged \textit{winter} in English and about 10 other languages (about 500,000 images);
+%\item
+(3) a random sample of 500,000 images.
+%\end{enumerate}
+%
+This yielded about 1.4 million images after removing duplicates.  We
+further sampled from this set in two ways. First, we selected up to 20
+random photos from each user, or all photos if a user had less than 20
+photos, giving about 258,000 images. Second, we sampled up to 100
+random photos from each $0.1^\circ \times 0.1^\circ$
+latitude-longitude bin of the earth (roughly 10km $\times$ 10km at the
+mid latitudes), yielding about 300,000 images. The combination of
+these two datasets has about 425,000 images after removing duplicates,
+creating 
+a diverse and realistic selection
+of images.  We partitioned this dataset into test and training
+sets on a per-user basis, so that all of any given user's photos are
+in one set or the other  (to reduce the potential
+for duplicate images appearing in both
+training and test).
+
+We then presented a subset of these images to humans and collected
+annotations for each image. We asked people to label
+the images into one of four categories: (1) contains obvious
+snow near the camera; (2) contains a trace amount of snow near
+the camera; (3) contains obvious snow but far away from the
+camera (e.g. on a mountain peak); and (4) does not contain snow. 
+For our application of reconstructing snowfall maps, we consider (1)
+and (2) to be positive classes and (3) and (4) to be negative,
+since snowfall in the distance does not give evidence of snow
+at the image's geo-tagged location. In total we labeled 10,000 images.
