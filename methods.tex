@@ -8,11 +8,12 @@
 \hfill \break
 
 Three parts:
+
 A. Extracting semantics using tags from individual images, which is what we did in WWW paper. Discuss simple keyword search on e.g. a few snow words, or machine learning to find keyword combinations. 
 
 B. Extracting semantics using images from individual images. Here we talk about the traditional features that are covered in ICCV paper, and then the deep learning techniques.
 
-C. Combining evidence together across users. Here we have the simple voting method and the probabilistic confidence score. We can augment with the additional factors that Stefan suggested, including priors based on time of year or geographic location, or other evidence like historical accuracy of specific users.] Also including temporal and spatial smoothing by simply adding to the confidence score priors.
+C. Combining evidence together across users. **Here we have the simple voting method and the probabilistic confidence score. We can augment with the additional factors that Stefan suggested, including priors based on time of year or geographic location, or other evidence like historical accuracy of specific users.] Also including temporal and spatial smoothing by simply adding to the confidence score priors.
 
 [Note what I am omitting here. My preference would be to ignore any techniques that try to classify bins jointly by aggregating all the tags or visual features of photos together in a bin and then using those features. I would also really like if the final classification is based just on thresholding a confidence score, even if the results are slightly worse than the best we can do. I just think it makes the story more complicated to do otherwise and harder to justify.] 
 
@@ -21,6 +22,9 @@ C. Combining evidence together across users. Here we have the simple voting meth
 ===================================
 \hfill \break
 \hfill \break
+
+\subsubsection*{** tags are considered per user while images are not}
+Evidence of tags is provided by Flickr users. According to their observation and opinion, tags are associated with  images. Tags provided by the same users are likely to be biased in the same way. And we assume users make mistakes with a certain probability. On the other hand, images are less likely to be biased according to users. It's the vision classifier not the photographer determines an image is with some ecology phenomenon or not. And this vision model has its own error rate. (?? I didn't explain the fixed error rate of gps and temporal information. I have question here.)
 
 \subsubsection*{Vision model}
 For each ecology phenomenon, the most descriptive visual features are extracted from images in training set. We test models built from each feature on testing set. Then these features are normalized and concatenated to build a descriptor of each image. With this combined feature, we learn a vision model on training images. This is the model we use to classify an image as having the phenomenon on it or not.

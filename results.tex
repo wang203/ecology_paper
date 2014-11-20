@@ -18,7 +18,9 @@ For each of these, we learn visual (and maybe text) classifiers for individual i
 \textbf{We test }
 (---- vision model) 
 \textbf{on data collected after the training images.}                                             
-(---- Therefore, we get results of image prediction. And they are clustered according to location and time. Then these images are used to compute confidence score of each place and time period.)
+(---- Therefore, we get results of image prediction. And they are clustered according to location and time. 
+
+Then these images are used to compute confidence score of each place and time period.)
 \textbf{and we compare to satellite ground truth. For each of snow and vegetation, we present two kinds of results:}
 
 ** Overall numbers.
@@ -51,14 +53,11 @@ B. Single time over place: Choose a few days and show maps of our estimates vers
 \subsection{Test on vegetation cover}
 \subsubsection*{Vege hand labeled dataset}
 
-crowd sourcing images\\*\\*
-Outdoor Greenery\\*
-Outdoor non-Greenery\\*
-Indoor\\*
-Other-modified\\*
-Not available
+We build a data set with over 10000 images. They are taken before 2009, and are composed by images with "forest" and "summer" like tags and also random images without any tag preference. These images are labeled with categories 
+\textit{"Outdoor Greenery","Outdoor non-Greenery","Indoor","Other-modified"},and \textit{"Not available"}.
 
-Finally, we build a positive set with images in category "Outdoor Greenery" and a negative set with images in categories "Outdoor non-Greenery" and "Indoor". To learn a image classification model, we build a training set with 4000 images and a testing set with 1900 images. In training and testing set, there are equal number of positive and negative samples.
+Finally, we build a positive set with images in category \textit{"Outdoor Greenery"} and a negative set 
+with images in categories \textit{"Outdoor non-Greenery"} and \textit{"Indoor"}. To learn a image classification model, we build a training set with 4000 images and a testing set with 1900 images. In training and testing set, there are equal number of positive and negative samples.
 
 \subsubsection*{Ground truth of vegetation -- NDVI index}
 %%%%%%% how much should the NDVI index value be mentioned?
@@ -175,11 +174,11 @@ in that place on that day.
 
 %%%%%%%%%%%%%%%%%%%%%%
 % hz added this for ROC curves
-%We convert this problem to a binary prediction problem to compare different method with ROC curves. For each method, we slide a threshold for the bins that have photos. Predictions will be made only for the bins with ground truth and photos for which snow bins are positive cases and non-snow bins are negative cases.
-%The confidence method and percentage method have single values to threshold while for voting method, we split it into two, as it has snow voters and no-snow voters. To make predictions using number of no-snow voters, we require the number of snow voters to be zero, while we don't consider the number of no-snow voters when using snow voters as thresholding values to make predictions. The baseline TPR for confidence, percentage and snow-voter voting is 2.76\%. % or 97.24%?
-%and the baseline TPR for no-snow voter is 1.90\% (is it useful to use no-snow voter number to predict snow?)
+% We convert this problem to a binary prediction problem to compare different method with ROC curves. For each method, we slide a threshold for the bins that have photos. Predictions will be made only for the bins with ground truth and photos for which snow bins are positive cases and non-snow bins are negative cases.
+% The confidence method and percentage method have single values to threshold while for voting method, we split it into two, as it has snow voters and no-snow voters. To make predictions using number of no-snow voters, we require the number of snow voters to be zero, while we don't consider the number of no-snow voters when using snow voters as thresholding values to make predictions. The baseline TPR for confidence, percentage and snow-voter voting is 2.76\%. % or 97.24%?
+% and the baseline TPR for no-snow voter is 1.90\% (is it useful to use no-snow voter number to predict snow?)
 
-%baseline_positive/baseline_total:0.0275996280425
+% baseline_positive/baseline_total:0.0275996280425
 
 % We first consider 
 
