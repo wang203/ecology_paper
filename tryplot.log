@@ -1,0 +1,442 @@
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2014.9.3)  21 NOV 2014 18:01
+entering extended mode
+ %&-line parsing enabled.
+**tryplot.tex
+(./tryplot.tex
+LaTeX2e <2005/12/01>
+Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, arabic, basque, bulgarian, coptic, welsh, czech, slovak, german, ng
+erman, danish, esperanto, spanish, catalan, galician, estonian, farsi, finnish,
+ french, greek, monogreek, ancientgreek, croatian, hungarian, interlingua, ibyc
+us, indonesian, icelandic, italian, latin, mongolian, dutch, norsk, polish, por
+tuguese, pinyin, romanian, russian, slovenian, uppersorbian, serbian, swedish, 
+turkish, ukenglish, ukrainian, loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2005/09/16 v1.4f Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size10.clo
+File: size10.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 90.
+
+(/usr/share/texmf/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2007/01/08 v0.04d Graphics/color for pdfTeX
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/share/texmf/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
+)
+(/usr/share/texmf/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count88
+\float@exts=\toks15
+\float@box=\box26
+\@float@everytoks=\toks16
+\@floatcapt=\box27
+)
+(/usr/share/texmf/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip43
+\subfigcapskip=\skip44
+\subfigcaptopadj=\dimen105
+\subfigbottomskip=\skip45
+\subfigcapmargin=\dimen106
+\subfiglabelskip=\skip46
+\c@subfigure=\count89
+\c@lofdepth=\count90
+\c@subtable=\count91
+\c@lotdepth=\count92
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/share/texmf/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip47
+\subfig@bottom=\skip48
+)
+(/usr/share/texmf/tex/latex/was/gensymb.sty
+Package: gensymb 2003/07/02 v1.0 (WaS)
+)
+(/usr/share/texmf/tex/latex/html/url.sty
+Package: url 1999/03/02  ver 1.4  Verb mode for urls, email addresses, and file
+ names
+)
+(/usr/share/texmf/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2007/02/07 v6.75r Hypertext links for LaTeX
+\@linkdim=\dimen107
+\Hy@linkcounter=\count93
+\Hy@pagecounter=\count94
+
+(/usr/share/texmf/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2007/02/07 v6.75r Hyperref: PDFDocEncoding definition (HO)
+)
+(/usr/share/texmf/tex/latex/config/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+(/usr/share/texmf/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2006/08/22 v2.4 Connects package keyval with LaTeX options (
+HO)
+)
+Package hyperref Info: Hyper figures OFF on input line 2288.
+Package hyperref Info: Link nesting OFF on input line 2293.
+Package hyperref Info: Hyper index ON on input line 2296.
+Package hyperref Info: Plain pages OFF on input line 2303.
+Package hyperref Info: Backreferencing OFF on input line 2308.
+
+Implicit mode ON; LaTeX internals redefined
+Package hyperref Info: Bookmarks ON on input line 2444.
+LaTeX Info: Redefining \url on input line 2599.
+\Fld@menulength=\count95
+\Field@Width=\dimen108
+\Fld@charsize=\dimen109
+\Choice@toks=\toks17
+\Field@toks=\toks18
+Package hyperref Info: Hyper figures OFF on input line 3102.
+Package hyperref Info: Link nesting OFF on input line 3107.
+Package hyperref Info: Hyper index ON on input line 3110.
+Package hyperref Info: backreferencing OFF on input line 3117.
+Package hyperref Info: Link coloring OFF on input line 3122.
+\Hy@abspage=\count96
+\c@Item=\count97
+\c@Hfootnote=\count98
+)
+*hyperref using default driver hpdftex*
+(/usr/share/texmf/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2007/02/07 v6.75r Hyperref driver for pdfTeX
+\Fld@listcount=\count99
+)
+(/usr/share/texmf/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+(/usr/share/texmf/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/usr/share/texmf/tex/latex/config/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+(/usr/share/texmf/tex/latex/tools/verbatim.sty
+Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks19
+\verbatim@line=\toks20
+\verbatim@in@stream=\read1
+)
+(/usr/share/texmf/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen110
+) (./tryplot.aux)
+\openout1 = `tryplot.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 17.
+
+(/usr/share/texmf/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+(/usr/share/texmf/tex/context/base/supp-pdf.tex
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count100
+\scratchdimen=\dimen111
+\scratchbox=\box28
+\nofMPsegments=\count101
+\nofMParguments=\count102
+\MPscratchCnt=\count103
+\MPscratchDim=\dimen112
+\MPnumerator=\count104
+\everyMPtoPDFconversion=\toks21
+)
+LaTeX Info: Redefining \celsius on input line 17.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 17.
+
+
+
+Package gensymb Warning: Not defining \perthousand.
+
+LaTeX Info: Redefining \ohm on input line 17.
+Package gensymb Info: Using \Omega for \ohm on input line 17.
+
+Package gensymb Warning: Not defining \micro.
+
+Package hyperref Info: Link coloring OFF on input line 17.
+(/usr/share/texmf/tex/latex/hyperref/nameref.sty
+Package: nameref 2006/12/27 v2.28 Cross-referencing by name of section
+
+(/usr/share/texmf/tex/latex/oberdiek/refcount.sty
+Package: refcount 2006/02/20 v3.0 Data extraction from references (HO)
+)
+\c@section@level=\count105
+)
+LaTeX Info: Redefining \ref on input line 17.
+LaTeX Info: Redefining \pageref on input line 17.
+ (./tryplot.out)
+(./tryplot.out)
+\@outlinefile=\write3
+\openout3 = `tryplot.out'.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 22.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 22.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 22.
+ <imggrid/falseposi/1.jpg, id=7, 501.875pt x 335.2525pt>
+File: imggrid/falseposi/1.jpg Graphic file (type jpg)
+
+<use imggrid/falseposi/1.jpg>
+<imggrid/falseposi/2.jpg, id=8, 501.875pt x 334.24875pt>
+File: imggrid/falseposi/2.jpg Graphic file (type jpg)
+
+<use imggrid/falseposi/2.jpg>
+<imggrid/falseposi/3.jpg, id=9, 334.24875pt x 501.875pt>
+File: imggrid/falseposi/3.jpg Graphic file (type jpg)
+
+<use imggrid/falseposi/3.jpg>
+<imggrid/falseposi/4.jpg, id=10, 251.43938pt x 376.40625pt>
+File: imggrid/falseposi/4.jpg Graphic file (type jpg)
+
+<use imggrid/falseposi/4.jpg>
+<imggrid/falseposi/5.jpg, id=11, 282.30469pt x 376.40625pt>
+File: imggrid/falseposi/5.jpg Graphic file (type jpg)
+
+<use imggrid/falseposi/5.jpg>
+<imggrid/falseposi/6.jpg, id=12, 376.40625pt x 281.55188pt>
+File: imggrid/falseposi/6.jpg Graphic file (type jpg)
+
+<use imggrid/falseposi/6.jpg>
+<imggrid/falseposi/7.jpg, id=13, 376.40625pt x 281.55188pt>
+File: imggrid/falseposi/7.jpg Graphic file (type jpg)
+
+<use imggrid/falseposi/7.jpg>
+<imggrid/falseposi/8.jpg, id=14, 376.40625pt x 281.55188pt>
+File: imggrid/falseposi/8.jpg Graphic file (type jpg)
+
+<use imggrid/falseposi/8.jpg>
+<imggrid/falseposi/9.jpg, id=15, 501.875pt x 376.40625pt>
+File: imggrid/falseposi/9.jpg Graphic file (type jpg)
+
+<use imggrid/falseposi/9.jpg>
+<imggrid/falseposi/10.jpg, id=16, 501.875pt x 335.2525pt>
+File: imggrid/falseposi/10.jpg Graphic file (type jpg)
+
+<use imggrid/falseposi/10.jpg>
+<imggrid/falseposi/11.jpg, id=17, 376.40625pt x 501.875pt>
+File: imggrid/falseposi/11.jpg Graphic file (type jpg)
+
+<use imggrid/falseposi/11.jpg>
+<imggrid/falseposi/12.jpg, id=18, 376.40625pt x 501.875pt>
+File: imggrid/falseposi/12.jpg Graphic file (type jpg)
+
+<use imggrid/falseposi/12.jpg>
+<imggrid/falseposi/13.jpg, id=19, 501.875pt x 375.4025pt>
+File: imggrid/falseposi/13.jpg Graphic file (type jpg)
+
+<use imggrid/falseposi/13.jpg>
+<imggrid/falseposi/14.jpg, id=20, 501.875pt x 376.40625pt>
+File: imggrid/falseposi/14.jpg Graphic file (type jpg)
+
+<use imggrid/falseposi/14.jpg>
+<imggrid/falseposi/15.jpg, id=21, 333.245pt x 501.875pt>
+File: imggrid/falseposi/15.jpg Graphic file (type jpg)
+
+<use imggrid/falseposi/15.jpg>
+<imggrid/falseposi/16.jpg, id=22, 157.10869pt x 117.83153pt>
+File: imggrid/falseposi/16.jpg Graphic file (type jpg)
+
+<use imggrid/falseposi/16.jpg>
+<imggrid/falseposi/17.jpg, id=23, 501.875pt x 376.40625pt>
+File: imggrid/falseposi/17.jpg Graphic file (type jpg)
+
+<use imggrid/falseposi/17.jpg>
+<imggrid/falseposi/18.jpg, id=24, 200.75pt x 150.5625pt>
+File: imggrid/falseposi/18.jpg Graphic file (type jpg)
+
+<use imggrid/falseposi/18.jpg>
+<imggrid/falseposi/19.jpg, id=25, 376.40625pt x 501.875pt>
+File: imggrid/falseposi/19.jpg Graphic file (type jpg)
+
+<use imggrid/falseposi/19.jpg>
+<imggrid/falseposi/20.jpg, id=26, 501.875pt x 335.2525pt>
+File: imggrid/falseposi/20.jpg Graphic file (type jpg)
+
+<use imggrid/falseposi/20.jpg>
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 67.
+
+<plots/nyc_noaa_vs_prediction_prev_3.png, id=27, 1284.8pt x 685.56125pt>
+File: plots/nyc_noaa_vs_prediction_prev_3.png Graphic file (type png)
+
+<use plots/nyc_noaa_vs_prediction_prev_3.png>
+<plots/philly_noaa_vs_prediction_prev_3.png, id=28, 1284.8pt x 685.56125pt>
+File: plots/philly_noaa_vs_prediction_prev_3.png Graphic file (type png)
+
+<use plots/philly_noaa_vs_prediction_prev_3.png>
+Overfull \hbox (0.86115pt too wide) in paragraph at lines 67--73
+ [] 
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 84.
+<imggrid/datasetposi/1.jpg, id=29, 376.40625pt x 282.30469pt>
+File: imggrid/datasetposi/1.jpg Graphic file (type jpg)
+
+<use imggrid/datasetposi/1.jpg>
+<imggrid/datasetposi/2.jpg, id=30, 382.42876pt x 501.875pt>
+File: imggrid/datasetposi/2.jpg Graphic file (type jpg)
+
+<use imggrid/datasetposi/2.jpg>
+<imggrid/datasetposi/3.jpg, id=31, 501.875pt x 376.40625pt>
+File: imggrid/datasetposi/3.jpg Graphic file (type jpg)
+
+<use imggrid/datasetposi/3.jpg>
+<imggrid/datasetposi/4.jpg, id=32, 139.722pt x 200.75pt>
+File: imggrid/datasetposi/4.jpg Graphic file (type jpg)
+
+<use imggrid/datasetposi/4.jpg>
+<imggrid/datasetposi/5.jpg, id=33, 7227.0pt x 4813.182pt>
+File: imggrid/datasetposi/5.jpg Graphic file (type jpg)
+
+<use imggrid/datasetposi/5.jpg>
+<imggrid/datasetposi/6.jpg, id=34, 68.55325pt x 103.24286pt>
+File: imggrid/datasetposi/6.jpg Graphic file (type jpg)
+
+<use imggrid/datasetposi/6.jpg>
+<imggrid/datasetposi/7.jpg, id=35, 150.5625pt x 100.27463pt>
+File: imggrid/datasetposi/7.jpg Graphic file (type jpg)
+
+<use imggrid/datasetposi/7.jpg>
+<imggrid/datasetposi/8.jpg, id=36, 100.375pt x 66.649pt>
+File: imggrid/datasetposi/8.jpg Graphic file (type jpg)
+
+<use imggrid/datasetposi/8.jpg>
+<imggrid/datasetposi/9.jpg, id=37, 120.45pt x 85.7604pt>
+File: imggrid/datasetposi/9.jpg Graphic file (type jpg)
+
+<use imggrid/datasetposi/9.jpg>
+<imggrid/datasetposi/10.jpg, id=38, 90.3375pt x 60.7068pt>
+File: imggrid/datasetposi/10.jpg Graphic file (type jpg)
+
+<use imggrid/datasetposi/10.jpg>
+<imggrid/datasetnega/1.jpg, id=39, 501.875pt x 376.40625pt>
+File: imggrid/datasetnega/1.jpg Graphic file (type jpg)
+
+<use imggrid/datasetnega/1.jpg>
+<imggrid/datasetnega/2.jpg, id=40, 150.5625pt x 100.27463pt>
+File: imggrid/datasetnega/2.jpg Graphic file (type jpg)
+
+<use imggrid/datasetnega/2.jpg>
+<imggrid/datasetnega/3.jpg, id=41, 150.5625pt x 100.27463pt>
+File: imggrid/datasetnega/3.jpg Graphic file (type jpg)
+
+<use imggrid/datasetnega/3.jpg>
+<imggrid/datasetnega/4.jpg, id=42, 501.875pt x 376.40625pt>
+File: imggrid/datasetnega/4.jpg Graphic file (type jpg)
+
+<use imggrid/datasetnega/4.jpg>
+<imggrid/datasetnega/5.jpg, id=43, 120.45pt x 79.0152pt>
+File: imggrid/datasetnega/5.jpg Graphic file (type jpg)
+
+<use imggrid/datasetnega/5.jpg>
+<imggrid/datasetnega/6.jpg, id=44, 80.2197pt x 120.45pt>
+File: imggrid/datasetnega/6.jpg Graphic file (type jpg)
+
+<use imggrid/datasetnega/6.jpg>
+<imggrid/datasetnega/7.jpg, id=45, 376.40625pt x 237.88875pt>
+File: imggrid/datasetnega/7.jpg Graphic file (type jpg)
+
+<use imggrid/datasetnega/7.jpg>
+<imggrid/datasetnega/8.jpg, id=46, 150.5625pt x 100.57574pt>
+File: imggrid/datasetnega/8.jpg Graphic file (type jpg)
+
+<use imggrid/datasetnega/8.jpg>
+<imggrid/datasetnega/9.jpg, id=47, 501.875pt x 376.40625pt>
+File: imggrid/datasetnega/9.jpg Graphic file (type jpg)
+
+<use imggrid/datasetnega/9.jpg>
+<imggrid/datasetnega/10.jpg, id=48, 501.875pt x 334.24875pt>
+File: imggrid/datasetnega/10.jpg Graphic file (type jpg)
+
+<use imggrid/datasetnega/10.jpg> [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdft
+ex.map}
+
+
+ <./plots/nyc_noaa_vs_prediction_prev_3.png (PNG copy)> <./plots/philly_noaa_vs
+_prediction_prev_3.png (PNG copy)>] [2 <./imggrid/falseposi/1.jpg> <./imggrid/f
+alseposi/2.jpg> <./imggrid/falseposi/3.jpg> <./imggrid/falseposi/4.jpg> <./imgg
+rid/falseposi/5.jpg> <./imggrid/falseposi/6.jpg> <./imggrid/falseposi/7.jpg> <.
+/imggrid/falseposi/8.jpg> <./imggrid/falseposi/9.jpg> <./imggrid/falseposi/10.j
+pg> <./imggrid/falseposi/11.jpg> <./imggrid/falseposi/12.jpg> <./imggrid/falsep
+osi/13.jpg> <./imggrid/falseposi/14.jpg> <./imggrid/falseposi/15.jpg> <./imggri
+d/falseposi/16.jpg> <./imggrid/falseposi/17.jpg> <./imggrid/falseposi/18.jpg> <
+./imggrid/falseposi/19.jpg> <./imggrid/falseposi/20.jpg>] [3 <./imggrid/dataset
+posi/1.jpg> <./imggrid/datasetposi/2.jpg> <./imggrid/datasetposi/3.jpg> <./imgg
+rid/datasetposi/4.jpg> <./imggrid/datasetposi/5.jpg> <./imggrid/datasetposi/6.j
+pg> <./imggrid/datasetposi/7.jpg> <./imggrid/datasetposi/8.jpg> <./imggrid/data
+setposi/9.jpg> <./imggrid/datasetposi/10.jpg> <./imggrid/datasetnega/1.jpg> <./
+imggrid/datasetnega/2.jpg> <./imggrid/datasetnega/3.jpg> <./imggrid/datasetnega
+/4.jpg> <./imggrid/datasetnega/5.jpg> <./imggrid/datasetnega/6.jpg> <./imggrid/
+datasetnega/7.jpg> <./imggrid/datasetnega/8.jpg> <./imggrid/datasetnega/9.jpg> 
+<./imggrid/datasetnega/10.jpg>] (./tryplot.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 3314 strings out of 256216
+ 48472 string characters out of 1917085
+ 101278 words of memory out of 1500000
+ 6545 multiletter control sequences out of 10000+200000
+ 11130 words of font info for 29 fonts, out of 1200000 for 2000
+ 645 hyphenation exceptions out of 8191
+ 25i,12n,24p,366b,387s stack positions out of 5000i,500n,6000p,200000b,15000s
+{/usr/share/texmf/fonts/enc/dvips/base/8r.enc}</usr/share/texmf/fonts/type1/b
+luesky/cm/cmmi10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr10.pfb></usr/s
+hare/texmf/fonts/type1/urw/times/utmr8a.pfb>
+Output written on tryplot.pdf (3 pages, 6764571 bytes).
+PDF statistics:
+ 86 PDF objects out of 1000 (max. 8388607)
+ 8 named destinations out of 1000 (max. 131072)
+ 227 words of extra memory for PDF output out of 10000 (max. 10000000)
+

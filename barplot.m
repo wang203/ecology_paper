@@ -15,7 +15,7 @@
 
 file=dlmread('daybin2007bar'); 
 
-for i=1:6
+for i=1:2
     list = zeros(23,6);%day bin predi gt prediposi prenega gtposi gtnega
     list(:,1:2) = file((i-1)*23+1:23*i,3:4);
 
@@ -37,7 +37,8 @@ for i=1:6
             end
         end
     end
-    subplot(2,3,i);
+    figure
+    %subplot(1,2,i);
     bar(list(:,3),'b');
     hold on
     bar(list(:,5),'b');
