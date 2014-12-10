@@ -1,57 +1,10 @@
 \section{method}
 
 
-\hfill \break
-\hfill \break
-\subsection*{latest writing}
-\hfill \break
-\hfill \break
-
-Three parts:
-
-A. Extracting semantics using tags from individual images, which is what we did in WWW paper. Discuss simple keyword search on e.g. a few snow words, or machine learning to find keyword combinations. 
-
-B. Extracting semantics using images from individual images. Here we talk about the traditional features that are covered in ICCV paper, and then the deep learning techniques.
-
-C. Combining evidence together across users. **Here we have the simple voting method and the probabilistic confidence score. We can augment with the additional factors that Stefan suggested, including priors based on time of year or geographic location, or other evidence like historical accuracy of specific users.] Also including temporal and spatial smoothing by simply adding to the confidence score priors.
-
-[Note what I am omitting here. My preference would be to ignore any techniques that try to classify bins jointly by aggregating all the tags or visual features of photos together in a bin and then using those features. I would also really like if the final classification is based just on thresholding a confidence score, even if the results are slightly worse than the best we can do. I just think it makes the story more complicated to do otherwise and harder to justify.] 
-
-\hfill \break
-\hfill \break
-===================================
-\hfill \break
-\hfill \break
-
-\subsubsection*{** tags are considered per user while images are not}
-Evidence of tags is provided by Flickr users. According to their observation and opinion, tags are associated with  images. Tags provided by the same users are likely to be biased in the same way. And we assume users make mistakes with a certain probability. On the other hand, images are less likely to be biased according to users. It's the vision classifier not the photographer determines an image is with some ecology phenomenon or not. And this vision model has its own error rate. (?? I didn't explain the fixed error rate of gps and temporal information. I have question here.)
-
-\subsubsection*{Vision model}
-For each ecology phenomenon, the most descriptive visual features are extracted from images in training set. We test models built from each feature on testing set. Then these features are normalized and concatenated to build a descriptor of each image. With this combined feature, we learn a vision model on training images. This is the model we use to classify an image as having the phenomenon on it or not.
-
-\subsubsection*{Deep learning}
+%///// Need to combine these two parts into one for data set
 
 
-In this convolutional neural network, we use ImageNet pre-trained model, and further tune it with our hand-labeled snow/vege dataset.
-
-\hfill \break
-\hfill \break
-===================================
-\hfill \break
-\hfill \break
-\subsection*{workshop}
-
-
-\hfill \break
-\hfill \break
-===================================
-\hfill \break
-\hfill \break
-\subsection*{www}
-
-
-%\subsection{Datasets}
-
+\subsection{DataSet}
 We use a sample of nearly 150 million geo-tagged, timestamped Flickr
 photos as our source of user-contributed observational data about the
 world. We collected this data using the public Flickr API, by
@@ -90,25 +43,303 @@ satellite.
 As an example, Figure~\ref{fig:samplemap} shows raw satellite snow data from one particular day.
 
 
+\subsubsection{Snow DataSet}
+% Create training data to  build snow visual model
+
+The distribution of geo-tagged Flickr photos is highly
+non-uniform, with high peaks in population centers and tourist
+locations.  Sampling uniformly at random from  Flickr photos
+produces a dataset that mirrors this highly non-uniform distribution,
+biasing it towards cities and away from rural areas. Since our
+eventual goal is to reproduce continental-scale satellite maps, rural
+areas are very important. An alternative is biased sampling that
+attempts to select more uniformly over the globe, but has the
+disadvantage that it no longer reflects the distribution of Flickr
+photos. Other important considerations include how to find a variety
+of snowy and non-snowy images, including relatively difficult images
+that may include wintry scenes with ice but not snow, and how to
+prevent highly-active Flickr users from disproportionately affecting
+the datasets.
+
+We strike a compromise on these issues by combining together datasets
+sampled in different ways.  We begin with a collection of about 100
+million Flickr photos geo-tagged within North America and collected
+using the public API (by repeatedly querying at different times and
+geo-spatial areas, similar to~\cite{hays}). From this set, we
+considered only photos taken before January 1, 2009 (so that we could
+use later years for creating a separate test set), and selected:
+%
+%\begin{enumerate}
+%\item
+(1) all photos tagged \textit{snow,} \textit{snowfall,} \textit{snowstorm,} or \textit{snowy} in
+  English and 10 other common languages (about 500,000 images);
+%\item
+(2) all photos tagged \textit{winter} in English and about 10 other languages (about 500,000 images);
+%\item
+(3) a random sample of 500,000 images.
+%\end{enumerate}
+%
+This yielded about 1.4 million images after removing duplicates.  We
+further sampled from this set in two ways. First, we selected up to 20
+random photos from each user, or all photos if a user had less than 20
+photos, giving about 258,000 images. Second, we sampled up to 100
+random photos from each $0.1^\circ \times 0.1^\circ$
+latitude-longitude bin of the earth (roughly 10km $\times$ 10km at the
+mid latitudes), yielding about 300,000 images. The combination of
+these two datasets has about 425,000 images after removing duplicates,
+creating 
+a diverse and realistic selection
+of images.  We partitioned this dataset into test and training
+sets on a per-user basis, so that all of any given user's photos are
+in one set or the other  (to reduce the potential
+for duplicate images appearing in both
+training and test).
+
+We then presented a subset of these images to humans and collected
+annotations for each image. We asked people to label
+the images into one of four categories: (1) contains obvious
+snow near the camera; (2) contains a trace amount of snow near
+the camera; (3) contains obvious snow but far away from the
+camera (e.g. on a mountain peak); and (4) does not contain snow. 
+For our application of reconstructing snowfall maps, we consider (1)
+and (2) to be positive classes and (3) and (4) to be negative,
+since snowfall in the distance does not give evidence of snow
+at the image's geo-tagged location. In total we labeled 10,000 images.
+
+\subsubsection{Vegetation DataSet}
+%%% Need to describe the training data for build vegetation visual model
 
 
-%% \begin{figure}
-%% \begin{center}
-%% \begin{tabular}{cc}
-%% \includegraphics[width=0.5\textwidth]{plots/nasadownsample20070101.png}
-%% \end{tabular}
-%% \end{center}
-%% \caption{Down-sampled NASA MODIS snow coverage data for North America
-%%   on 2007.01.01. Grey: water-covered, or no data, or the confidence
-%%   index value is 0; blue: no snow and has non-zero confidence index
-%%   value; green: has snow and non-zero confidence index value. (Please
-%%   view in color.)}
-%% \label{fig:nasadownsample20070101}
-%% \end{figure}
+We build a data set with over 10000 images. They are taken before 2009, and are composed by images with "forest" and "summer" like tags and also random images without any tag preference. These images are labeled with categories 
+\textit{"Outdoor Greenery","Outdoor non-Greenery","Indoor","Other-modified"},and \textit{"Not available"}.
+
+Finally, we build a positive set with images in category \textit{"Outdoor Greenery"} and a negative set 
+with images in categories \textit{"Outdoor non-Greenery"} and \textit{"Indoor"}. To learn a image classification model, we build a training set with 4000 images and a testing set with 1900 images. In training and testing set, there are equal number of positive and negative samples.
+To show the diversity of our Flickr image dataset, in figure ~\ref{fig:dataset} we present a random sample of images in our vegetation dataset labeled as positive and negative.
 
 
-\subsection{Estimation techniques}
-\label{sec:methods}
+
+
+
+
+
+
+
+\begin{figure*}[th]
+{\small{
+\begin{center}
+\begin{tabular}{@{}c@{\,\,\,}c@{\,\,\,}c@{\,\,\,}c@{\,\,\,}c@{\,\,\,}}
+\includegraphics[width=0.19\textwidth]{imggrid/datasetposi/1.jpg} &
+\includegraphics[height=1in]{imggrid/datasetposi/2.jpg} &
+\includegraphics[width=0.19\textwidth]{imggrid/datasetposi/3.jpg} &
+\includegraphics[height=1in]{imggrid/datasetposi/4.jpg} &
+\includegraphics[width=0.19\textwidth]{imggrid/datasetposi/5.jpg} \\
+%\multicolumn{5}{c}{(a) Random positive images in vegetation dataset} \\
+\\[-6pt]
+\hline
+\\[-6pt]
+\includegraphics[height=1in]{imggrid/datasetposi/6.jpg} &
+\includegraphics[width=0.19\textwidth]{imggrid/datasetposi/7.jpg} &
+\includegraphics[width=0.19\textwidth]{imggrid/datasetposi/8.jpg} &
+\includegraphics[width=0.19\textwidth]{imggrid/datasetposi/9.jpg} &
+\includegraphics[width=0.19\textwidth]{imggrid/datasetposi/10.jpg} \\
+\multicolumn{5}{c}{(a) Random positive images in vegetation dataset} \\ 
+\\[-6pt]
+\hline
+\\[-6pt]
+\includegraphics[width=0.19\textwidth]{imggrid/datasetnega/1.jpg} &
+\includegraphics[width=0.19\textwidth]{imggrid/datasetnega/2.jpg} &
+\includegraphics[width=0.19\textwidth]{imggrid/datasetnega/3.jpg} &
+\includegraphics[width=0.19\textwidth]{imggrid/datasetnega/4.jpg} &
+\includegraphics[width=0.19\textwidth]{imggrid/datasetnega/5.jpg} \\
+%\multicolumn{5}{c}{(c) Random false negatives (snow images classified as non-snow)} \\ 
+\\[-6pt]
+\hline
+\\[-6pt]
+\includegraphics[height=1in]{imggrid/datasetnega/6.jpg} &
+\includegraphics[width=0.19\textwidth]{imggrid/datasetnega/7.jpg} &
+\includegraphics[width=0.19\textwidth]{imggrid/datasetnega/8.jpg} &
+\includegraphics[width=0.19\textwidth]{imggrid/datasetnega/9.jpg} &
+\includegraphics[width=0.19\textwidth]{imggrid/datasetnega/10.jpg} \\
+\multicolumn{5}{c}{(b) Random negative images in vegetation dataset} \\
+\end{tabular}
+\end{center}
+}}
+\caption{Random images from our hand-labeled dataset. Public sharing images are various in quality, contents, illumination and view angle.
+Negative images like winter trees without leaves, or indoor images capturing a photo of forest are more confusing.}
+\label{fig:dataset}
+\end{figure*}
+
+
+\subsection{Extracting semantics using tags from individual images}
+
+We consider two learning paradigms. The first
+is to produce a single exemplar for each bin in time and space
+consisting of the set of all tags used by all users. For each of these
+exemplars, the NASA and/or NOAA ground truth data gives a label (snow
+or non-snow). We then use standard machine learning algorithms like
+Support Vector Machines and decision trees to identify the most
+discriminative tags and tag combinations. In the second paradigm, our
+goal instead is to classify individual \textit{photos} as containing
+snow or not, and then use these classifier outputs to compute the
+number of positive and non-positive photos in each bin (i.e., to
+compute $m$ and $n$ in the likelihood ratio described in the last
+section).
+
+\subsection{Extracting semantics using images from individual images}
+
+
+%\subsubsection{Traditional Visual features}
+
+\subsubsection{Snow Visual features}
+Snow is a somewhat unique visual phenomenon, and we claim that
+detecting it in images is a unique recognition task. In some cases,
+snow can be detected by coarse scene recognition: ski slopes or snowy
+landscapes are distinctive scenes. But snow can appear in any kind of
+outdoor scene, and is thus like an object. However, unlike most
+objects that have some distinctive features, snow is simply a white,
+near-textureless material.  (In fact, our informal observation is that
+humans detect snow not by recognizing its appearance, but by noticing
+that other expected features of a scene are occluded; in this sense,
+detecting snow is less about the features that are seen and more about
+the features that are \textit{not} seen. We leave this as an
+observation to inspire future work.)
+%
+We tested a variety of off-the-shelf visual features for classifying
+whether an image contains fallen snow. We used Support Vector
+Machines for classification, choosing kernels based on the feature
+type.  Intuitively, color is a very important feature for detecting
+snow, and thus we focused on features that use color to some
+degree. Our features are:
+
+
+\xhdr{Color histograms} We begin with perhaps the simplest of color
+features. We build joint histograms in CIELAB space, with 4 bins on
+the lightness dimension and 14 bins along each of the two color
+dimensions, for a total of 784 bins. We experimented with other
+quantizations and found that this arrangement worked best.  We encode
+the histogram as a 784 dimensional feature and use an SVM with a
+chi-squared distance (as in~\cite{XiaoHEOT10}).
+
+\xhdr{Tiny images} 
+%Tiny images are another very simple way of
+%representing an image that nevertheless capture coarse color and
+%spatial layout information
+We subsample images to 16 $\times$ 16 pixels, giving 256 pixels per
+RGB color plane and yielding a 768 dimensional feature vector.
+Drastically reducing the image dimensions yields a feature that is
+less sensitive to exact alignment and more computationally
+feasible~\cite{torralba2008tiny}.  
+%We use an RBF kernel to compare the
+%unnormalized distance.
+
+
+\xhdr{Spatial Moments} Tiny images capture coarse color and spatial
+scene layout information, but much information is discarded during
+subsampling.  As an alternative approach, we convert the image to LUV
+color space, divide it into 49 blocks using a 7 $\times$ 7 grid, and
+then compute the mean and variance of each block in each color
+channel.  Intuitively, this is a low-resolution image and a very
+simple texture feature, respectively.  We also compute maximum,
+minimum, and median value within each cell, so that the final
+feature vector has 735 dimensions.
+
+%<<<<<<< .mine
+
+%\begin{figure*}[th!]
+%\begin{center}
+%\vspace{-16pt}
+%\begin{tabular}{cc}
+% \includegraphics[width=0.4\textwidth]{figs/ROC-curves.jpg} &
+%\includegraphics[width=0.4\textwidth]{figs/PR-curves.jpg} \\
+%\end{tabular}
+%\end{center}
+%\vspace{-12pt}
+%\caption{
+%Snow classification results for different features and combinations, in terms of {\textit{(left):}} ROC curves for the task of classifying snow vs. non-snow images; and 
+%{\textit{(right):}} Precision-Recall curves for the task of retrieving snow images.
+%}
+%\label{fig:PR_ROC_snow}
+%\end{figure*}
+
+
+\xhdr{{Color Local Binary Pattern (LBP) with pyramid
+    pooling}} LBP represents each $9 \times 9$ pixel neighborhood 
+as an 8-bit binary number by thresholding the 8 outer pixels
+by the value at the center.  We build 256-bin histograms over
+these LBP values, both on the grayscale image and on each RGB color
+channel~\cite{korayem2012solving}. We compute these histograms in each cell of a three-level spatial
+pyramid, with 1 bin at the lowest level, 4 bins in a $2 \times 2$ grid
+at the second level, and 16 bins in a $4 \times 4$ grid at the third level.
+This yields a $(1+4+16) \times 4 \times 256$ = 21504 dimensional feature
+vector for each image.
+
+\xhdr{GIST} We also apply GIST features, which capture coarse texture
+and scene layout by applying a Gabor filter bank followed by
+down-sampling~\cite{oliva2001modeling}. Our variant produces a
+1536-dimensional  vector and operates on color planes. Scaling
+images to have square aspect ratios before computing GIST improved
+classification results significantly~\cite{douze2009evaluation}.
+
+
+We experimented with a number of other features, and found
+that they did not work well; local features like SIFT and HOG in
+particular perform poorly, again because snow does not have
+distinctive local visual appearance. 
+
+\subsubsection{Vegetation visual features}
+
+Vegetation has the signature green color. The leaves of plants have distinctive visual texture. So we employ SIFT feature to analyze the local gradient distribution. And we also extract GIST feature to describe texture feature and global context. 
+
+
+
+
+
+\textbf{\textit{Color SIFT histogram.}}
+We extract dense SIFT feature on each of the RGB color plane, and concatenate them to build color SIFT feature. The dense SIFT feature is extracted from every 2 pixels by 2 pixels bin, with a step size of 5 pixels. In this way, we achieve representative key points and reasonable computation complex. 
+% Therefore we have 128*3-d for each key point
+% about 300-500 key points each images
+
+From training data set, We build 2000 dimensional centers of color SIFT feature using K-means clustering. With these centers, a 2000 dimensional histogram is built from all the key points of each image.
+
+Using SIFT histogram, a model is trained and tested with SVM using RBF kernel. 
+%Maybe the numbers should be in evaluation section        
+The performance is 78.10\%.
+
+\textbf{\textit{Color GIST.}}
+Similar to color SIFT feature, we also extract GIST feature from each of the RGB color plane.\\*\\*
+The performance is 82.58\%.
+
+\textbf{\textit{Combine visual features.}}
+The combined visual feature is built from concatenating the normalized GIST feature and SIFT histogram. A new model is learnt based on the combined feature.
+The performance is 85.9\%.
+
+\subsubsection{Deep learning}
+Recently the Conventional Neural Network (CNN) ~\cite{krizhevsky2012imagenet} has gained a lot of attention in the vision community, as it outperformed all other techniques in the ImageNet challenge (the most famous object category detection competition)~\cite{ilsvrcarxiv14}.
+
+
+
+CNN is a special type of feed forward neural network inspired by the biological process~\cite{krizhevsky2012imagenet} in cats' visual cortex. 
+%It is currently the de facto algorithm of image classification on standard datasets.
+CNN enjoys additional features that distinguish it from the standard neural networks: shared wights and sparse connectivity.
+A layer in CNN may consist of three different stages: convolution, non-linear activation, and pooling.
+In the convolution stage, a set of convolution filters is applied in parallel. 
+The output of a convolution filter is then passed to non-linear activation functions (e.g., rectified linear activation function, sigmoid activation function).
+The final stage is pooling, where the net output is manipulated based on its neighbors (e.g., max pooling , $L_2$ norm, and weighted average).
+Pooling makes the network invariant to the translation of the input
+
+The key idea behind this approach is that instead of first designing low-level features by
+hand and then running a machine learning algorithm, a single unified
+algorithm should learn both the low-level features and the
+high-classifier simultaneously. 
+
+We apply CNN to detect snow and vegetation on image level. We followed Oquab~\cite{Oquab14} et al. and started with a model
+pre-trained on the huge ImageNet dataset then we train our models using hand-labeled data sets.
+ 
+
+
+
+\subsection{Combining evidence together across users}
 
 Our goal is to estimate the presence or absence of a given ecological
 phenomenon (like a species of plant or flower, or a meteorological
@@ -235,69 +466,134 @@ no snow.  Black areas indicate a likelihood ratio
 near 1, showing little conference either way, and grey areas lack
 data entirely (having no Flickr photos in that bin on that day).
 
-\subsection{Learning features automatically}
 
-The confidence score in the last section has a number of limitations,
-including requiring that a set of tags related to the phenomenon of
-interest be selected by hand. Moreover, it makes no attempt to
-incorporate visual evidence or negative textual evidence --- e.g.,
-that a photo tagged ``snowy owl'' probably contains a bird and no
-actual snow.  We use machine learning techniques to address these
-weaknesses, both to automatically identify specific tags and tag
-combinations that are correlated with the presence of a phenomenon of
-interest, and to incorporate visual evidence into the prediction techniques.
 
-\xhdr{Learning tags.}  We consider two learning paradigms. The first
-is to produce a single exemplar for each bin in time and space
-consisting of the set of all tags used by all users. For each of these
-exemplars, the NASA and/or NOAA ground truth data gives a label (snow
-or non-snow). We then use standard machine learning algorithms like
-Support Vector Machines and decision trees to identify the most
-discriminative tags and tag combinations. In the second paradigm, our
-goal instead is to classify individual \textit{photos} as containing
-snow or not, and then use these classifier outputs to compute the
-number of positive and non-positive photos in each bin (i.e., to
-compute $m$ and $n$ in the likelihood ratio described in the last
-section).
+\xhdr{Temporal smoothing.}  For many phenomena (including snow), the
+existence of an event on one day is strongly correlated with its
+existence on the next day. Thus one way of addressing the sparsity of
+Flickr photos in some locations is to propagate evidence forward and
+backward in time.  To do this, we apply a Gaussian filter on the Flickr
+confidence values for each bin in an attempt to achieve better
+recalls. We vary the degree of smoothing by using Gaussians with
+different variance values.  We tried smoothing with many
+different parameters, including smoothing both forward and backwards
+in time, or in only one direction.
 
-\xhdr{Learning visual features.}  We also wish to incorporate visual
-evidence from the photos themselves. There is decades of
-work in the computer vision community on object and scene
-classification (see~\cite{szeliski} for a recent survey), although
-most of that work has not considered the large, noisy photo collections we work with here. We tried a number of
-approaches, and found that a classifier using a simplified version of
-GIST  augmented with color features~\cite{gist, hays}
-gave a good trade-off between accuracy and 
-tractability.
 
-\newcommand{\lab}{CIELAB }
-Given an image $I$, we partition the image into a $4 \times 4$ grid of
-16 equally-sized rectangular regions. In each region we compute the
-average pixel values in each of the red, green, and blue color planes,
-and then convert this color triple from sRGB space to the \lab color
-space~\cite{lab}. \lab  has a number of advantages, including
-separating greyscale intensity from the color channels and having greater
-perceptual uniformity (so that Euclidean distances between two \lab
-color triples are approximately proportional to the human perception
-of difference between the colors). For each region $R$ we also compute the
-total gradient energy $E(R)$ within the grayscale plane $I_g$ of the image,
+
+\xhdr{Voting.}  Voting is an interesting
+technique  because of its simplicity. Voting
+simply counts the number of users who have annotated at least one
+photo in a given bin and day with a snow-related tag.
+Figure~\ref{fig:precvotes}
+plots precision versus the number of votes for snow retrieval.  The
+shape of these curve illustrates why crowd-sourced observations of the
+world can be reliable, if enough people are involved: as the number of
+votes for snow increases, it becomes progressively less likely that
+these independent observations are coincidental, and more likely that
+they are caused by the presence or absence of an actual phenomenon.
+It is interesting to notice that when there are 7 or more snow voters,
+snow prediction precision becomes 100\%, while the same is true for
+non-snow prediction when the number of non-snow voters reaches 33
+if there are no snow voters in the bin.
+
+\begin{figure}
+\begin{center}
+\begin{tabular}{c}
+\includegraphics[width=0.3\textwidth,trim=1cm 0.5cm 1cm 1cm,clip]{plots/precvotes.png}
+%\includegraphics[width=0.3\textwidth,trim=1cm 1cm 1cm 1cm,clip]{plots/precvotesnosnow.png} \\
+\end{tabular}
+\end{center}
+\vspace{-20pt}
+\caption{Precision vs number of votes for snow predictions using the voting method.}
+\label{fig:precvotes}
+\end{figure}
+%\hfill \break
+%\hfill \break
+%\subsection*{latest writing}
+%\hfill \break
+%\hfill \break
+
+
+%Three parts:
 %
-\begin{eqnarray*}
-E(R) & = & \sum_{(x,y) \in R}   || \nabla I_g(x,y) || \\
-& = & \sum_{(x,y) \in R} \sqrt{I_x(x,y)^2 + I_y(x,y)^2}, 
-\end{eqnarray*}
+%A. Extracting semantics using tags from individual images, which is what we did in WWW paper. Discuss simple keyword search on e.g. a few snow words, or machine learning to find keyword combinations. 
 %
-where $I_x(x,y)$ and $I_y(x,y)$ are the partial derivatives in the $x$
-and $y$ directions evaluated at point $(x,y)$, approximated as,
+%B. Extracting semantics using images from individual images. Here we talk about the traditional features that are covered in ICCV paper, and then the deep learning techniques.
 %
-\begin{eqnarray*}
-I_x(x,y) = I_g(x+1, y) - I_g(x-1, y), \\
- I_y(x,y) = I_g(x, y+1) - I_g(x, y-1).
-\end{eqnarray*}
+%C. Combining evidence together across users. **Here we have the simple voting method and the probabilistic confidence score. We can augment with the additional factors that Stefan suggested, including priors based on time of year or geographic location, or other evidence like historical accuracy of specific users.] Also including temporal and spatial smoothing by simply adding to the confidence score priors.
 %
-  For each image we
-concatenate the gradient energy in each of the 16 bins, followed by
-the 48 color features (average L, a, and b values for each of the 16
-bins), to produce a 64-dimensional feature vector.  We then learn a
-Support Vector Machine (SVM) classifier from a labeled training image
-set.
+%[Note what I am omitting here. My preference would be to ignore any techniques that try to classify bins jointly by aggregating all the tags or visual features of photos together in a bin and then using those features. I would also really like if the final classification is based just on thresholding a confidence score, even if the results are slightly worse than the best we can do. I just think it makes the story more complicated to do otherwise and harder to justify.] 
+%
+%\hfill \break
+%\hfill \break
+%===================================
+%\hfill \break
+%\hfill \break
+
+
+
+
+
+
+\begin{comment}
+
+%\subsection{Datasets}
+\begin{comment}
+We use a sample of nearly 150 million geo-tagged, timestamped Flickr
+photos as our source of user-contributed observational data about the
+world. We collected this data using the public Flickr API, by
+repeatedly searching for photos within random time periods and
+geo-spatial regions, until the entire globe and all days between January 1, 2007 and December 31, 2010 had been covered.
+We applied filters to remove blatantly inaccurate
+metadata, in particular removing photos with geotag precision less
+than about city-scale (as reported by Flickr), and photos whose upload
+timestamp is the same as the EXIF camera timestamp (which usually
+means that the camera timestamp was missing).  
+
+For ground truth we use large-scale data originating from two
+independent sources: ground-based weather stations, and aerial
+observations from satellites.  For the ground-based observations, we
+use publicly-available daily snowfall and snow depth observations from
+the U.S. National Oceanic and Atmospheric Administration (NOAA) Global
+Climate Observing System Surface Network (GSN)~\cite{ghcn}.  This data
+provides highly accurate daily data, but only at sites that have
+surface observing stations. 
+%
+For denser, more global coverage, we also use
+data from the Moderate Resolution Imaging Spectroradiometer (MODIS)
+instrument aboard NASA's Terra satellite. The satellite is in a polar
+orbit so that it scans the entire surface of the earth every day. The
+MODIS instrument measures spectral emissions at various wavelengths,
+and then post-processing uses these measurements to estimate ground cover.
+In this paper we use two datasets: the daily snow cover
+maps~\cite{modissnow} and the two-week vegetation
+averages~\cite{modisveg}. Both of these sets of data including an
+estimate of the percentage of snow or vegetation ground cover at each
+point on earth, along with a quality score indicating the confidence
+in the estimate. Low confidence is caused primarily by cloud cover
+(which changes the spectral emissions and prevents accurate ground
+cover from being estimated), but also by technical problems with the
+satellite. 
+As an example, Figure~\ref{fig:samplemap} shows raw satellite snow data from one particular day.
+
+\end{comment}
+
+
+%% \begin{figure}
+%% \begin{center}
+%% \begin{tabular}{cc}
+%% \includegraphics[width=0.5\textwidth]{plots/nasadownsample20070101.png}
+%% \end{tabular}
+%% \end{center}
+%% \caption{Down-sampled NASA MODIS snow coverage data for North America
+%%   on 2007.01.01. Grey: water-covered, or no data, or the confidence
+%%   index value is 0; blue: no snow and has non-zero confidence index
+%%   value; green: has snow and non-zero confidence index value. (Please
+%%   view in color.)}
+%% \label{fig:nasadownsample20070101}
+%% \end{figure}
+
+
+
+
