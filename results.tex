@@ -90,8 +90,9 @@ To show the diversity of our Flickr image dataset, in figure ~\ref{fig:dataset} 
 \\[-6pt]
 \hline
 \\[-6pt]
-\includegraphics[width=0.19\textwidth]{imggrid/datasetnega/1.jpg} &
-\includegraphics[width=0.19\textwidth]{imggrid/datasetnega/2.jpg} &
+\includegraphics[height=1in]{imggrid/datasetnega/6.jpg} &
+\includegraphics[width=0.19\textwidth]{imggrid/datasetnega/9.jpg} &
+
 \includegraphics[width=0.19\textwidth]{imggrid/datasetnega/3.jpg} &
 \includegraphics[width=0.19\textwidth]{imggrid/datasetnega/4.jpg} &
 \includegraphics[width=0.19\textwidth]{imggrid/datasetnega/5.jpg} \\
@@ -99,10 +100,10 @@ To show the diversity of our Flickr image dataset, in figure ~\ref{fig:dataset} 
 \\[-6pt]
 \hline
 \\[-6pt]
-\includegraphics[height=1in]{imggrid/datasetnega/6.jpg} &
+\includegraphics[width=0.19\textwidth]{imggrid/datasetnega/1.jpg} &
 \includegraphics[width=0.19\textwidth]{imggrid/datasetnega/7.jpg} &
 \includegraphics[width=0.19\textwidth]{imggrid/datasetnega/8.jpg} &
-\includegraphics[width=0.19\textwidth]{imggrid/datasetnega/9.jpg} &
+\includegraphics[width=0.19\textwidth]{imggrid/datasetnega/2.jpg} &
 \includegraphics[width=0.19\textwidth]{imggrid/datasetnega/10.jpg} \\
 \multicolumn{5}{c}{(b) Random negative images in vegetation dataset} \\
 \end{tabular}
@@ -306,77 +307,37 @@ Non-Greenery & 353 & 400\tabularnewline
 \end{tabular}
 \end{center}
 }}
-\caption{In all false positive bins, there are 47 images that are predicted as greenery. And these images are the reason these bins are predicted as green. Here are some random selected examples of the green images.}
+\caption{In all false positive bins, there are ... images that are predicted as greenery. And these images are the reason these bins are predicted as green. Here are some random selected examples of the green images.}
 \label{fig:falseposi}
 \end{figure*}
 Generally, all the false negative error is due to the sparseness of data. While not enough images are collected at certain location during some time, there is either no green image found or green images are too few compare to the quantity of non-green images. On the other hand, false positive error is rare (less than 1\%) and complex. We found most images in the false positive bins are actually green vegetation images. ( here we need some more explanation) In figure ~\ref{fig:falseposi}, we show some examples of images in false positive bins.
 
 
 
-\begin{figure*}[th]
-{\small{
-\begin{center}
-\begin{tabular}{@{}c@{\,\,\,}c@{\,\,\,}c@{\,\,\,}c@{\,\,\,}c@{\,\,\,}}
-\includegraphics[width=0.19\textwidth]{imggrid/falseposi/1.jpg} &
-\includegraphics[width=0.19\textwidth]{imggrid/falseposi/2.jpg} &
-\includegraphics[height=1in]{imggrid/falseposi/3.jpg} &
-\includegraphics[height=1in]{imggrid/falseposi/4.jpg} &
-\includegraphics[height=1in]{imggrid/falseposi/5.jpg} \\
-%\multicolumn{5}{c}{(a) Random positive images in vegetation dataset} \\
-\\[-6pt]
-\hline
-\\[-6pt]
-\includegraphics[width=0.19\textwidth]{imggrid/falseposi/6.jpg} &
-\includegraphics[width=0.19\textwidth]{imggrid/falseposi/7.jpg} &
-\includegraphics[width=0.19\textwidth]{imggrid/falseposi/8.jpg} &
-\includegraphics[width=0.19\textwidth]{imggrid/falseposi/9.jpg} &
-\includegraphics[width=0.19\textwidth]{imggrid/falseposi/10.jpg} \\
-\multicolumn{5}{c}{(a) Random positive images in vegetation dataset} \\ 
-\\[-6pt]
-\hline
-\\[-6pt]
-\includegraphics[height=1in]{imggrid/falseposi/11.jpg} &
-\includegraphics[height=1in]{imggrid/falseposi/12.jpg} &
-\includegraphics[width=0.19\textwidth]{imggrid/falseposi/13.jpg} &
-\includegraphics[width=0.19\textwidth]{imggrid/falseposi/14.jpg} &
-\includegraphics[height=1in]{imggrid/falseposi/15.jpg} \\
-%\multicolumn{5}{c}{(c) Random false negatives (snow images classified as non-snow)} \\ 
-\\[-6pt]
-\hline
-\\[-6pt]
-\includegraphics[width=0.19\textwidth]{imggrid/falseposi/16.jpg} &
-\includegraphics[width=0.19\textwidth]{imggrid/falseposi/17.jpg} &
-\includegraphics[width=0.19\textwidth]{imggrid/falseposi/18.jpg} &
-\includegraphics[height=1in]{imggrid/falseposi/19.jpg} &
-\includegraphics[width=0.19\textwidth]{imggrid/falseposi/20.jpg} \\
-\multicolumn{5}{c}{(b) Random negative images in vegetation dataset} \\
-\end{tabular}
-\end{center}
-}}
-\caption{In all false positive bins, there are 47 images that are predicted as greenery. And these images are the reason these bins are predicted as green. Here are some random selected examples of the green images.}
-\label{fig:falseposi}
-\end{figure*}
-
 
 \xhdr{**Single place over time}
-
-figure ~\ref{fig:placeinbar} 
+Figure ~\ref{fig:placeinbar} shows vegetation coverage of 6 places over 2009 and 2010. Prediction results on top usually have more data available than ground truth on the bottom.
 
 % bar plot of 2 places
 \begin{figure}
 %{\small{
 \begin{center}
-\begin{tabular}{c c}
-\includegraphics[width=0.22\textwidth]{bar1.jpg} &
+\begin{tabular}{ccc}
+\includegraphics[width=0.14\textwidth]{bar/8560.jpg} &
+\includegraphics[width=0.14\textwidth]{bar/8561.jpg} &
 %\includegraphics[width=0.5\textwidth,height=1.4in,clip,trim=0 0.5in 0in 0.6in]{plots/chicago_noaa_vs_prediction_prev_3.png} 
-\includegraphics[width=0.22\textwidth]{bar2.jpg} \\
-(a) & (b)\\
+\includegraphics[width=0.14\textwidth]{bar/8881.jpg} \\
+\includegraphics[width=0.14\textwidth]{bar/8911.jpg} &
+\includegraphics[width=0.14\textwidth]{bar/9705.jpg} &
+%\includegraphics[width=0.5\textwidth,height=1.4in,clip,trim=0 0.5in 0in 0.6in]{plots/chicago_noaa_vs_prediction_prev_3.png} 
+\includegraphics[width=0.14\textwidth]{bar/10816.jpg} \\
+%(a) & (b)\\
 \\
 \end{tabular}
 \end{center}
 %}}
 \vspace{-24pt}
-\caption{Yellow bars show non-greenery at that time. Blue bars represent greenery. Prediction results on top shows 2 random places comparing to satellite ground truth. The ground truth on the bottom tends to disappear when leaves are turning yellow or green.}
+\caption{Yellow bars show non-greenery at that time. Blue bars represent greenery. Prediction results on top shows 6 random places comparing to satellite ground truth. The ground truth on the bottom tends to disappear when leaves are turning yellow or green.}
 \label{fig:placeinbar}
 \vspace{-12pt}
 \end{figure}
@@ -389,17 +350,26 @@ Sample maps are presented in figure ~\ref{fig:map}. (I should print an outline o
 \begin{figure}
 %{\small{
 \begin{center}
-\begin{tabular}{c c}
-\includegraphics[width=0.22\textwidth]{imggrid/13.png} &
+\begin{tabular}{cccc}
+\includegraphics[width=0.10\textwidth]{map/72.png} &
+\includegraphics[width=0.10\textwidth]{map/77.png} &
+\includegraphics[width=0.10\textwidth]{map/78.png} &
 %\includegraphics[width=0.5\textwidth,height=1.4in,clip,trim=0 0.5in 0in 0.6in]{plots/chicago_noaa_vs_prediction_prev_3.png} 
-\includegraphics[width=0.22\textwidth]{imggrid/22.png} \\
-(a) & (b)\\
+\includegraphics[width=0.10\textwidth]{map/79.png}  \\
+Mar, 6th&May, 25th&Jun, 10th&Jun, 26th\\
+\includegraphics[width=0.10\textwidth]{map/82.png} &
+\includegraphics[width=0.10\textwidth]{map/83.png} &
+\includegraphics[width=0.10\textwidth]{map/84.png} &
+%\includegraphics[width=0.5\textwidth,height=1.4in,clip,trim=0 0.5in 0in 0.6in]{plots/chicago_noaa_vs_prediction_prev_3.png} 
+\includegraphics[width=0.10\textwidth]{map/91.png}  \\
+Aug, 13th&Aug, 29th&Sep, 14th&Dec 19th\\
 \\
 \end{tabular}
 \end{center}
 %}}
 \vspace{-24pt}
-\caption{On two 16-days time period, end of August on the left and during Christmas on the right, we show the confusion matrix map here. Orange bins are true positive; yellow bins are false negative; blue bins are false positive; and black bins are true negative.}
+\caption{%On two 16-days time period, end of August on the left and during Christmas on the right, we show the confusion matrix map here. Orange bins are true positive; yellow bins are false negative; blue bins are false positive; and black bins are true negative.
+We use prediction results to recreate vegetation coverage maps for each 16-days period. There are 8 maps picked in 2010. The dates under each map are the starting date of each 16-days period.}
 \label{fig:map}
 \vspace{-12pt}
 \end{figure}
