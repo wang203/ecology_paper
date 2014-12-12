@@ -1,6 +1,256 @@
 \section{experiments and results}
 
 
+
+
+\subsection{Snow Case}
+
+\subsubsection{Single Image classification}
+
+We used a variety of  visual features  for classifying
+whether an image contains fallen snow. We used Support Vector
+Machines for classification, choosing kernels based on the feature
+type. 
+
+We tested these approaches to detecting snow on our dataset of
+10,000 hand-labeled images. We split this set into a training set of
+8,000 images and a test set of 2,000 images, sampled to have an
+ equal proportion of snow and non-snow images (so
+that the accuracy of a random baseline is 50\%).
+Table~\ref{tab:snow} presents the results. We observe that all of the
+features perform significantly better than a random baseline. 
+Gist, Color Histograms and Tiny Image all give very similar accuracies, within a half
+percentage point of 74\%. Spatial Moments and
+LBP  features perform
+slightly better at 76.2\% and 77.0\%. We also tested a combination of all 
+features by learning a second-level linear SVM on the output of the
+five SVMs; this combination performed significantly better than any single feature,
+at 80.5\%.
+
+
+Figure~\ref{fig:PR_ROC_snow} shows classification performance in
+terms of an ROC curve, as well as a
+precision-recall curve in which the task is to retrieval photos
+containing snow. The precision-recall curve shows that at about 20\%
+recall, precision is very near to 100\%, while even at 50\% recall,
+precision is close to 90\%.  This is a nice feature because in many
+applications, it may not be necessarily to correct classify all
+images, but instead to find some images that most likely contain a
+subject of interest.
+%
+To give a sense for the difficulty and failure modes of our dataset,
+we show a random sample of correct and incorrect classification results
+in Figure~\ref{fig:fp}.
+
+\begin{figure*}[th!]
+\begin{center}
+\vspace{-16pt}
+\begin{tabular}{cc}
+ \includegraphics[width=0.4\textwidth]{figs/ROC-curves.jpg} &
+\includegraphics[width=0.4\textwidth]{figs/PR-curves.jpg} \\
+\end{tabular}
+\end{center}
+\vspace{-8pt}
+\caption{
+Snow classification results for different features and combinations, in terms of {\textit{(left):}} ROC curves for the task of classifying snow vs. non-snow images; and 
+{\textit{(right):}} Precision-Recall curves for the task of retrieving snow images.
+}
+\label{fig:PR_ROC_snow}
+\end{figure*}
+
+\begin{table}[b]
+\begin{center}
+{\footnotesize{
+\begin{tabular}{|l|c|c|}
+\hline 
+Feature & Kernel  & Accuracy\tabularnewline
+\hline 
+\hline 
+Random Baseline  & --- & 50.0\%\tabularnewline
+\hline 
+\hline
+Gist & RBF & 73.7\%\tabularnewline
+\hline 
+Color  & $\chi^2$ & 74.1\%\tabularnewline
+\hline
+Tiny & RBF & 74.3\%\tabularnewline
+\hline 
+Spatial Color Moments & RBF & 76.2\%\tabularnewline
+\hline 
+Spatial pyramid LBP & RBF &\textbf{77.0\%}\tabularnewline
+\hline 
+\hline
+All features  & linear & \textbf{80.5\%}\tabularnewline
+\hline 
+\end{tabular}
+}}
+\caption{Performance of different features  for snow detection, all using SVMs for classification. }
+\label{tab:snow}
+\end{center}
+\end{table}
+
+
+
+The best performance we had using our traditional visual features using SVM is 80\% accuracy.  We also build CNN visual model for snow using Imagenet pre-trained model. We fine-tune our model using our training data. CNN  achieves 88\% accuracy which  outperforms all other features by 8\% . Therefore, we used CNN as our visual model for final predictions.  Similar to visual model we also build SVM using only tags as features and our text classifier achieves 87\%.
+
+
+
+
+We now turn to presenting experimental results for estimating the
+geo-temporal distributions of snow.
+
+\subsubsection{Snow prediction on cities}
+
+
+We first test how well the Flickr data can predict snowfall at a local
+level, and in particular for cities in which high-quality
+surface-based snowfall observations exist and for which photo density is high.
+
+We choose 4 U.S. metropolitan areas, New York City, Boston, Chicago and
+Philadelphia, and try to predict both daily snow presence as well as
+the quantity of snowfall.  For each city, we define a corresponding
+geospatial bounding box and select the NOAA ground observation stations in that area. 
+For example, 
+Figure~\ref{tab:city_statistics} shows the the stations 
+and the bounding box for 
+New York City. We calculate the ground truth daily snow quantity for a city as the average of
+the valid 
+snowfall values from its stations.
+
+We call any day with a non-zero snowfall or snowcover to be a snow day,
+and any other day to be a non-snow day.
+
+Figure~\ref{tab:city_statistics} also presents some basic statistics for
+these 4 cities.  All of our experiments involve 4 years (1461 days) of
+data from January 2007 through December 2010; we reserve the first two
+years for training and validation, and the second two years for
+testing.
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.35\textwidth]{plots/nyc_stations.png} 
+\end{center}
+\begin{center}
+{\small{
+\newcommand{\spc}{\hspace{2pt}}
+\begin{tabular} {|@{\spc}l@{\spc}|@{\spc}r@{\spc}|@{\spc}r@{\spc}|@{\spc}r@{\spc}|@{\spc}r@{\spc}|} 
+\hline 
+\textbf{} &{NYC}  &{Chicago} &{Boston}&{Philadelphia} \tabularnewline
+\hline 
+{Mean active Flickr users / day} &{65.6} &{94.9} &{59.7} &{43.7} \tabularnewline
+\hline 
+{Approx. city area ($km^2$)} &{3,712} &{11,584} &{11,456} &{9,472}  \tabularnewline
+\hline 
+{User density (avg users/unit area)} &{112.4} &{52.5} &{33.5} &{29.6} \tabularnewline
+\hline 
+{Mean daily snow (inches)} &{0.28} &{0.82} &{0.70} &{0.35} \tabularnewline
+\hline 
+{Snow days (snow>0 inches)} &{185} &{418} &{373} &{280} \tabularnewline
+\hline 
+{Number of obs. stations} &{14} &{20} &{41} &{26} \tabularnewline
+\hline 
+\end{tabular}}}
+\end{center}
+\vspace{-12pt}
+ \caption {\textit{Top:} New York City geospatial bounding box used to select Flickr photos, and locations of NOAA observation stations. \textit{Bottom:} Statistics about spatial area, photo density, and ground truth for each of the 4 cities.}
+\label{tab:city_statistics} 
+\end{figure}
+
+
+
+
+\xhdr{Daily snow classification for 4 cities.}
+Figure~\ref{fig:city_roc}(a) presents ROC curves for this
+daily snow versus non-snow classification task on New York City. The figure compares the likelihood
+ratio confidence score from equation~(\ref{eq:conf}) to the baseline
+approaches (voting and percentage), using the tag set
+${\cal S}$=\{snow, snowy, snowing, snowstorm\}.
+The area under the ROC curve (AUC) statistics are 0.929, 0.905, and 0.903 for confidence, percentage, and voting, respectively, 
+and the improvement of the confidence method is statistically significant 
+with $p=0.0713$ according to the statistical test of~\cite{auc}.
+The confidence method also outperforms other methods for the other three cities (not shown due to
+space constraints).  ROC curves for all 4 cities using the likelihood
+scores are shown in Figure~\ref{fig:city_roc}(b). Chicago has the best
+performance and Philadelphia has the worst; a possible explanation
+is that Chicago has the most active Flickr users per
+day (94.9) while Philadelphia has the least (43.7).
+
+These methods based on presence or absence of tags are simple and very
+fast, but they have a number of disadvantages, including that the tag
+set must be manually chosen and that negative correlations between
+tags and phenomena are not considered.
+We thus tried training a classifier to learn these relationships automatically.
+For each day in each city, we produce a single binary feature vector indicating whether 
+or not a given tag was used on that day. Also we tried to build classifiers trained based on our likelihood ratio computed based on tags or our visual model predictions. 
+
+
+
+
+
+
+
+
+\begin{figure*}
+%\begin{center}
+\hspace{-0.25in}
+\small{
+\begin{tabular}{@{}c@{}c@{}c@{}c@{}}
+\includegraphics[width=0.50\textwidth,clip,trim=0.4in 0 0.8in 0]{plots/nyc_snow_ROC.png} &
+\includegraphics[width=0.50\textwidth,clip,trim=0.4in 0 0.8in 0]{plots/city_cmp_snow_ROC.png} 
+(a) & (b)  
+\end{tabular}
+}
+%\end{center}
+\vspace{-6pt}
+\caption{ROC curves for binary snow predictions: (a) ROC curves for New York City, comparing likelihood
+ratio confidence score to voting and percentage approaches, (b) ROC curves for 4 cities using the likelihood
+scores}
+\label{fig:city_roc}
+\vspace{-6pt}
+\end{figure*}
+
+
+
+
+
+
+
+
+\begin{table*} 
+ \caption {\textbf{Results for Confidence score model using tags and visual classifiers for our 4 cities .}}
+\label{tab:city_conf_tag_vision} 
+\begin{center}
+{
+\begin{tabular} {|c|c|c|c|c|c|} 
+\hline 
+City &  baseline & tags  &  tag confidence  &  vision conf & tags conf and vision conf \tabularnewline
+\hline 
+
+{NYC} & 85\% & 85.75 \% &90.4241 \%&90.2873 \% &92.3393 \%\tabularnewline
+\hline 
+{Chicago)} &72.80\% & 93.5616 \% &94.1176 \% &93.1601 \% &95.0752 \%  \tabularnewline
+\hline 
+{Boston} & 75.60\%& 90.5479 \% &89.1781 \%&85.2055 \% & 91.2329 \% \tabularnewline
+\hline 
+{Philly} & 80.50\% & 85.34\% & 89.1929 \% &85.0889 \%	 & 89.1929 \%  \tabularnewline
+\hline 
+
+\end{tabular}}
+\end{center}
+\vspace{-12pt}
+\end{table*}
+
+
+\subsection{Vegetation case}
+
+
+
+
+
+
+
+
 \hfill \break
 \hfill \break
 \subsection*{latest writing}
