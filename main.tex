@@ -37,6 +37,8 @@
 \usepackage{color}
 %\usepackage{multirow} %mk
 \usepackage{verbatim}
+\usepackage[draft,inline,nomargin]{fixme}
+\usepackage{bbm}
 
 \usepackage{multirow}
 \begin{document}
@@ -52,6 +54,12 @@
 
 
 \newcommand{\leaveout}[1]{}
+
+
+\newcommand{\mustfix}[1]{\fixme{\hl{#1}}}
+\newcommand{\pleasenote}[1]{\fxnote{\hl{#1}}}
+\newcommand{\hlfixme}[1]{\fixme{\hl{#1}}}
+\newcommand{\hlfxnote}[1]{\fxnote{\hl{#1}}}
 
 \newenvironment{packed_itemize}{
 \begin{itemize}
