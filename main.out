@@ -1,12 +1,23 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
 \BOOKMARK [1][-]{section.2}{related work}{}% 2
 \BOOKMARK [1][-]{section.3}{method}{}% 3
-\BOOKMARK [2][-]{subsection.3.1}{Estimation techniques}{section.3}% 4
-\BOOKMARK [2][-]{subsection.3.2}{Learning features automatically}{section.3}% 5
-\BOOKMARK [1][-]{section.4}{experiments and results}{}% 6
-\BOOKMARK [2][-]{subsection.4.1}{Test on vegetation cover}{section.4}% 7
-\BOOKMARK [2][-]{subsection.4.2}{Snow detection}{section.4}% 8
-\BOOKMARK [2][-]{subsection.4.3}{Detecting California Poppies}{section.4}% 9
-\BOOKMARK [2][-]{subsection.4.4}{www \205 snow coverage}{section.4}% 10
-\BOOKMARK [2][-]{subsection.4.5}{Estimating vegetation cover \(may move forward\)}{section.4}% 11
-\BOOKMARK [1][-]{section.5}{discussion and conclusion}{}% 12
+\BOOKMARK [2][-]{subsection.3.1}{DataSet}{section.3}% 4
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Snow DataSet}{subsection.3.1}% 5
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Vegetation DataSet}{subsection.3.1}% 6
+\BOOKMARK [2][-]{subsection.3.2}{Extracting semantics using tags from individual images}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.3}{Extracting semantics using images from individual images}{section.3}% 8
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Snow Visual features}{subsection.3.3}% 9
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Vegetation visual features}{subsection.3.3}% 10
+\BOOKMARK [3][-]{subsubsection.3.3.3}{Deep learning}{subsection.3.3}% 11
+\BOOKMARK [2][-]{subsection.3.4}{Combining evidence together across users}{section.3}% 12
+\BOOKMARK [1][-]{section.4}{experiments and results}{}% 13
+\BOOKMARK [2][-]{subsection.4.1}{Snow Case}{section.4}% 14
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Single Image classification}{subsection.4.1}% 15
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Snow prediction on cities}{subsection.4.1}% 16
+\BOOKMARK [2][-]{subsection.4.2}{Vegetation case}{section.4}% 17
+\BOOKMARK [2][-]{subsection.4.3}{Test on vegetation cover}{section.4}% 18
+\BOOKMARK [2][-]{subsection.4.4}{Snow detection}{section.4}% 19
+\BOOKMARK [2][-]{subsection.4.5}{Detecting California Poppies}{section.4}% 20
+\BOOKMARK [2][-]{subsection.4.6}{www \205 snow coverage}{section.4}% 21
+\BOOKMARK [2][-]{subsection.4.7}{Estimating vegetation cover \(may move forward\)}{section.4}% 22
+\BOOKMARK [1][-]{section.5}{discussion and conclusion}{}% 23
