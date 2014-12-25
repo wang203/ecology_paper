@@ -171,6 +171,30 @@ Negative images like winter trees without leaves, or indoor images capturing a p
 \end{figure*}
 
 
+In continental-scale prediction, we only look at images on Flickr.com in year 2007 to 2010, with no tag limitation. We filter out the photos with inaccurate timestamps and geotags. We only use images with geotag precision no less than 13. ( what's that mean?) 
+
+I paste this from David's email. The only thing is we use geotag precision >= 13 rather than 11. 
+
+[For geotags, there is an
+accuracy number right after the GPS coordinate in the merge\_files; we
+should ignore any photos with a number less than about 11. That means
+that the precision is less than about a city-scale. For timestamps,
+one thing that happens a lot is that people upload photos to Flickr
+that do not have timestamps -- e.g. scanned images. By default, Flickr
+gives this photo a timestamp of the day and time that it was
+*uploaded*. The first date in the merge\_files is the taken time and
+the second is the upload time. So if these two are the same, it means
+the taken time is probably not right and we should ignore the photo.
+Now one complication is that the two timestamps are in different time
+zones -- taken time is in the user's timezone while upload time is in
+Flickr's time zone (pacific time I think). So a simple rule is to
+simply remove any photos whose minutes and seconds are exactly the
+same for both taken time and upload time. That will unnecessarily
+remove about 1/(60*60)=1/3600 photos, but is a good simple rule.]
+
+
+
+
 \subsection{Extracting semantics using tags from individual images}
 
 We consider two learning paradigms. The first
@@ -289,7 +313,10 @@ distinctive local visual appearance.
 
 \subsubsection{Vegetation visual features}
 
-Vegetation has the signature green color. The leaves of plants have distinctive visual texture. So we employ SIFT feature to analyze the local gradient distribution. And we also extract GIST feature to describe texture feature and global context. 
+Vegetation has the signature green color. 
+The leaves of plants have distinctive visual texture. 
+So we employ SIFT feature to analyze the local gradient distribution. 
+And we also extract GIST feature to describe texture feature and global context. 
 
 
 
@@ -304,15 +331,15 @@ From training data set, We build 2000 dimensional centers of color SIFT feature 
 
 Using SIFT histogram, a model is trained and tested with SVM using RBF kernel. 
 %Maybe the numbers should be in evaluation section        
-The performance is 78.10\%.
+%The performance is 78.10\%.
 
 \textbf{\textit{Color GIST.}}
 Similar to color SIFT feature, we also extract GIST feature from each of the RGB color plane.\\*\\*
-The performance is 82.58\%.
+%The performance is 82.58\%.
 
 \textbf{\textit{Combine visual features.}}
 The combined visual feature is built from concatenating the normalized GIST feature and SIFT histogram. A new model is learnt based on the combined feature.
-The performance is 85.9\%.
+%The performance is 85.9\%.
 
 \subsubsection{Deep learning}
 Recently the Conventional Neural Network (CNN) ~\cite{krizhevsky2012imagenet} has gained a lot of attention in the vision community, as it outperformed all other techniques in the ImageNet challenge (the most famous object category detection competition)~\cite{ilsvrcarxiv14}.
@@ -468,17 +495,20 @@ data entirely (having no Flickr photos in that bin on that day).
 
 
 
-\xhdr{Temporal smoothing.}  For many phenomena (including snow), the
-existence of an event on one day is strongly correlated with its
-existence on the next day. Thus one way of addressing the sparsity of
-Flickr photos in some locations is to propagate evidence forward and
-backward in time.  To do this, we apply a Gaussian filter on the Flickr
-confidence values for each bin in an attempt to achieve better
-recalls. We vary the degree of smoothing by using Gaussians with
-different variance values.  We tried smoothing with many
-different parameters, including smoothing both forward and backwards
-in time, or in only one direction.
+%\xhdr{Temporal smoothing.}  For many phenomena (including snow), the
+%existence of an event on one day is strongly correlated with its
+%existence on the next day. Thus one way of addressing the sparsity of
+%Flickr photos in some locations is to propagate evidence forward and
+%backward in time.  To do this, we apply a Gaussian filter on the Flickr
+%confidence values for each bin in an attempt to achieve better
+%recalls. We vary the degree of smoothing by using Gaussians with
+%different variance values.  We tried smoothing with many
+%different parameters, including smoothing both forward and backwards
+%in time, or in only one direction.
 
+% I really suggest we take this off. Not get any help from time and location data, and not do any 
+%post-process to is a selling point of our paper. And we are not doing this after WWW paper
+%any more.
 
 
 \xhdr{Voting.}  Voting is an interesting
