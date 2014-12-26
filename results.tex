@@ -285,7 +285,7 @@ We computed our confidence scores based on tags and image-classification, then w
 \subsubsection{Single image classification}
 
 
-Using the method we describe in~\ref{sec:methods}, we train and test the vision model on our hand-labeled data set. And we present the results on image classification level.
+Using the method we describe in~\ref{sec:method}, we train and test the vision model on our hand-labeled data set. And we present the results on image classification level.
 
 
 \begin{table} 
@@ -318,7 +318,7 @@ We consider north America area has more images uploaded to photo-sharing website
 %In our work, we define north America as latitude 10$^{\circ}$ to 70$^{\circ}$ and longitude -130$^{\circ}$ to -50$^{\circ}$.
 
 
-We combine all the evidence over space and time in North America from 2007 to 2010. We compute confidence score described in Section ~\ref{sec:method}. 
+We combine all the evidence over space and time in North America from 2007 to 2010. We compute confidence score described in Section~\ref{sec:method}. 
 %Confidence score is measuring the ratio of log likelihood of being a vegetation bin or not at each time period. All the prior statistics are learnt from satellite ground truth in 2007 and 2008.
 The prior probability of a place being covered by vegetation at some time is 75.2\%.
 %(I doubt this number. This is because the ground truth put too many bins in gray area while there are too many non-green bins on the north that we don't really care.) 
@@ -326,12 +326,12 @@ For an image taken from a place covered by green vegetation at that time, the pr
 
 Now we present the performance of vegetation detection in north America.
 
-\hfill \break
-\hfill \break
+%\hfill \break
+%\hfill \break
 
-\\*
-*** The performance using 2 threshold on confidence score with removing bad timestamps\\*
-\\*
+
+*** The performance using 2 threshold on confidence score with removing bad timestamps
+
 on + day and bin, the probability of an img is +, p(s|+) = 0.271778644215\\*
 on - day and bin, the probability of an img is +, p(s|-) = 0.0303125\\*
 \\*
