@@ -270,9 +270,27 @@ each bin with one of three ground truth labels:
 \end{packed_itemize}
 %
 
+Figure ~\ref{fig:snowcurve} shows the precision and recall curve of snow prediction in continental-scale.
+% bar plot of 2 places
+\begin{figure}
+%{\small{
+\begin{center}
+
+\includegraphics[width=0.5\textwidth]{snowcurve-s.pdf}
+
+%\includegraphics[width=0.5\textwidth,height=1.4in,clip,trim=0 0.5in 0in 0.6in]{plots/chicago_noaa_vs_prediction_prev_3.png} 
+
+\end{center}
+%}}
+\vspace{-24pt}
+\caption{Precision and recall curve of snow prediction in continental scale.}
+\label{fig:snowcurve}
+\vspace{-12pt}
+\end{figure}
 
 Here we limit our predictions for the bins which have photos, we do this by keeping the bins have ground truth and photos at the same time. 
-We computed our confidence scores based on tags and image-classification, then we trained simple decision tree to learn the correct thresholds to make final prediction. We achieve almost 0.5\% over the baseline (cutting the error rate by more than 20\%), the baseline in our case is the majority class which predicts now snow all the time.    
+We computed our confidence scores based on tags and image-classification, then we trained simple decision tree to learn the correct thresholds to make final prediction. We achieve almost 0.5\% over the baseline (cutting the error rate by more than 20\%), the baseline in our case is the majority class which predicts now snow all the time.  
+  
 
 %increases over the baseline (98.0\% - majority class which predicts now snow all the time).   
 
@@ -285,23 +303,28 @@ We computed our confidence scores based on tags and image-classification, then w
 \subsubsection{Single image classification}
 
 
-Using the method we describe in~\ref{sec:method}, we train and test the vision model on our hand-labeled data set.
+Using the method we describe in Section ~\ref{sec:method}, we train and test the vision model on our hand-labeled data set.
 There are 4000 images in training set and 2000 images in testing set. In both training and testing set, the number of positive and negative images are the same. Here we present the results on image classification level.
 
 
 \begin{table} 
- \caption {\textbf{Results for our  visual models for vegetation  .}}
+ \caption {\textbf{Results for our  visual models for vegetation.}}
 \label{tab:veg_img_classifier} 
 \begin{center}
 {
 \begin{tabular} {|c|c|} 
 \hline 
-Visual model &  Accuracy \tabularnewline
+Visual feature &  Accuracy \tabularnewline
 \hline 
+\hline
+Random Baseline & 50.00\%\tabularnewline
+\hline
+\hline
 Color SIFT & 78.10\%\tabularnewline
 \hline 
 Color GIST & 82.58\% \tabularnewline
 \hline 
+\hline
 SIFT and GIST& 85.9\% \tabularnewline
 \hline 
 CNN\% &  88.0\%\tabularnewline
@@ -325,77 +348,94 @@ The prior probability of a place being covered by vegetation at some time is 75.
 %(I doubt this number. This is because the ground truth put too many bins in gray area while there are too many non-green bins on the north that we don't really care.) 
 For an image taken from a place covered by green vegetation at that time, the probability of this image being a green image is 27.18\%. On the other hand, it's only 3.03\% probability to see a green image in a place not covered by enough green vegetation at that time.
 
-Now we present the performance of vegetation detection in north America.
+%Now we present the performance of vegetation detection in north America.
 
 %\hfill \break
 %\hfill \break
+While the satellite has ground truth for 87594 bins in North America, our method predicts 61602 bins (70.3\% in quantity). Moreover, about 20\% of satellite ground truth locate in north Canada. On the other hand, our data is from users in social media. So our prediction focus on more populated locations or places people like to visit such as natrual scenery.
 
+In North America, the overall accuracy of our method is 93.2\% comparing to the 86.6\% majority baseline. The precision of green bins is 98.8\% and the precision of non-green bins is 68.2\%. Recall of green bins is 93.3\% and recall of non-green bins is 92.5\%.
 
-*** The performance using 2 threshold on confidence score with removing bad timestamps
-
-on + day and bin, the probability of an img is +, p(s|+) = 0.271778644215\\*
-on - day and bin, the probability of an img is +, p(s|-) = 0.0303125\\*
-\\*
-num of bins gt shows nongreen = 32657\\*
-overlap of gt and predi both shows nongreen = 400\\*
-accuracy = 0.012248522522\\*
-num of bins predi shows green = 16545\\*
-overlap of gt and predi both shows green = 2580\\*
-accuracy = 0.155938349955\\*
-num of bins that both have data = 3369\\*
-overlap = 2980\\*
-accuracy = 0.884535470466\\*
-num of bins that predi have data = 25950\\*
-num of bins that gt have data = 43446\\*
-ratio = 0.597293191548\\*
-in bins both have data, num of predi as gr = 2616\\*
-overlap = 2580\\*
-precision of gr = 0.98623853211\\*
-in bins both have data, num of predi as nongr = 753\\*
-overlap = 400\\*
-precision of nongr = 0.531208499336\\*
-in bins both have data, num of gt as gr = 2933\\*
-overlap = 2580\\*
-recall of gr = 0.879645414252\\*
-in bins both have data, num of gt as nongr = 436\\*
-overlap = 400\\*
-recall of nongr = 0.917431192661\\*
-
-The random baseline from ground truth is\\*
-2933+436\\*
-3369\\*
-2933/3369\\*
-.87058474324725437815\\*
-\\*
-***confusion matrix maps and data
-
-\begin{table}[b]
+%snowcurve.pdf
+%curvevege.jpg
+% precision-recall of vege
+Figure ~\ref{fig:curvevege} shows the precision and recall curve of snow prediction in continental-scale.
+% bar plot of 2 places
+\begin{figure}
+%{\small{
 \begin{center}
-{\footnotesize{
-\begin{tabular}{|l|c|c|}
-\hline 
---- & \multicolumn{2}{c|}{Ground truth}\tabularnewline
-\hline
---- & Greenery & Non-Greenery\tabularnewline
-\hline 
-\hline 
-%Random Baseline  & --- & 50.0\%\tabularnewline
-%\hline 
-%\hline
-Greenery & 2580 & 36\tabularnewline
-\hline 
-Non-Greenery & 353 & 400\tabularnewline
-\hline
-\end{tabular}
-}}
-\caption{Confusion matrix of vegetation detection in 2007}
-\label{tab:confusionmatrix}
+
+\includegraphics[width=0.5\textwidth]{curvevege.jpg}
+
+%\includegraphics[width=0.5\textwidth,height=1.4in,clip,trim=0 0.5in 0in 0.6in]{plots/chicago_noaa_vs_prediction_prev_3.png} 
+
 \end{center}
-\end{table}
-(This table looks terrible. Hope there is a way to make it prettier.)
-(??? Result is presented in video. Is a map necessary here? or a better way?)
-\\*
-***explain errors
+%}}
+\vspace{-24pt}
+\caption{Precision and recall curve of vegetation prediction in continental scale.}
+\label{fig:curvevege}
+\vspace{-12pt}
+\end{figure}
+
+%
+%# of bins gt shows nongreen = 67571
+%overlap of gt and predi both shows nongreen = 1085
+%accuracy = 0.016057184295
+%# of bins predi shows green = 42317
+%overlap of gt and predi both shows green = 7061
+%accuracy = 0.166859654512
+%# of bins that both have data = 8741
+%overlap = 8146
+%accuracy = 0.931929985128
+%# of bins that predi have data = 61602
+%# of bins that gt have data = 87594
+%ratio = 0.703267347079
+%in bins both have data, # of predi as gr = 7149
+%overlap = 7061
+%precision of gr = 0.987690586096
+%in bins both have data, # of predi as nongr = 1592
+%overlap = 1085
+%precision of nongr = 0.681532663317
+%in bins both have data, # of gt as gr = 7568
+%overlap = 7061
+%recall of gr = 0.933007399577
+%in bins both have data, # of gt as nongr = 1173
+%overlap = 1085
+%recall of nongr = 0.924978687127
+%
+%
+%baseline = 0.865804827823
+
+
+%
+%***confusion matrix maps and data
+%
+%\begin{table}[b]
+%\begin{center}
+%{\footnotesize{
+%\begin{tabular}{|l|c|c|}
+%\hline 
+%--- & \multicolumn{2}{c|}{Ground truth}\tabularnewline
+%\hline
+%--- & Greenery & Non-Greenery\tabularnewline
+%\hline 
+%\hline 
+%%Random Baseline  & --- & 50.0\%\tabularnewline
+%%\hline 
+%%\hline
+%Greenery & 2580 & 36\tabularnewline
+%\hline 
+%Non-Greenery & 353 & 400\tabularnewline
+%\hline
+%\end{tabular}
+%}}
+%\caption{Confusion matrix of vegetation detection in 2007}
+%\label{tab:confusionmatrix}
+%\end{center}
+%\end{table}
+%(This table looks terrible. Hope there is a way to make it prettier.)
+%(??? Result is presented in video. Is a map necessary here? or a better way?)
+
 
 \begin{figure*}[th]
 {\small{
@@ -440,6 +480,9 @@ Non-Greenery & 353 & 400\tabularnewline
 \caption{In all false positive bins, there are ... images that are predicted as greenery. And these images are the reason these bins are predicted as green. Here are some random selected examples of the green images.}
 \label{fig:falseposi}
 \end{figure*}
+
+%****explain errors
+
 Generally, all the false negative error is due to the sparseness of data. While not enough images are collected at certain location during some time, there is either no green image found or green images are too few compare to the quantity of non-green images. On the other hand, false positive error is rare (less than 1\%) and complex. We found most images in the false positive bins are actually green vegetation images. ( here we need some more explanation) In figure ~\ref{fig:falseposi}, we show some examples of images in false positive bins.
 
 
