@@ -1,0 +1,308 @@
+\begin{thebibliography}{10}
+
+\bibitem{ghcn}
+http://www.ncdc.noaa.gov/oa/climate/ghcn-daily/.
+
+\bibitem{greatsunflower}
+The great sunflower project.
+\newblock http://www.greatsunflower.org.
+
+\bibitem{lostladybug}
+Lost ladybug project.
+\newblock http://www.lostladybug.org.
+
+\bibitem{Aggarwal:2013vh}
+C.~Aggarwal and T.~Abdelzaher.
+\newblock {Social Sensing}.
+\newblock In {\em Managing and Mining Sensor Data}. Springer, 2013.
+
+\bibitem{anagnostpopoulos08}
+A.~Anagnostopoulos, R.~Kumar, and M.~Mahdian.
+\newblock Influence and correlation in social networks.
+\newblock In {\em KDD}, 2008.
+
+\bibitem{balamurugan2007greenery}
+P.~Balamurugan and R.~Rajesh.
+\newblock Greenery image and non-greenery image classification using adaptive
+  neuro-fuzzy inference system.
+\newblock In {\em Conference on Computational Intelligence and Multimedia
+  Applications, 2007. International Conference on}, volume~3, pages 431--435.
+  IEEE, 2007.
+
+\bibitem{rain2009IJCV}
+P.~Barnum, S.~Narasimhan, and T.~Kanade.
+\newblock Analysis of rain and snow in frequency space.
+\newblock {\em IJCV}, 86(2-3), 2009.
+
+\bibitem{bollen11twitter}
+J.~Bollen, H.~Mao, and X.-J. Zeng.
+\newblock Twitter mood predicts the stock market.
+\newblock {\em Journal of Computational Science}, 2(1):1--8, 2011.
+
+\bibitem{boutell2005exploiting}
+M.~Boutell.
+\newblock {\em Exploiting context for semantic scene classification}.
+\newblock PhD thesis, University of Rochester Department of Computer Science,
+  2005.
+
+\bibitem{boutell2006semanticfeature}
+M.~Boutell, A.~Choudhury, J.~Luo, and C.~M. Brown.
+\newblock Using semantic features for scene classification: How good do they
+  need to be?
+\newblock In {\em ICME}, 2006.
+
+\bibitem{brockmann06}
+D.~Brockmann, L.~Hufnagel, and T.~Geisel.
+\newblock The scaling laws of human travel.
+\newblock {\em Nature}, 439:462--465, 2006.
+
+\bibitem{feedback08kdd}
+D.~Crandall, D.~Cosley, D.~Huttenlocher, J.~Kleinberg, and S.~Suri.
+\newblock Feedback effects between similarity and social influence in online
+  communities.
+\newblock In {\em KDD}, 2008.
+
+\bibitem{crandall2009mapping}
+D.~J. Crandall, L.~Backstrom, D.~Huttenlocher, and J.~Kleinberg.
+\newblock Mapping the world's photos.
+\newblock In {\em Proceedings of the 18th international conference on World
+  wide web}, pages 761--770. ACM, 2009.
+
+\bibitem{delongueville09}
+B.~De~Longueville, R.~S. Smith, and G.~Luraschi.
+\newblock "{OMG}, from here, i can see the flames!".
+\newblock In {\em Proc. Intl. Workshop on Location Based Social Networks},
+  pages 73--80, 2009.
+
+\bibitem{digrazia13}
+J.~DiGrazia, K.~McKelvey, J.~Bollen, and F.~Rojas.
+\newblock More tweets, more votes: Social media as a quantitative indicator of
+  political behavior.
+\newblock {\em PLOS One}, 2013.
+
+\bibitem{douze2009evaluation}
+M.~Douze, H.~Jegou, H.~Sandhawalia, L.~Amsaleg, and C.~Schmid.
+\newblock Evaluation of gist descriptors for web-scale image search.
+\newblock In {\em ICIVR}, 2009.
+
+\bibitem{Fan2008}
+R.-E. Fan, K.-W. Chang, C.-J. Hsieh, X.-R. Wang, and C.-J. Lin.
+\newblock Liblinear - a library for large linear classification, 2008.
+
+\bibitem{ebirds}
+D.~Fink, T.~Damoulas, and J.~Dave.
+\newblock Adaptive spatio-temporal exploratory models: Hemisphere-wide species
+  distributions from massively crowdsourced e{B}ird data.
+\newblock In {\em AAAI}, 2013.
+
+\bibitem{foschi1997detecting}
+P.~G. Foschi and D.~K. Smith.
+\newblock Detecting subpixel woody vegetation in digital imagery using two
+  artificial intelligence approaches.
+\newblock {\em Photogrammetric Engineering and Remote Sensing}, 63(5):493--499,
+  1997.
+
+\bibitem{ginsberg09flu}
+J.~Ginsberg, M.~Mohebbi, R.~Patel, L.~Brammer, M.~Smolinski, and L.~Brilliant.
+\newblock Detecting influenza epidemics using search engine query data.
+\newblock {\em Nature}, 457:1012--1014, 2009.
+
+\bibitem{Golder:2011cy}
+S.~A. Golder and M.~Macy.
+\newblock {Diurnal and Seasonal Mood Vary with Work, Sleep, and Daylength
+  Across Diverse Cultures}.
+\newblock {\em Science}, 333(6051):1878--1881, Sept. 2011.
+
+\bibitem{modissnow}
+D.~K. Hall, G.~A. Riggs, and V.~V. Salomonson.
+\newblock {MODIS/Terra Snow Cover Daily L3 Global 0.05Deg CMG V004}.
+\newblock Boulder, CO, USA: National Snow and Ice Data Center, 2011, updated
+  daily.
+
+\bibitem{hauff2012geo}
+C.~Hauff and G.-J. Houben.
+\newblock Geo-location estimation of flickr images: social web based
+  enrichment.
+\newblock In {\em Advances in Information Retrieval}, pages 85--96. Springer,
+  2012.
+
+\bibitem{hays}
+J.~Hays and A.~A. Efros.
+\newblock {IM2GPS}: Estimating geographic information from a single image.
+\newblock In {\em CVPR}, 2008.
+
+\bibitem{meteo}
+O.~Hyvarinen and E.~Saltikoff.
+\newblock Social media as a source of meteorological observations.
+\newblock {\em Monthly Weather Review}, 138(8):3175--3184, 2010.
+
+\bibitem{jin10prediction}
+X.~Jin, A.~Gallagher, L.~Cao, J.~Luo, and J.~Han.
+\newblock The wisdom of social multimedia: Using {F}lickr for prediction and
+  forecast.
+\newblock In {\em ACM Multimedia}, 2010.
+
+\bibitem{king09snowtweets}
+J.~King, A.~Cabrera, and R.~Kelly.
+\newblock {The Snowtweets Project}: Communicating snow depth measurements from
+  specialists and non-specialists via mobile communication technologies and
+  social networks.
+\newblock In {\em AGU Fall Meeting}, 2009.
+
+\bibitem{korayem2012solving}
+M.~Korayem, A.~Mohamed, D.~Crandall, and R.~Yampolskiy.
+\newblock Solving avatar captchas automatically.
+\newblock In {\em AMLTA}, 2012.
+
+\bibitem{Kremerskothen11}
+K.~Kremerskothen.
+
+\bibitem{krizhevsky2012imagenet}
+A.~Krizhevsky, I.~Sutskever, and G.~Hinton.
+\newblock Imagenet classification with deep convolutional neural networks.
+\newblock In {\em Advances in Neural Information Processing Systems}, pages
+  1097--1105, 2012.
+
+\bibitem{kumar2012leafsnap}
+N.~Kumar, P.~N. Belhumeur, A.~Biswas, D.~W. Jacobs, W.~J. Kress, I.~C. Lopez,
+  and J.~V. Soares.
+\newblock Leafsnap: A computer vision system for automatic plant species
+  identification.
+\newblock In {\em Computer Vision--ECCV 2012}, pages 502--516. Springer, 2012.
+
+\bibitem{modisveg}
+{Land Processes Distributed Active Archive Center}.
+\newblock {MODIS/Terra Vegetation Indices 16-Day L3 Global 0.05Deg CMG V005}.
+\newblock Sioux Falls, SD: U.S. Geological Survey., 2011.
+
+\bibitem{lazer09}
+D.~{Lazer et al}.
+\newblock Life in the network: the coming age of computational social science.
+\newblock {\em Science}, 323(5915):721--723, 2009.
+
+\bibitem{Leung:2010wa}
+D.~Leung and S.~Newsam.
+\newblock {Proximate Sensing: Inferring What-Is-Where From Georeferenced Photo
+  Collections}.
+\newblock In {\em CVPR}, 2010.
+
+\bibitem{li2007event}
+L.-J. Li and L.~Fei-Fei.
+\newblock What, where and who? classifying events by scene and object
+  recognition.
+\newblock In {\em ICCV}, 2007.
+
+\bibitem{li2009totalscene}
+L.-J. Li, R.~Socher, and L.~Fei-Fei.
+\newblock Towards total scene understanding: classification, annotation and
+  segmentation in an automatic framework.
+\newblock In {\em CVPR}, 2009.
+
+\bibitem{libennowell08}
+D.~Liben-Nowell and J.~Kleinberg.
+\newblock Tracing information flow on a global scale using internet
+  chain-letter data.
+\newblock {\em PNAS}.
+
+\bibitem{luo2003spatialcontext}
+J.~Luo, A.~Singhal, and W.~Zhu.
+\newblock Natural object detection in outdoor scenes based on probabilistic
+  spatial context models.
+\newblock In {\em ICME}, 2003.
+
+\bibitem{murdock}
+C.~Murdock, N.~Jacobs, and R.~Pless.
+\newblock {Webcam2Satellite}: Estimating cloud maps from webcam imagery.
+\newblock In {\em WACV}, 2013.
+
+\bibitem{oconnor10mood}
+B.~O'Connor, R.~Balasubramanyan, B.~Routedge, and N.~Smith.
+\newblock From tweets to polls: Linking text sentiment to public opinion time
+  series.
+\newblock In {\em ICWSM}, 2010.
+
+\bibitem{oliva2001modeling}
+A.~Oliva and A.~Torralba.
+\newblock Modeling the shape of the scene: A holistic representation of the
+  spatial envelope.
+\newblock {\em IJCV}, 42(3):145--175, 2001.
+
+\bibitem{Oquab14}
+M.~Oquab, L.~Bottou, I.~Laptev, and J.~Sivic.
+\newblock Learning and transferring mid-level image representations using
+  convolutional neural networks.
+\newblock In {\em CVPR}, 2014.
+
+\bibitem{ipcc2007climate}
+M.~L. Parry, O.~F. Canziani, J.~P. Palutikof, P.~J. van~der Linden, and C.~E.
+  Hanson.
+\newblock {\em IPCC, 2007: Climate Change 2007: Impacts, Adaptation, and
+  Vulnerability}.
+\newblock Cambridge University Press, 2007.
+
+\bibitem{ilsvrcarxiv14}
+O.~Russakovsky, J.~Deng, H.~Su, J.~Krause, S.~Satheesh, S.~Ma, Z.~Huang,
+  A.~Karpathy, A.~Khosla, M.~Bernstein, A.~C. Berg, and L.~Fei-Fei.
+\newblock {ImageNet Large Scale Visual Recognition Challenge}, 2014.
+
+\bibitem{Sadilek:2012wp}
+A.~Sadilek, H.~Kautz, and V.~Silenzio.
+\newblock {Predicting Disease Transmission from Geo-Tagged Micro-Blog Data}.
+\newblock In {\em AAAI}, 2012.
+
+\bibitem{Sakaki:2010uv}
+T.~Sakaki, M.~Okazaki, and Y.~Matsuo.
+\newblock {Earthquake shakes Twitter users: real-time event detection by social
+  sensors}.
+\newblock In {\em WWW}, 2010.
+
+\bibitem{siagian2008comparison}
+C.~Siagian and L.~Itti.
+\newblock Comparison of gist models in rapid scene categorization tasks.
+\newblock {\em Journal of Vision}, 8(6):734--734, 2008.
+
+\bibitem{singh2010geo}
+V.~Singh, S.~Venkatesha, and A.~K. Singh.
+\newblock Geo-clustering of images with missing geotags.
+\newblock In {\em Granular Computing (GrC), 2010 IEEE International Conference
+  on}, pages 420--425. IEEE, 2010.
+
+\bibitem{singh10socialpixels}
+V.~K. Singh, M.~Gao, and R.~Jain.
+\newblock Social pixels: genesis and evaluation.
+\newblock In {\em ACM Multimedia}, 2010.
+
+\bibitem{singhal2003spatialcontext}
+A.~Singhal, J.~Luo, and W.~Zhu.
+\newblock Probabilistic spatial context models for scene content understanding.
+\newblock In {\em CVPR}, 2003.
+
+\bibitem{thomee_time2014}
+B.~Thomee, J.~G. Moreno, and D.~A. Shamma.
+\newblock Who's time is it anyway?: Investigating the accuracy of camera
+  timestamps.
+\newblock In {\em Proceedings of the 22nd ACM International Conference on
+  Multimedia}, 2014.
+
+\bibitem{torralba2008tiny}
+A.~Torralba, R.~Fergus, and W.~T. Freeman.
+\newblock 80 million tiny images: A large data set for nonparametric object and
+  scene recognition.
+\newblock {\em PAMI}, 30(11):1958--1970, 2008.
+
+\bibitem{auc}
+I.~Vergara, T.~Norambuena, E.~Ferrada, A.~Slater, and F.~Melo.
+\newblock {StAR}: a simple tool for the statistical comparison of {ROC} curves.
+\newblock {\em BMC Bioinformatics}, 9(1):265, 2008.
+
+\bibitem{XiaoHEOT10}
+J.~Xiao, J.~Hays, K.~A. Ehinger, A.~Oliva, and A.~Torralba.
+\newblock {SUN} database: Large-scale scene recognition from abbey to zoo.
+\newblock In {\em CVPR}, 2010.
+
+\bibitem{ecology2012www}
+H.~Zhang, M.~Korayem, D.~Crandall, and G.~LeBuhn.
+\newblock {Mining Photo-sharing Websites to Study Ecological Phenomena}.
+\newblock In {\em WWW}, 2012.
+
+\end{thebibliography}

@@ -197,20 +197,26 @@ can handle incomplete and incorrect observations.
 
 \xhdr{added - Vegetation classification.}
 %http://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=5&ved=0CEkQFjAE&url=http%3A%2F%2Fhomes.cs.washington.edu%2F~neeraj%2Fpapers%2Fnk_eccv2012_leafsnap.pdf&ei=W9n8U5z7JoOTyATZloLICA&usg=AFQjCNHzDMozsenIFTdGySrMk0Vw8nhLhA&sig2=CPxNj5C0S-b3YDpR7-jPHg&bvm=bv.73612305,d.aWw
-~\cite{Leafsnap: A Computer Vision System for Automatic Plant Species Identification} identifies plant species by leaf images. They focus on accurate leaf segmentation according to color difference of leaf and background, curvature distribution over scale, and nearest neighbor matching.
 
-~\cite{Comparisons of Gist Models in Rapid Scene categorization tasks}
-introduces multiple Gist models in scene classification. There happen to be a test set of vegetation shows gist feature works great on vegetation classification.
+%~\cite{Leafsnap: A Computer Vision System for Automatic Plant Species Identification} 
 
-~\cite{Detecting subpixel woody vegetation in digital imagery using two artificial intelligence approaches}
-This one may be a little too old
+~\cite{kumar2012leafsnap}identifies plant species by leaf images. They focus on accurate leaf segmentation according to color difference of leaf and background, curvature distribution over scale, and nearest neighbor matching.
+
+%~\cite{Comparisons of Gist Models in Rapid Scene categorization tasks}
+
+~\cite{siagian2008comparison}introduces multiple Gist models in scene classification. There happen to be a test set of vegetation shows gist feature works great on vegetation classification.
+
+%~\cite{Detecting subpixel woody vegetation in digital imagery using two artificial intelligence approaches}
+
+~\cite{foschi1997detecting}This one may be a little too old
 It's using man-made mask and neural networks.
 (could be compared with deep learning)
 
 a lot of works use remote sensing 
 
 %http://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=3&ved=0CDMQFjAC&url=http%3A%2F%2Fwww.researchgate.net%2Fpublication%2F4309074_Greenery_Image_and_Non-greenery_Image_Classification_Using_Adaptive_Neuro-Fuzzy_Inference_System%2Flinks%2F09e4150ddce7a3514d000000&ei=Edr8U6yzJMOAygSg4YGAAw&usg=AFQjCNGXbvsw1sd1aZA1vAnk_f-4n5bwGA&sig2=62HbvxAtNQXCkCH_raYdig&bvm=bv.73612305,d.aWw
-This paper ~\cite{greenery and non-greenery image classification using adaptive neuro-guzzy inference system}
+This paper ~\cite{balamurugan2007greenery}
+%~\cite{greenery and non-greenery image classification using adaptive neuro-guzzy inference system}
 is the closest one to our purpose.
 They consider
 color, texture features in images and get good result. But they only test on a very limited dataset where the positive images are either with one tree in the center or full of trees or meadow. This is so not enough when we are working with  complex and very large number of public shared images.

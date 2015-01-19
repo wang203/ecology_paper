@@ -1,0 +1,66 @@
+This is BibTeX, Version 0.99d (TeX Live 2012)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
+The style file: abbrv.bst
+Database file #1: eco.bib
+You're missing a field name---line 31 of file eco.bib
+ : 
+ : %title = {6,000,000,000.},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 40 of file eco.bib
+ : 
+ : %author = {N. Rodic Marsan},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 161 of file eco.bib
+ : 
+ : %volume = 105,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--to sort, need author or key in greatsunflower
+Warning--to sort, need author or key in lostladybug
+Warning--to sort, need author or key in ghcn
+Warning--empty year in libennowell08
+You've used 55 entries,
+            2118 wiz_defined-function locations,
+            763 strings with 12332 characters,
+and the built_in function-call counts, 18336 in all, are:
+= -- 1667
+> -- 1020
+< -- 8
++ -- 404
+- -- 346
+* -- 1208
+:= -- 3015
+add.period$ -- 163
+call.type$ -- 55
+change.case$ -- 334
+chr.to.int$ -- 0
+cite$ -- 59
+duplicate$ -- 726
+empty$ -- 1519
+format.name$ -- 346
+if$ -- 3875
+int.to.chr$ -- 0
+int.to.str$ -- 55
+missing$ -- 47
+newline$ -- 270
+num.names$ -- 104
+pop$ -- 473
+preamble$ -- 1
+purify$ -- 283
+quote$ -- 0
+skip$ -- 482
+stack$ -- 0
+substring$ -- 745
+swap$ -- 145
+text.length$ -- 8
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 218
+warning$ -- 4
+while$ -- 141
+width$ -- 57
+write$ -- 558
+(There were 3 error messages)
