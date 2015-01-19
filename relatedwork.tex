@@ -2,7 +2,7 @@
 
 A variety of recent work has studied how to apply computational
 techniques to analyze online social datasets in order to aid research
-in other disciplines~\cite{lazer09}. Much of this work has studied
+in many disciplines~\cite{lazer09}. Much of this work has studied
 questions in sociology and human interaction, such as how friendships
 form~\cite{feedback08kdd}, how information flows through social
 networks~\cite{libennowell08}, how people move through
@@ -35,12 +35,10 @@ distribution of a phenomenon (e.g. snow) across an entire continent
 each day for several years.
 
 
-\xhdr{Crowd-sourcing from social media} Several recent studies have
-shown the power of social media  for observing
-the world itself, as a special case of
-`social sensing'~\cite{Aggarwal:2013vh}.
-This
-work includes using Twitter data to measure collective emotional
+\xhdr{Crowd-sourcing from social media.} 
+Several recent studies have shown the power of social media  for observing
+the world itself, as a special case of `social sensing'~\cite{Aggarwal:2013vh}.
+This work includes using Twitter data to measure collective emotional
 state~\cite{Golder:2011cy} (which, in turn, has found to
 be predictive of stock  moves~\cite{bollen11twitter}),
 predicting product adoption rates and political election
@@ -50,11 +48,11 @@ earthquakes and other natural disasters~\cite{Sakaki:2010uv}.
 %tags, query search terms, and English words in large
 %datasets~\cite{singh10socialpixels,
 %vlachos2004identifying,chien2005semantic,Backstrom:2008tv,Vadrevu2008,ginsberg09flu,Sadilek:2012wp,Cook:2012wj,Michel:2011gm,radinsky2011word,Radinsky:2012ta};
+
 Particularly striking examples include Ginsberg
 \textit{et al}~\cite{ginsberg09flu}, who show that 
 geo-temporal properties of web search queries can
-predict the spread of flu, and 
-Sadilek \textit{et al}~\cite{Sadilek:2012wp} who show that
+predict the spread of flu, and Sadilek \textit{et al}~\cite{Sadilek:2012wp} who show that
 Twitter feeds can predict when a given person will
 fall ill.
 
@@ -67,8 +65,7 @@ who show that by monitoring the geospatial distribution of search
 engine queries related to flu symptoms, the spread of the H1N1
 flu can be estimated several days before the official statistics produced by traditional
 means.
-DeLongueville \textit{et
-  al}~\cite{delongueville09} study tweets related to a major fire in
+DeLongueville \textit{etal}~\cite{delongueville09} study tweets related to a major fire in
 France, but their analysis is at a very small scale (a few dozen
 tweets) and their focus is more on human reactions to the fire as
 opposed to using these tweets to estimate the fire's position and
@@ -85,14 +82,18 @@ any ground truth.
 Over all the images on Flickr.com, XX\% (only a small subset) of them come with geo and temporal data.
 ?Among these data, XX\% of them are accurate enough.
 ?Flickr provides the geo-location accuracy according to the camera device, and GPS precision.
+
 Meanwhile, a lot of works are trying to correct estimate or correct geo-location of Flickr images.
-~\cite{Geo-Clustering of Images With Missing GeoTags} estimates where images are taken for those missing geo-tags. They are optimizing a graph clustering problem. Attributes in their graph include textual tags, timestamps and vision content. It's inspired by an earlier work
-~\cite{Mapping the world’s photos}.
-~\cite{Geo-Location Estimation of Flickr Images: Social
-Web Based Enrichment} consider textual meta-data to correct geo tags. 
+%~\cite{Geo-Clustering of Images With Missing GeoTags} 
+~\cite{singh2010geo}estimates where images are taken for those missing geo-tags. They are optimizing a graph clustering problem. Attributes in their graph include textual tags, timestamps and vision content. It's inspired by an earlier work ~\cite{crandall2009mapping}.
+%~\cite{Geo-Location Estimation of Flickr Images: SocialWeb Based Enrichment} 
+
+~\cite{hauff2012geo} consider textual meta-data to correct geo tags. 
 They also found for users active on both Flickr and Twitter, the Twitter post at around the same time the images are taken can be a reliable reference to estimate the approximate location.
 
-Timestamp is harder to be accurate due to the same reason of geo-tags and the time-zone problem. In paper ~\cite{Who's Time is it anyway?}, there is a detail analysis in disagreement of camera time and GPS time. They also estimate a more accurate timestamp when users taking multiple images in a short timespan.
+Timestamp is harder to be accurate due to the same reason of geo-tags and the time-zone problem. 
+%In paper %~\cite{Who's Time is it anyway?}, 
+Thomee et.al.~\cite{thomee_time2014}  show  a detailed analysis in disagreement of camera time and GPS time. They also estimate a more accurate timestamp when users taking multiple images in a short timespan.
 
 
 
@@ -196,8 +197,7 @@ can handle incomplete and incorrect observations.
 
 \xhdr{added - Vegetation classification.}
 %http://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=5&ved=0CEkQFjAE&url=http%3A%2F%2Fhomes.cs.washington.edu%2F~neeraj%2Fpapers%2Fnk_eccv2012_leafsnap.pdf&ei=W9n8U5z7JoOTyATZloLICA&usg=AFQjCNHzDMozsenIFTdGySrMk0Vw8nhLhA&sig2=CPxNj5C0S-b3YDpR7-jPHg&bvm=bv.73612305,d.aWw
-~\cite{Leafsnap: A Computer Vision System for
-Automatic Plant Species Identification} identifies plant species by leaf images. They focus on accurate leaf segmentation according to color difference of leaf and background, curvature distribution over scale, and nearest neighbor matching.
+~\cite{Leafsnap: A Computer Vision System for Automatic Plant Species Identification} identifies plant species by leaf images. They focus on accurate leaf segmentation according to color difference of leaf and background, curvature distribution over scale, and nearest neighbor matching.
 
 ~\cite{Comparisons of Gist Models in Rapid Scene categorization tasks}
 introduces multiple Gist models in scene classification. There happen to be a test set of vegetation shows gist feature works great on vegetation classification.
