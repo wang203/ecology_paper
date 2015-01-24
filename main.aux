@@ -1,19 +1,16 @@
 \relax 
-\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
-\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
-\global\let\oldcontentsline\contentsline
-\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
-\global\let\oldnewlabel\newlabel
-\gdef\newlabel#1#2{\newlabelxx{#1}#2}
-\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
-\AtEndDocument{\ifx\hyper@anchor\@undefined
-\let\contentsline\oldcontentsline
-\let\newlabel\oldnewlabel
-\fi}
-\fi}
-\global\let\hyper@last\relax 
-\gdef\HyperFirstAtBeginDocument#1{#1}
-\providecommand\HyField@AuxAddToFields[1]{}
+\ifx\hyper@anchor\@undefined
+\global \let \oldcontentsline\contentsline
+\gdef \contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global \let \oldnewlabel\newlabel
+\gdef \newlabel#1#2{\newlabelxx{#1}#2}
+\gdef \newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\let \contentsline\oldcontentsline
+\let \newlabel\oldnewlabel}
+\else
+\global \let \hyper@last\relax 
+\fi
+
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{\thepage }{section.1}}
 \citation{greatsunflower}
 \citation{ebirds}
@@ -115,7 +112,7 @@
 \newlabel{fig:dataset}{{3}{\thepage }{Random images from our hand-labeled dataset. Public sharing images are various in quality, contents, illumination and view angle. Negative images like winter trees without leaves, or indoor images capturing a photo of forest are more confusing}{figure.3}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.3}Deep learning}{\thepage }{subsubsection.3.3.3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Combining evidence together across users}{\thepage }{subsection.3.4}}
-\newlabel{eq:conf}{{1}{\thepage }{Combining evidence together across users\relax }{equation.3.1}{}}
+\newlabel{eq:conf}{{1}{\thepage }{Combining evidence together across users\relax }{equation.1}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Precision vs number of votes for snow predictions using the voting method.}}{\thepage }{figure.4}}
 \newlabel{fig:precvotes}{{4}{\thepage }{Precision vs number of votes for snow predictions using the voting method}{figure.4}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}experiments and results}{\thepage }{section.4}}
@@ -123,38 +120,40 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1}Single Image classification}{\thepage }{subsubsection.4.1.1}}
 \citation{auc}
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Performance of different features for snow detection, all using SVMs for classification. }}{\thepage }{table.1}}
-\newlabel{tab:snow}{{1}{\thepage }{Performance of different features for snow detection, all using SVMs for classification}{table.1}{}}
+\newlabel{tab:snow}{{1}{\thepage }{Performance of different features for snow detection, all using SVMs for classification. \relax }{table.1}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2}Snow prediction on cities}{\thepage }{subsubsection.4.1.2}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \textit  {Top:} New York City geospatial bounding box used to select Flickr photos, and locations of NOAA observation stations. \textit  {Bottom:} Statistics about spatial area, photo density, and ground truth for each of the 4 cities.}}{\thepage }{figure.6}}
 \newlabel{tab:city_statistics}{{6}{\thepage }{\textit {Top:} New York City geospatial bounding box used to select Flickr photos, and locations of NOAA observation stations. \textit {Bottom:} Statistics about spatial area, photo density, and ground truth for each of the 4 cities}{figure.6}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.3}{Continental-scale snow prediction}}{\thepage }{subsubsection.4.1.3}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces  Snow classification results for different features and combinations, in terms of {\textit  {(left):}} ROC curves for the task of classifying snow vs. non-snow images; and {\textit  {(right):}} Precision-Recall curves for the task of retrieving snow images. }}{\thepage }{figure.5}}
-\newlabel{fig:PR_ROC_snow}{{5}{\thepage }{Snow classification results for different features and combinations, in terms of {\textit {(left):}} ROC curves for the task of classifying snow vs. non-snow images; and {\textit {(right):}} Precision-Recall curves for the task of retrieving snow images}{figure.5}{}}
+\newlabel{fig:PR_ROC_snow}{{5}{\thepage }{ Snow classification results for different features and combinations, in terms of {\textit {(left):}} ROC curves for the task of classifying snow vs. non-snow images; and {\textit {(right):}} Precision-Recall curves for the task of retrieving snow images. \relax }{figure.5}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces ROC curves for binary snow predictions: (a) ROC curves for New York City, comparing likelihood ratio confidence score to voting and percentage approaches, (b) ROC curves for 4 cities using the likelihood scores}}{\thepage }{figure.7}}
 \newlabel{fig:city_roc}{{7}{\thepage }{ROC curves for binary snow predictions: (a) ROC curves for New York City, comparing likelihood ratio confidence score to voting and percentage approaches, (b) ROC curves for 4 cities using the likelihood scores\relax }{figure.7}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Vegetation case}{\thepage }{subsection.4.2}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Single image classification}{\thepage }{subsubsection.4.2.1}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}Vegetation coverage over time and space}{\thepage }{subsubsection.4.2.2}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces \textbf  {Results for Confidence score model using tags and visual classifiers for our 4 cities .}}}{\thepage }{table.2}}
-\newlabel{tab:city_conf_tag_vision}{{2}{\thepage }{\textbf {Results for Confidence score model using tags and visual classifiers for our 4 cities .}\relax }{table.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Precision and recall curve of snow prediction in continental scale.}}{\thepage }{figure.8}}
 \newlabel{fig:snowcurve}{{8}{\thepage }{Precision and recall curve of snow prediction in continental scale}{figure.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Vegetation case}{\thepage }{subsection.4.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Single image classification}{\thepage }{subsubsection.4.2.1}}
+\citation{Fan2008}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces \textbf  {Results for Confidence score model using tags and visual classifiers for our 4 cities .}}}{\thepage }{table.2}}
+\newlabel{tab:city_conf_tag_vision}{{2}{\thepage }{\textbf {Results for Confidence score model using tags and visual classifiers for our 4 cities .}\relax }{table.2}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces \textbf  {Results for our visual models for vegetation.}}}{\thepage }{table.3}}
 \newlabel{tab:veg_img_classifier}{{3}{\thepage }{\textbf {Results for our visual models for vegetation.}\relax }{table.3}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Precision and recall curve of vegetation prediction in continental scale.}}{\thepage }{figure.9}}
 \newlabel{fig:curvevege}{{9}{\thepage }{Precision and recall curve of vegetation prediction in continental scale}{figure.9}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}Vegetation coverage over time and space}{\thepage }{subsubsection.4.2.2}}
 \@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Yellow bars show non-greenery at that time. Blue bars represent greenery. Prediction results on top shows 6 random places comparing to satellite ground truth. The ground truth on the bottom tends to disappear when leaves are turning yellow or green.}}{\thepage }{figure.11}}
 \newlabel{fig:placeinbar}{{11}{\thepage }{Yellow bars show non-greenery at that time. Blue bars represent greenery. Prediction results on top shows 6 random places comparing to satellite ground truth. The ground truth on the bottom tends to disappear when leaves are turning yellow or green}{figure.11}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3}Performance at single place over time}{\thepage }{subsubsection.4.2.3}}
-\citation{Fan2008}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces In all false positive bins, there are ... images that are predicted as greenery. And these images are the reason these bins are predicted as green. Here are some random selected examples of the green images.}}{\thepage }{figure.10}}
-\newlabel{fig:falseposi}{{10}{\thepage }{In all false positive bins, there are ... images that are predicted as greenery. And these images are the reason these bins are predicted as green. Here are some random selected examples of the green images}{figure.10}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces We use prediction results to recreate vegetation coverage maps for each 16-days period. There are 8 maps picked in 2010. The dates under each map are the starting date of each 16-days period.}}{\thepage }{figure.12}}
 \newlabel{fig:map}{{12}{\thepage }{We use prediction results to recreate vegetation coverage maps for each 16-days period. There are 8 maps picked in 2010. The dates under each map are the starting date of each 16-days period}{figure.12}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3}Performance at single place over time}{\thepage }{subsubsection.4.2.3}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.4}Single time over place}{\thepage }{subsubsection.4.2.4}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.5}not using tag in vegetation case}{\thepage }{subsubsection.4.2.5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces In all false positive bins, there are ... images that are predicted as greenery. And these images are the reason these bins are predicted as green. Here are some random selected examples of the green images.}}{\thepage }{figure.10}}
+\newlabel{fig:falseposi}{{10}{\thepage }{In all false positive bins, there are ... images that are predicted as greenery. And these images are the reason these bins are predicted as green. Here are some random selected examples of the green images}{figure.10}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Greenery precision-recall curve using two different ground truth thresholds.}}{\thepage }{figure.13}}
 \newlabel{fig:greenery}{{13}{\thepage }{Greenery precision-recall curve using two different ground truth thresholds}{figure.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces ROC curve for classifying greenery of bins, using tag features and LibLinear classifier.}}{\thepage }{figure.14}}
+\newlabel{fig:liblinear_greenery}{{14}{\thepage }{ROC curve for classifying greenery of bins, using tag features and LibLinear classifier}{figure.14}{}}
 \bibstyle{abbrv}
 \bibdata{eco}
 \bibcite{ghcn}{1}
@@ -162,50 +161,55 @@
 \bibcite{lostladybug}{3}
 \bibcite{Aggarwal:2013vh}{4}
 \bibcite{anagnostpopoulos08}{5}
-\bibcite{rain2009IJCV}{6}
-\bibcite{bollen11twitter}{7}
-\bibcite{boutell2005exploiting}{8}
-\bibcite{boutell2006semanticfeature}{9}
-\bibcite{brockmann06}{10}
-\bibcite{feedback08kdd}{11}
-\bibcite{crandall2009mapping}{12}
-\bibcite{delongueville09}{13}
-\bibcite{digrazia13}{14}
-\bibcite{douze2009evaluation}{15}
-\bibcite{Fan2008}{16}
-\bibcite{ebirds}{17}
-\bibcite{ginsberg09flu}{18}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces ROC curve for classifying greenery of bins, using tag features and LibLinear classifier.}}{\thepage }{figure.14}}
-\newlabel{fig:liblinear_greenery}{{14}{\thepage }{ROC curve for classifying greenery of bins, using tag features and LibLinear classifier}{figure.14}{}}
+\bibcite{balamurugan2007greenery}{6}
+\bibcite{rain2009IJCV}{7}
+\bibcite{bollen11twitter}{8}
+\bibcite{boutell2005exploiting}{9}
+\bibcite{boutell2006semanticfeature}{10}
+\bibcite{brockmann06}{11}
+\bibcite{feedback08kdd}{12}
+\bibcite{crandall2009mapping}{13}
+\bibcite{delongueville09}{14}
+\bibcite{digrazia13}{15}
+\bibcite{douze2009evaluation}{16}
+\bibcite{Fan2008}{17}
+\bibcite{ebirds}{18}
+\bibcite{foschi1997detecting}{19}
+\bibcite{ginsberg09flu}{20}
+\bibcite{Golder:2011cy}{21}
 \@writefile{toc}{\contentsline {section}{\numberline {5}discussion and conclusion}{\thepage }{section.5}}
 \@writefile{toc}{\contentsline {section}{\numberline {6}References}{\thepage }{section.6}}
-\bibcite{Golder:2011cy}{19}
-\bibcite{modissnow}{20}
-\bibcite{hauff2012geo}{21}
-\bibcite{hays}{22}
-\bibcite{meteo}{23}
-\bibcite{jin10prediction}{24}
-\bibcite{king09snowtweets}{25}
-\bibcite{korayem2012solving}{26}
-\bibcite{Kremerskothen11}{27}
-\bibcite{modisveg}{28}
-\bibcite{lazer09}{29}
-\bibcite{Leung:2010wa}{30}
-\bibcite{li2007event}{31}
-\bibcite{li2009totalscene}{32}
-\bibcite{libennowell08}{33}
-\bibcite{luo2003spatialcontext}{34}
-\bibcite{murdock}{35}
-\bibcite{oconnor10mood}{36}
-\bibcite{oliva2001modeling}{37}
-\bibcite{ipcc2007climate}{38}
-\bibcite{Sadilek:2012wp}{39}
-\bibcite{Sakaki:2010uv}{40}
-\bibcite{singh2010geo}{41}
-\bibcite{singh10socialpixels}{42}
-\bibcite{singhal2003spatialcontext}{43}
-\bibcite{thomee_time2014}{44}
-\bibcite{torralba2008tiny}{45}
-\bibcite{auc}{46}
-\bibcite{XiaoHEOT10}{47}
-\bibcite{ecology2012www}{48}
+\bibcite{modissnow}{22}
+\bibcite{hauff2012geo}{23}
+\bibcite{hays}{24}
+\bibcite{meteo}{25}
+\bibcite{jin10prediction}{26}
+\bibcite{king09snowtweets}{27}
+\bibcite{korayem2012solving}{28}
+\bibcite{Kremerskothen11}{29}
+\bibcite{krizhevsky2012imagenet}{30}
+\bibcite{kumar2012leafsnap}{31}
+\bibcite{modisveg}{32}
+\bibcite{lazer09}{33}
+\bibcite{Leung:2010wa}{34}
+\bibcite{li2007event}{35}
+\bibcite{li2009totalscene}{36}
+\bibcite{libennowell08}{37}
+\bibcite{luo2003spatialcontext}{38}
+\bibcite{murdock}{39}
+\bibcite{oconnor10mood}{40}
+\bibcite{oliva2001modeling}{41}
+\bibcite{Oquab14}{42}
+\bibcite{ipcc2007climate}{43}
+\bibcite{ilsvrcarxiv14}{44}
+\bibcite{Sadilek:2012wp}{45}
+\bibcite{Sakaki:2010uv}{46}
+\bibcite{siagian2008comparison}{47}
+\bibcite{singh2010geo}{48}
+\bibcite{singh10socialpixels}{49}
+\bibcite{singhal2003spatialcontext}{50}
+\bibcite{thomee_time2014}{51}
+\bibcite{torralba2008tiny}{52}
+\bibcite{auc}{53}
+\bibcite{XiaoHEOT10}{54}
+\bibcite{ecology2012www}{55}

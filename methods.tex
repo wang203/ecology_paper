@@ -210,6 +210,101 @@ number of positive and non-positive photos in each bin (i.e., to
 compute $m$ and $n$ in the likelihood ratio described in the last
 section).
 
+
+
+
+
+\subsubsection{not using tag in vegetation case}
+
+
+We tested the performance of using only tags to make vegetation coverage prediction ~\cite{ecology2012www}. The performance shows tag
+feature is not going to improve the result of using visual evidence.
+
+%%%%%%%%%%%    why this part     %%%%%%%%%%%%%%%%%
+%This is the result of vegetation case in www paper.
+%I guess this might help us to explain why we don't use tag in vege case in this paper.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%
+%As shown in Figure~\ref{fig:greenery}, both curves outperform a random baseline for greenery prediction, but the estimates
+%are not as accurate as those observed during in snow predictions. 
+%% djc: conserving space...
+%%For no greenery
+%%predictions, when the threshold is 0, both combinations have
+%%precisions above baselines. 50\% and 1\% threshold combination has
+%%99.6\% for recall and 75.1\% for precision comparing to the 74.4\%
+%%precision baseline, while 50\% and 5\% threshold combination has
+%%99.6\% for recall and 84.6\% for precision comparing to the 84.2\%
+%%precision baseline. However, the precisions drop when the absolute
+%%values of the thresholds go up as shown in
+%%Figure~\ref{fig:no_greenery}.  For the 50\% and 5\% threshold
+%%combination, the curve is not smooth towards the left end as there are
+%%very few predictions made which cause the precision to be unstable.
+%%
+%%
+%There seem to be several reasons for this drop in performance.
+%%The reason for this is yet to be explored. 
+%One is that the boundary between greenery and no greenery
+%seems more vague than the snow/no-snow boundary. 
+%%Also, when it
+%%snows people are more likely to tag with the term ``snow,''  comparing to tagging
+%%"leaves" when leaves are green on a daily basis. For the 50\% and 1\%
+%%threshold combination, p(greenery user|there is greenery) = 0.10 and
+%%p(greenery user|there is no greenery) = 0.08, which is unlike that of
+%%the snow data: when there is no snow, people seldom tag "snow".
+%Moreover, the greenery ground truth data has a much coarser temporal resolution (16 days).
+%Finally, it's less clear which tags should be used to estimate greenery; using color analysis of the visual content of images may be a better approach, which we leave for future work.
+%%
+%%
+%%
+%%#################################mk#################################################
+%We also tried a learned classifier to predict greenery/non-greenery
+%bins based on the set of tags used by all users in each bin and on
+%each day.  We used the LibLinear classifier~\cite{Fan2008}
+%because it performed well in case of snow classification. 
+%Figure~\ref{fig:liblinear_greenery} presents the ROC curve for this classification task,
+%showing an equal-error rate of about 91.6\%.
+%%our data set for
+%%vegetation classification task consists of 33611 exemplars, each of
+%%which represents one bin in one day.  Of these samples only 3223
+%%exemplars contains tags.  we evaluate the results by using 10 fold
+%%cross validation and also by dividing the data into training set
+%%contains exemplars from 2007 and 2008 years and testing set contains
+%%exemplars from 2009 and 2010. table ~\ref{tab:classifier_greenerybins}
+%%shows the results for both cases.
+%
+%\begin{figure}
+%\begin{center}
+%\begin{tabular}{cc}
+%%%hp cr
+%\includegraphics[width=0.35\textwidth]{plots/greenery.png}
+%%%\includegraphics[width=0.35\textwidth,trim=1cm 0.5cm 1cm 1cm,clip]{plots/greenery.png}
+%\end{tabular}
+%\end{center}
+%\vspace{-12pt}
+%\caption{Greenery precision-recall curve using two different ground truth thresholds.}
+%\label{fig:greenery}
+%\end{figure}
+%
+%\begin{figure}
+%\begin{center}
+%\begin{tabular}{cc}
+%\includegraphics[width=0.35\textwidth]{plots/greenery_LibLinear_Snow_1_curves_ROC.png}
+%\end{tabular}
+%\end{center}
+%%%hp cr
+%\vspace{-12pt}
+%\caption{ROC curve for classifying greenery of bins, using tag features and LibLinear classifier.}
+%\label{fig:liblinear_greenery}
+%\end{figure}
+%\vspace{-12pt}
+%
+
+
+
+
+
+
 \subsection{Extracting semantics using images from individual images}
 
 
